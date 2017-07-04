@@ -1,0 +1,7 @@
+messenger4j:
+    appSecret: 
+    verifyToken: 
+    pageAccessToken: 
+
+server:
+    port: 8000
