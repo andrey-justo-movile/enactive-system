@@ -8,6 +8,13 @@ build.mustRunAfter clean
 
 mainClassName="com.social.enactive.main.SocialEnactiveMain"
 
+task copyToLib(type: Copy) {
+    into "$buildDir/lib"
+    from(configurations.compile)
+}
+
+stage.dependsOn(copyToLib)
+
 repositories {
     jcenter()
 }
