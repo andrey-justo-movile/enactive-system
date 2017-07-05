@@ -1,3 +1,11 @@
 /.gradle/
 /bin/
+build
+.gradle
+.idea
+out
+*.iml
+*.ipr
+*.iws
+.DS_Store
 /build/
