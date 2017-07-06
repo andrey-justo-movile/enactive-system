@@ -11,8 +11,6 @@ ext {
 
 task stage(dependsOn: ['build', 'clean'])
 
-stage.dependsOn(installDist)
-
 repositories {
     mavenCentral()
 }
