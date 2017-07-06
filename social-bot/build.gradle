@@ -3,7 +3,8 @@ apply plugin: 'application'
 
 sourceCompatibility = 1.8
 
-task stage(dependsOn: ['build', 'clean'])
+task stage(dependsOn: ['build', 'clean', 'war'])
+war.mustRunAfter clean
 build.mustRunAfter clean
 
 mainClassName="com.social.enactive.main.SocialEnactiveMain"
@@ -16,13 +17,25 @@ task copyToLib(type: Copy) {
     rename {
         'social-bot.jar'
     }
+    
+    into "$buildDir/server"
+    from(configurations.compile) {
+        include "social-bot*"
+    }
 }
 
 stage.dependsOn(copyToLib)
 
-clean << { project.file('social-bot.jar').delete() }
+tasks.clean.doLast() { project.file('social-bot.jar').delete() }
 
 build.dependsOn(copyToLib)
+
+tasks.stage.doLast() {
+    delete fileTree(dir: "build/distributions")
+    delete fileTree(dir: "build/assetCompile")
+    delete fileTree(dir: "build/distributions")
+    delete fileTree(dir: "build/libs", exclude: "*.war")
+}
 
 
 repositories {

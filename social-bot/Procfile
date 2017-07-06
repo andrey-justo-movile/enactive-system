@@ -1,1 +1,1 @@
-web: java -Dgrails.env=prod -Dserver.port=$PORT $JAVA_OPTS -jar social-bot.jar com.social.enactive.main.SocialEnactiveMain
+web: cd build ; java -Dgrails.env=prod -jar ../build/server/social-bot-*.jar --expand-war --port $PORT libs/*.war
