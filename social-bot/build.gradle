@@ -22,6 +22,8 @@ stage.dependsOn(copyToLib)
 
 clean << { project.file('social-bot.jar').delete() }
 
+build.dependsOn(copyToLib)
+
 
 repositories {
      mavenLocal()
