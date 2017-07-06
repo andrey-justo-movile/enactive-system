@@ -9,7 +9,6 @@ ext {
     gradleWrapperVersion = project.gradleWrapperVersion
 }
 
-sourceCompatibility = 1.8
 mainClassName = "com.social.enactive.main.SocialEnactiveMain"
 
 task stage(dependsOn: ['build', 'clean'])
