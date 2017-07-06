@@ -11,6 +11,11 @@ mainClassName="com.social.enactive.main.SocialEnactiveMain"
 task copyToLib(type: Copy) {
     into "$buildDir/lib"
     from(configurations.compile)
+    from jar.archivePath
+    into project.rootDir
+    rename {
+        'social-bot.jar'
+    }
 }
 
 stage.dependsOn(copyToLib)

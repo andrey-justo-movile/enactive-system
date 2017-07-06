@@ -1,1 +1,1 @@
-web: ./gradlew run
+web: java -Dgrails.env=prod -Dserver.port=$PORT $JAVA_OPTS -jar social-bot.jar com.social.enactive.main.SocialEnactiveMain
