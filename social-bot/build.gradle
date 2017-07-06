@@ -1,13 +1,21 @@
 buildscript {
+	ext {
+		springBootVersion = '1.5.4.RELEASE'
+	}
     repositories {
-        mavenLocal()
-        jcenter()
+        mavenCentral()
     }
+    dependencies {
+    	classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}" 
+	}
 }
 
 ext {
     gradleWrapperVersion = project.gradleWrapperVersion
 }
+
+apply plugin:'java'
+apply plugin: 'spring-boot'
 
 task stage(dependsOn: ['build', 'clean'])
 
