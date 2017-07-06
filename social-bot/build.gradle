@@ -19,6 +19,10 @@ repositories {
     jcenter()
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.3'
+}
+
 dependencies {
 
     // APACHE HTTP COMPONENTS
