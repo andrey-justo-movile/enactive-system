@@ -9,8 +9,6 @@ ext {
     gradleWrapperVersion = project.gradleWrapperVersion
 }
 
-mainClassName = "com.social.enactive.main.SocialEnactiveMain"
-
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
 
