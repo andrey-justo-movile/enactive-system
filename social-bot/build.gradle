@@ -16,7 +16,8 @@ task copyToLib(type: Copy) {
 stage.dependsOn(copyToLib)
 
 repositories {
-    jcenter()
+     mavenLocal()
+     maven { url "https://repo.grails.org/grails/core" }
 }
 
 task wrapper(type: Wrapper) {

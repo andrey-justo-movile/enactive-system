@@ -1,1 +1,1 @@
-web: build/install/social-bot/bin/social-bot
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/social-enactive.jar
