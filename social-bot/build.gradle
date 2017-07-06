@@ -5,10 +5,6 @@ buildscript {
     }
 }
 
-plugins {
-    id "io.ratpack.ratpack-groovy" version "1.4.5"
-}
-
 ext {
     gradleWrapperVersion = project.gradleWrapperVersion
 }
@@ -26,20 +22,11 @@ repositories {
     mavenCentral()
 }
 
-tasks.stage.doLast() {
-    delete fileTree(dir: "build/distributions")
-    delete fileTree(dir: "build/assetCompile")
-    delete fileTree(dir: "build/distributions")
-    delete fileTree(dir: "build/libs", exclude: "*.war")
-}
-
 task wrapper(type: Wrapper) {
     gradleVersion = '3.3'
 }
 
 dependencies {
-
- 	compile 'com.github.jsimone:webapp-runner:8.5.11.3'
 
     // APACHE HTTP COMPONENTS
     compile "org.apache.httpcomponents:httpclient:4.5+"

@@ -33,6 +33,14 @@
     </appender>
 
     <appender name="core" class="ch.qos.logback.core.ConsoleAppender">
+        <file>${LOG_PATH}/core.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/core.log.k2y-%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>${DEFAULT_MAX_FILE_SIZE}</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>${DEFAULT_MAX_HISTORY}</maxHistory>
+        </rollingPolicy>
         <encoder>
             <pattern>${PATTERN_CORE}</pattern>
         </encoder>
