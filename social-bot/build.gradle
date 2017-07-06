@@ -10,10 +10,8 @@ ext {
 }
 
 task stage(dependsOn: ['build', 'clean'])
-build.mustRunAfter clean
 
 stage.dependsOn(installDist)
-build.dependsOn(installDist)
 
 repositories {
     mavenCentral()
