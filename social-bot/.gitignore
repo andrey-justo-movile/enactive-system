@@ -9,3 +9,5 @@ out
 *.iws
 .DS_Store
 /build/
+/.classpath
+/.settings/
