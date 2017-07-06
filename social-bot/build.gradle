@@ -20,9 +20,7 @@ task copyToLib(type: Copy) {
 
 stage.dependsOn(copyToLib)
 
-clean << {
-    project.file('social-bot.jar).delete()
-}
+clean << { project.file('social-bot.jar).delete() }
 
 
 repositories {
