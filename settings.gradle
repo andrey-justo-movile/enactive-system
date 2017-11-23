@@ -1,0 +1,3 @@
+rootProject.name = 'enactive-system'
+
+include 'social-bot'

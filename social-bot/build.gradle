@@ -1,32 +1,25 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.4.RELEASE'
-	}
     repositories {
         mavenCentral()
+        maven { url 'https://repo.spring.io/libs-snapshot' }
     }
     dependencies {
-    	classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}" 
-	}
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
 }
 
-ext {
-    gradleWrapperVersion = project.gradleWrapperVersion
-}
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'net.researchgate.release'
+apply plugin: 'nebula.rpm'
 
-apply plugin:'java'
-apply plugin: 'spring-boot'
+//mainClassName="com.social.enactive.main.SocialEnactiveMain"
+apply from: '../application.gradle'
 
-task stage(dependsOn: ['build', 'clean'])
-
-repositories {
-    mavenCentral()
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.3'
-}
-
+/******************************************************************************
+ * DEPENDENCIES                                                               *
+ ******************************************************************************/
 dependencies {
 
     // APACHE HTTP COMPONENTS
@@ -35,13 +28,7 @@ dependencies {
     
     // APACHE
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
-    
-    // LOGGING
-    compile "ch.qos.logback:logback-classic:1.1+"
-    compile "org.slf4j:slf4j-api:1.7+"
-    compile "org.slf4j:jcl-over-slf4j:1.7+"
-    compile "org.slf4j:log4j-over-slf4j:1.7+"
-    
+        
     // JACKSON
     compile "com.fasterxml.jackson.core:jackson-core:2.8.8"
     compile "com.fasterxml.jackson.module:jackson-module-parameter-names:2.8.8"
@@ -55,10 +42,10 @@ dependencies {
     compile 'commons-collections:commons-collections:3.2.1'
     
     // SPRING
-    compile group: 'org.springframework', name: 'spring-context', version: '4.3.9.RELEASE'
-    compile "org.springframework:spring-webmvc:4.3.9.RELEASE"
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.5.4.RELEASE'
-    compile "org.springframework.boot:spring-boot-starter-jetty:1.5.4.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}"
     
     // API.AI
     compile 'ai.api:libai:1.4.8'
