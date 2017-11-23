@@ -1,8 +1,7 @@
-package com.social.enactive.main.filter;
+package com.social.enactive.bot.configuration.http.filter;
 
 import java.io.IOException;
 import java.util.Enumeration;
-import java.util.UUID;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -14,14 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.StopWatch;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.slf4j.MDC;
+
+import com.social.enactive.bot.configuration.log.Log;
+import com.social.enactive.bot.configuration.log.LogManager;
+
 
 public class RequestFilter implements Filter {
-
-    private Logger CORE = LoggerFactory.getLogger("core");
-    private static final String STAMP_LABEL = "stamp";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -29,7 +26,7 @@ public class RequestFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        RequestFilter.stamp(null);
+        LogManager.stamp();
         StopWatch chronometer = new StopWatch();
         chronometer.start();
 
@@ -63,22 +60,13 @@ public class RequestFilter implements Filter {
             String name = (String) parameters.nextElement();
             sb.append(" ").append(name).append(": ").append(request.getParameter(name)).append(";");
         }
-        CORE.info("{}", sb.append(" ]").toString());
-        CORE.debug("Elapsed time: {} ms", chronometer.getTime());
+        Log.CORE.info("{}", sb.append(" ]").toString());
+        Log.CORE.debug("Elapsed time: {} ms", chronometer.getTime());
 
         chain.doFilter(request, response);
-    }
-
-    private static void stamp(String stamp) {
-        if (StringUtils.isBlank(stamp)) {
-            stamp = UUID.randomUUID().toString();
-        }
-
-        MDC.put(STAMP_LABEL, stamp.replaceAll("[^0-9a-zA-Z]", ""));
     }
 
     @Override
     public void destroy() {
     }
-
 }

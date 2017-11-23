@@ -1,4 +1,4 @@
-package com.social.enactive.main.configuration;
+package com.social.enactive.bot.configuration;
 
 import org.eclipse.jetty.server.ConnectionFactory;
 import org.eclipse.jetty.server.Connector;
@@ -22,7 +22,6 @@ public class WebContextConfiguration implements JettyServerCustomizer {
 				httpConfiguration.addCustomizer(new ForwardedRequestCustomizer());
 			}
 		}
-
 	}
 
 }

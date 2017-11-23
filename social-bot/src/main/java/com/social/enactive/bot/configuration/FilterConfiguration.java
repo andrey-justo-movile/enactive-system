@@ -1,4 +1,4 @@
-package com.social.enactive.main.configuration;
+package com.social.enactive.bot.configuration;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import com.social.enactive.main.filter.RequestFilter;
+import com.social.enactive.bot.configuration.http.filter.RequestFilter;
 
 @Component
 @Order(Integer.MIN_VALUE)
