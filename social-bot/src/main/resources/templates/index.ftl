@@ -14,7 +14,7 @@
 		        send-button-text="Send"
 		        show-user-avatar="true"
 		        show-composer="true"
-		        composer-placeholder-text="Write your message here">
+		        composer-placeholder-text="Write your message here" style="height: 100vh;">
 		</simple-chat>
     </div>
   	
