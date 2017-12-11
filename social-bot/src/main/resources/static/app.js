@@ -14,10 +14,15 @@
 		var socket = new SockJS('/ws');
         var stompClient = Stomp.over(socket);
 
+        var user = {
+        	id: '1',
+        	name: 'Convidado'
+        }
+        
         vm.you = {
             userId: '4562KDJYE72930DST283DFY202Dd',
             avatar: 'http://www.freelanceweb16.fr/wp-content/uploads/2015/08/Woman_Avatar.gif',
-            userName: 'Andrey'
+            userName: user.name
         };
         
         vm.messages = [];
@@ -26,12 +31,13 @@
 			
 			if(message && stompClient) {
 				var chatMessage = {
-					sender: 'Andrey',
-					content: message.text,
-					type: 'CHAT'
+					conversation_id: '1',
+					sender_id: user.id,
+					text: message.text				
 				};
 
 				stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
+				vm.messages.push(message)
 				message.text = '';
 			}
         };
@@ -47,7 +53,7 @@
    	 		// Tell your username to the server
     		stompClient.send("/app/chat.addUser",
         		{},
-        	JSON.stringify({sender: 'Andrey', type: 'JOIN'})
+        	JSON.stringify(user)
     		)
 		}
 		
@@ -56,8 +62,13 @@
 		}
 		
 		function onMessageReceived(payload) {
-			var message = JSON.parse(payload.body);
-			console.log(message);
+			var messages = JSON.parse(payload.body);
+			console.log(messages);
+			messages.foreach(function(item) {
+				vm.messages.push({
+						text: item.text
+				});
+			});
 		}
 
         stompClient.connect({}, onConnected, onError);
