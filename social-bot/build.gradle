@@ -47,6 +47,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-freemarker:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}"
+    compile 'org.springframework.boot:spring-boot-devtools'
     
     // ACTIVEMQ
     compile group: 'org.apache.activemq', name: 'activemq-stomp', version: '5.15.2'

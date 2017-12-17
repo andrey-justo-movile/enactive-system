@@ -11,7 +11,7 @@ allprojects {
     apply plugin: 'jacoco'
     apply plugin: 'findbugs'
 
-    group 'com.justo.mutant'
+    group 'com.social.enactive'
 
 	repositories {
         mavenCentral()

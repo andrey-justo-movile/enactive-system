@@ -6,3 +6,5 @@ spring:
          property-naming-strategy: SNAKE_CASE
     activemq:
         broker-url: "stomp+nio://localhost:61616?trace=true&wireFormat=stomp&persistent=false&useJmx=false&useShutdownHook=true"
+    freemaker:
+        cache: false

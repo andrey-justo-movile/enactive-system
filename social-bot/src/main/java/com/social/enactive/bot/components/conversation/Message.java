@@ -2,27 +2,35 @@ package com.social.enactive.bot.components.conversation;
 
 import java.io.Serializable;
 
+import com.social.enactive.bot.components.user.User;
+
 public class Message implements Serializable {
 
 	private static final long serialVersionUID = 916551022124799080L;
 
+	private final String id;
 	private final String conversationId;
-	private final String senderId;
+	private final User sender;
 	private final String text;
 
-	public Message(String conversationId, String senderId, String text) {
+	public Message(String id, String conversationId, User sender, String text) {
 		super();
+		this.id = id;
 		this.conversationId = conversationId;
-		this.senderId = senderId;
+		this.sender = sender;
 		this.text = text;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 	public String getText() {
 		return text;
 	}
 
-	public String getSenderId() {
-		return senderId;
+	public User getSender() {
+		return sender;
 	}
 
 	public String getConversationId() {
@@ -31,7 +39,7 @@ public class Message implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Message = {conversationId=" + conversationId + ", senderId=" + senderId + ", text=" + text + "}";
+		return "Message {id=" + id + ", conversationId=" + conversationId + ", text=" + text + "}";
 	}
 
 }

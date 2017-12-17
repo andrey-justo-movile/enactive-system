@@ -26,7 +26,7 @@ public class MessagingHandler {
 	
 	// TODO: remove mock conversation obj and use a database
 	private final Conversation conversation = new Conversation("1", 
-			Arrays.asList(new User("1", "Convidado"), new BotBehavior("test", BehaviorScenario.ECHO, "test")));
+			Arrays.asList(new User("1", "Convidado", ""), new BotBehavior("test", BehaviorScenario.ECHO, "test", "/images/teacher.png")));
 	
 	@MessageMapping("/chat.sendMessage")
 	@SendTo("/channel/public")
@@ -42,9 +42,9 @@ public class MessagingHandler {
 
 	@MessageMapping("/chat.addUser")
 	@SendTo("/channel/public")
-	public String addUser(@Payload String chatMessage, SimpMessageHeaderAccessor headerAccessor) {
+	public List<Message> addUser(@Payload Message chatMessage, SimpMessageHeaderAccessor headerAccessor) {
 		Log.SYSTEM.info("Message received={}", chatMessage);
-		return chatMessage;
+		return Arrays.asList(chatMessage);
 	}
 
 }

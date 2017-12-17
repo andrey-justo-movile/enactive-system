@@ -23,7 +23,7 @@ public class ScenarioEngineHandler implements Engine {
 	@Override
 	public List<Message> process(Conversation conversation, Message message) throws UserNotInConversationException {
 		BotBehavior behavior = (BotBehavior) conversation.getParticipants().stream().filter(p -> p instanceof BotBehavior).findFirst().orElse(null);
-		User currentUser = conversation.getParticipants().stream().filter(p -> p.getId().equals(message.getSenderId())).findFirst().orElse(null);
+		User currentUser = conversation.getParticipants().stream().filter(p -> p.getId().equals(message.getSender().getId())).findFirst().orElse(null);
 		if (currentUser == null) {
 			throw new UserNotInConversationException(conversation, currentUser);
 		}
@@ -37,7 +37,7 @@ public class ScenarioEngineHandler implements Engine {
 			handler = (MessageHandler) context.getBean(behavior.getScenario().name());
 		}
 		
-		return handler.handler(user, message);
+		return handler.handler(user, message, behavior);
 	}
 	
 }

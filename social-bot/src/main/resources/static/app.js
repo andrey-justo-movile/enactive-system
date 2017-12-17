@@ -20,7 +20,7 @@
         }
         
         vm.you = {
-            userId: '4562KDJYE72930DST283DFY202Dd',
+            userId: user.id,
             avatar: 'http://www.freelanceweb16.fr/wp-content/uploads/2015/08/Woman_Avatar.gif',
             userName: user.name
         };
@@ -28,17 +28,16 @@
         vm.messages = [];
         
         vm.sendMessage = function(message) {
-			
 			if(message && stompClient) {
 				var chatMessage = {
 					conversation_id: '1',
-					sender_id: user.id,
+					sender: {
+						id: user.id
+					},
 					text: message.text				
 				};
 
 				stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
-				vm.messages.push(message)
-				message.text = '';
 			}
         };
 
@@ -64,11 +63,17 @@
 		function onMessageReceived(payload) {
 			var messages = JSON.parse(payload.body);
 			console.log(messages);
-			messages.foreach(function(item) {
-				vm.messages.push({
-						text: item.text
-				});
-			});
+			for (var i = 0; i < messages.length; i++) {
+				if (messages[i].text != null) {
+					vm.messages.push({
+							id: messages[i].id,
+							text: messages[i].text,
+							userId: messages[i].sender.id,
+							userName: messages[i].sender.name,
+							avatar: messages[i].sender.picture
+					});
+				}
+			}
 		}
 
         stompClient.connect({}, onConnected, onError);
