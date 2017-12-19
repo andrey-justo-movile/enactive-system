@@ -22,7 +22,8 @@
         vm.you = {
             userId: user.id,
             avatar: 'http://www.freelanceweb16.fr/wp-content/uploads/2015/08/Woman_Avatar.gif',
-            userName: user.name
+            userName: user.name,
+            channel: null
         };
         
         vm.messages = [];

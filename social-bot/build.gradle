@@ -49,6 +49,9 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}"
     compile 'org.springframework.boot:spring-boot-devtools'
     
+    // SPRING DATA
+	compile "org.springframework.data:spring-data-mongodb:${springDataMongo}"
+    
     // ACTIVEMQ
     compile group: 'org.apache.activemq', name: 'activemq-stomp', version: '5.15.2'
     compile group: 'org.apache.activemq', name: 'activemq-kahadb-store', version: '5.15.2'

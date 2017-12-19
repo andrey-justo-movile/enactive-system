@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -28,9 +29,9 @@ public class MessagingHandler {
 	private final Conversation conversation = new Conversation("1", 
 			Arrays.asList(new User("1", "Convidado", ""), new BotBehavior("test", BehaviorScenario.ECHO, "test", "/images/teacher.png")));
 	
-	@MessageMapping("/chat.sendMessage")
-	@SendTo("/channel/public")
-	public List<Message> sendMessage(@Payload Message message) {
+	@MessageMapping("/chat.sendMessage/{channel}")
+	@SendTo("/channel/public/{channel}")
+	public List<Message> sendMessage(@Payload Message message, @DestinationVariable String channel) {
 		Log.SYSTEM.info("Message received={}", message);
 		try {
 			return engine.process(conversation, message);
@@ -40,9 +41,9 @@ public class MessagingHandler {
 		}
 	}
 
-	@MessageMapping("/chat.addUser")
-	@SendTo("/channel/public")
-	public List<Message> addUser(@Payload Message chatMessage, SimpMessageHeaderAccessor headerAccessor) {
+	@MessageMapping("/chat.addUser/{channel}")
+	@SendTo("/channel/public/{channel}")
+	public List<Message> addUser(@Payload Message chatMessage, SimpMessageHeaderAccessor headerAccessor, @DestinationVariable String channel) {
 		Log.SYSTEM.info("Message received={}", chatMessage);
 		return Arrays.asList(chatMessage);
 	}
