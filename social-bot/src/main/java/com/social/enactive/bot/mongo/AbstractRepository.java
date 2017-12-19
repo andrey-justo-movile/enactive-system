@@ -1,5 +1,7 @@
 package com.social.enactive.bot.mongo;
 
+import org.springframework.data.mongodb.core.MongoTemplate;
+
 public abstract class AbstractRepository<T> {
 	
 	protected final MongoTemplate template;
