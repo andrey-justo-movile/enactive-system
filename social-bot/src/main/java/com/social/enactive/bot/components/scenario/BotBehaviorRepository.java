@@ -8,8 +8,8 @@ import com.social.enactive.bot.mongo.AbstractRepository;
 
 public class BotBehaviorRepository extends AbstractRepository<BotBehavior>{
 
-	public BotBehaviorRepository(MongoTemplate template, Class<BotBehavior> clazz) {
-		super(template, clazz);
+	public BotBehaviorRepository(MongoTemplate template) {
+		super(template, BotBehavior.class);
 	}
 	
 	public BotBehavior findByBehavior(final BehaviorScenario scenario) {
