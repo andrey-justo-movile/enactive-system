@@ -28,7 +28,7 @@ public class Message implements Serializable {
 		this.content = content;
 		this.instant = instant;
 	}
-	
+
 	public Message(String id, String conversationId, User sender, Content content) {
 		super();
 		this.id = id;
@@ -54,10 +54,14 @@ public class Message implements Serializable {
 		return conversationId;
 	}
 
+	public Instant getInstant() {
+		return instant;
+	}
+	
 	@Override
 	public String toString() {
 		return "Message {id=" + id + ", conversationId=" + conversationId + ", sender=" + sender + ", content="
-				+ content + "}";
+				+ content + ", instant=" + instant + "}";
 	}
 
 }

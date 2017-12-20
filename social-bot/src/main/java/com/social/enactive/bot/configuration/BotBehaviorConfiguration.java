@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
-import com.social.enactive.bot.components.message.MessageRepository;
-import com.social.enactive.bot.components.message.MessageService;
 import com.social.enactive.bot.components.scenario.BotBehaviorRepository;
 import com.social.enactive.bot.components.scenario.BotBehaviorService;
 
