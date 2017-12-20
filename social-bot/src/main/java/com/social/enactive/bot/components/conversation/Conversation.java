@@ -3,12 +3,15 @@ package com.social.enactive.bot.components.conversation;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+
 import com.social.enactive.bot.components.user.User;
 
 public class Conversation implements Serializable, Cloneable {
 
 	private static final long serialVersionUID = -7150943699666276487L;
 
+	@Id
 	private final String id;
 	private final List<User> participants;
 

@@ -26,6 +26,8 @@ public abstract class AbstractRepository<T> {
 		return template.findById(id, objClass, collectionName());
 	}
 	
-	public abstract String collectionName();
+	public String collectionName() {
+		return objClass.getSimpleName();
+	}
 
 }

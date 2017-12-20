@@ -10,8 +10,8 @@ public class BotBehavior extends User implements Serializable {
 
 	private final BehaviorScenario scenario;
 
-	public BotBehavior(String id, BehaviorScenario scenario, String name, String picture) {
-		super(name, id, picture);
+	public BotBehavior(String id, BehaviorScenario scenario, String name, String userName, String picture) {
+		super(id, name, userName, picture);
 		this.scenario = scenario;
 	}
 	

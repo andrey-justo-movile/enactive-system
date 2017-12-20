@@ -35,7 +35,10 @@
 					sender: {
 						id: user.id
 					},
-					text: message.text				
+					content: {
+						text: message.text
+					}
+									
 				};
 
 				stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
