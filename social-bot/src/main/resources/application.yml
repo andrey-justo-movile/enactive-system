@@ -8,3 +8,8 @@ spring:
         broker-url: "stomp+nio://localhost:61616?trace=true&wireFormat=stomp&persistent=false&useJmx=false&useShutdownHook=true"
     freemaker:
         cache: false
+    jmx:
+        enabled: true
+    data:
+        mongodb:
+            uri:

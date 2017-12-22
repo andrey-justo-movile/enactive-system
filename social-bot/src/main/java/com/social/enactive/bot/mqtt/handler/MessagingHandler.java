@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 
 import com.social.enactive.bot.components.conversation.ConversationService;
 import com.social.enactive.bot.components.message.Message;
+import com.social.enactive.bot.components.message.MessageService;
 import com.social.enactive.bot.configuration.log.Log;
 import com.social.enactive.bot.engine.Engine;
 
@@ -25,6 +26,9 @@ public class MessagingHandler {
 	@Autowired
 	private ConversationService conversationService;
 	
+	@Autowired
+	private MessageService messageService;
+	
 	@MessageMapping("/chat.sendMessage/{channel}")
 	@SendTo("/channel/public/{channel}")
 	public List<Message> sendMessage(@Payload Message message, @DestinationVariable String channel) {
@@ -34,6 +38,8 @@ public class MessagingHandler {
 		} catch (Exception e) {
 			Log.EXCEPTION.error("Couldn't send message", e);
 			return null;
+		} finally {
+			messageService.save(message);
 		}
 	}
 
