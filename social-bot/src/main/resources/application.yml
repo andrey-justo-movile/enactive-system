@@ -4,12 +4,28 @@ server:
 spring:
     jackson:
          property-naming-strategy: SNAKE_CASE
-    activemq:
-        broker-url: "stomp+nio://localhost:61616?trace=true&wireFormat=stomp&persistent=false&useJmx=false&useShutdownHook=true"
     freemaker:
         cache: false
     jmx:
         enabled: true
+    activemq:
+        broker-url: "stomp+nio://localhost:61616?trace=true&wireFormat=stomp&persistent=false&useJmx=false&useShutdownHook=true"
     data:
         mongodb:
-            uri:
+            uri: mongodb://andrey.justo:social_bot@localhost:27017/social_bot 
+ 
+authentication:
+    secret: secret
+
+---
+
+spring:
+    profiles: prod
+    activemq:
+        broker-url: "stomp+nio://localhost:61616?trace=true&wireFormat=stomp&persistent=false&useJmx=false&useShutdownHook=true"
+    data:
+        mongodb:
+            uri: mongodb://andrey.justo:social_bot@localhost:27017/social_bot 
+            
+authentication:
+    secret: secret

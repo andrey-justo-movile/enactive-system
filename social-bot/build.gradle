@@ -48,11 +48,13 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-freemarker:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}"
-    compile 'org.springframework.boot:spring-boot-devtools'
-	compile group: 'org.springframework.security', name: 'spring-security-rsa', version: '1.0.5.RELEASE'
-    
+    compile "org.springframework.boot:spring-boot-devtools"
+
     // SPRING DATA
 	compile "org.springframework.data:spring-data-mongodb:${springDataMongo}"
+	
+	// JWT
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.0'
     
     // ACTIVEMQ
     compile group: 'org.apache.activemq', name: 'activemq-stomp', version: '5.15.2'

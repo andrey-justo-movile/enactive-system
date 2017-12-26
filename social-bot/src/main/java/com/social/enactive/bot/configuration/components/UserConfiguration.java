@@ -1,4 +1,4 @@
-package com.social.enactive.bot.configuration;
+package com.social.enactive.bot.configuration.components;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
