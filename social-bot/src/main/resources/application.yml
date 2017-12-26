@@ -22,10 +22,10 @@ authentication:
 spring:
     profiles: prod
     activemq:
-        broker-url: "stomp+nio://localhost:61616?trace=true&wireFormat=stomp&persistent=false&useJmx=false&useShutdownHook=true"
+        broker-url: "{cipher}AAAAB3NzaC1yc2EAAAADAQABAAABAQCalAF981xk7Y7zS2fQE3iLG+bZyCk0Wqnb2gKUwgIjBCoaRSVOjgRQAx7YLGUf...                 AQB039s9uFh+WfL9r50GtA+bzz8FxylhihJXM2BleqZAlXGGLsy0ayfPJxDleitUgIUWeKR3Beuj3Q+cO1BUWNRZTR3blTFFu1MDaAYaWWSYV+/Vzx4N2bFaLyVIuYihmxd4q+fPc4sHpkk6dTMPIf3XS0wjNgqj7kJUV1d1hUGWea2GLLMQbcOeQizD6+bb+jNYylw8nVTLFdudXrWwK2msCyCql0BuC3i9vqR3oDCmcuuFagtnst73YYK1/wV8sPRrJPcnW4WIR+t+YhFt2X8jV8hxfkrlKFKemN12Y5VePEbka4lJSCLjIOVpRY7mcfV6bn5DxLhNv6sfN0IkOGbnJL2BJ3eX/XwD5PNeimZBBEKq9SOWlUQvPWDdsvJJDxsKM3fbsm5QpnrhhfrULf/tF4PcqaKhjHzYHGkuvbUIcLKTOqZLxQeCF/wxHGkb0RpDLtj2++Opb2AcnSH1JZuuz7TAgrmA99p8YqgEymHWkYmc+iDsHtvqU9TcPbeFCDo="
     data:
         mongodb:
-            uri: mongodb://andrey.justo:social_bot@localhost:27017/social_bot 
+            uri: '{cipher}AAAAB3NzaC1yc2EAAAADAQABAAABAQCalAF981xk7Y7zS2fQE3iLG+bZyCk0Wqnb2gKUwgIjBCoaRSVOjgRQAx7YLGUf...                 AQAf/No4zl6r3253Xr2FfYE+EOAnvodZ2cKXmr2y29+kAZG1wxf2ADsafivVnc8N88+/NFUVPK4vruMv1zRZbwk03/TZ5onx4CLS7KYa/gVCEPI3WbDVa5BCzt4BqSrvEeaeKwkSN/h2gmbW32aMF9fRHepJGvPTWscr2qIgqBOxi+ptZhzOUv75d8+6j0rkk4vN3aZETls6YTe+469sPP8OV3jVMx2PhZcjB6KeiCV7buzeLnMzX2EMe7DXsPqt8hgCdP4z0aiT0R7Tgu16nyR/oYfSZREuEH3aeD/g4vgGQeVBxQs6v554XtQlUhnfTP5RcxF1LBGP8EqTAja9160ytpBgDH8OphjBVzwyHP8PQ1eWwBw6jWDEc6/Lran82HDOr61AxQZh8Yapr+W9+wI7sHDzKU3lWDZWuikIElii29lYR2cnfp6oTLsXTHGR87axoXXvm115XsCqdXNFkIAdBIktcTBwIKJcfgdu/ge+TA==' 
             
 authentication:
-    secret: secret
+    secret: '{cipher}AAAAB3NzaC1yc2EAAAADAQABAAABAQCalAF981xk7Y7zS2fQE3iLG+bZyCk0Wqnb2gKUwgIjBCoaRSVOjgRQAx7YLGUf...                 AQBW9e1Q1auciHVKEOlMj7c0lAz60EFiVwS2m/wQ8x3F2laTt/asi2KXjRbKpCErz5vJF+X5iFUEj79Z/Hjx7LK8wZ7D0f1tiYyzBGDPkZ/eAEkss7UCQ9SkpGeP+oYXCzkMzO9ogCHqOJ9QADaAI9bDZOUOEr6Mr4M03s9IScF2Qtu9vzwEcFUz5CYPNl/mUNqJYR61c1m6zu+RxUZuQnM8eaVFpOvHotD++gI3G3bVNohw6BRgHzgEx4+IEmkduEvuJXe8VUFmbGDCyfOPXZJOiVfd/5rEhzTXOoaxMsjEdVr9znRswQslxj7r/cLWnDPxDwNDvdmZ13NSIgox1neATbvKixQK0WGGmD1qa4IbwSlZM16DFQICRoj+/GF9xoM='
