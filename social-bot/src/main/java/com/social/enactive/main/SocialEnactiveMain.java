@@ -10,9 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
-import com.ulisesbocchio.jasyptspringboot.annotation.EncryptablePropertySource;
-import com.ulisesbocchio.jasyptspringboot.annotation.EncryptablePropertySources;
 
 @EnableAsync
 @Configuration
@@ -20,8 +17,6 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EncryptablePropertySources;
 @EnableConfigurationProperties
 @ComponentScan({"com.social.enactive"})
 @SpringBootApplication
-@EnableEncryptableProperties
-@EncryptablePropertySources({@EncryptablePropertySource("classpath:encrypted.yml")})
 public class SocialEnactiveMain {
 
     public static ApplicationContext context;
