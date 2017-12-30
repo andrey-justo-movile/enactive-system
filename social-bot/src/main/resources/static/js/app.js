@@ -34,10 +34,10 @@
         		url: '/login',
         		data: {
         			'user_name': $scope.user_name,
-        			'password': $scope.password,
+        			'password': $scope.password
         		}
         	}).then(function successCallback(response) {
-    			startConntection(response.body);
+    			startConntection(response.body, vm.you.channel);
   			}, function errorCallback(response) {
     				// called asynchronously if an error occurs
     			// or server returns response with an error status.
@@ -55,7 +55,7 @@
         			'picture': $scope.picture
         		}
         	}).then(function successCallback(response) {
-    			startConntection(response.body);
+    			startConntection(response.body, vm.you.channel);
   			}, function errorCallback(response) {
     				// called asynchronously if an error occurs
     			// or server returns response with an error status.
@@ -85,7 +85,23 @@
             console.log('onMessagePosted');
         });
         
-        function startConntection(userLogged) {
+        function startConversation() {
+        	$http({
+        		method: 'POST',
+        		url: '/conversation',
+        		data: {
+        			'user_id': vm.user.id,
+        			'bot_behavior': 'ECHO'
+        		}
+        	}).then(function successCallback(response) {
+    			startConntection(response.body);
+  			}, function errorCallback(response) {
+    				// called asynchronously if an error occurs
+    			// or server returns response with an error status.
+  			});
+        }
+        
+        function startConntection(userLogged, channel) {
         	vm.user.id = userLogged.user.id;
 			vm.user.name = userLogged.user.name;
 			vm.user.picture = userLogged.user.picture;
@@ -93,7 +109,7 @@
 			vm.you.userId = vm.user.id,
     		vm.you.avatar = vm.user.picture,
     		vm.you.userName = vm.user.name,
-    		vm.you.channel = null;
+    		vm.you.channel = channel;
     		
         	socket = new SockJS('/ws');
         	stompClient = Stomp.over(socket);
@@ -106,10 +122,7 @@
         		return;
         	}
         	
-    		// Subscribe to the Public Channel
     		stompClient.subscribe('/channel/public/' + vm.you.channel, onMessageReceived);
-
-   	 		// Tell your username to the server
     		stompClient.send("/app/chat.addUser/" + vm.you.channel,
         		{},
         	JSON.stringify(user)

@@ -20,9 +20,10 @@ public class ConversationService {
 		return conversationRepository.find(id);
 	}
 
-	public Conversation joinConversation(final String id, User user, final BotBehavior botBehavior) {
+	public Conversation joinConversation(final String id, final User user, final BotBehavior botBehavior) {
 		if (StringUtils.isBlank(id)) {
-			return create(botBehavior, user);
+			Conversation conversation = conversationRepository.findDefault(user.getUserName(), botBehavior.getUserName());
+			return conversation != null ? conversation : create(botBehavior, user);
 		}
 
 		Conversation conversation = conversationRepository.find(id);
@@ -39,7 +40,7 @@ public class ConversationService {
 	}
 
 	private Conversation create(final BotBehavior botBehavior, final User user) {
-		Conversation conversation = new Conversation(UUID.randomUUID().toString(), Arrays.asList(user, botBehavior));
+		Conversation conversation = new Conversation(UUID.randomUUID().toString(), Arrays.asList(user, botBehavior), ConversationType.DEFAULT);
 		return conversationRepository.insert(conversation);
 	}
 

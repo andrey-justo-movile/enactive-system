@@ -13,12 +13,14 @@ public class Conversation implements Serializable, Cloneable {
 
 	@Id
 	private final String id;
+	private final ConversationType type;
 	private final List<User> participants;
 
-	public Conversation(String id, List<User> participants) {
+	public Conversation(String id, List<User> participants, ConversationType type) {
 		super();
 		this.id = id;
 		this.participants = participants;
+		this.type = type;
 	}
 
 	public String getId() {
@@ -29,8 +31,13 @@ public class Conversation implements Serializable, Cloneable {
 		return participants;
 	}
 
+	public ConversationType getType() {
+		return type;
+	}
+
 	@Override
 	public String toString() {
-		return "Conversation = {id=" + id + ", participants=" + participants +	 "}";
+		return "Conversation {id=" + id + ", type=" + type + ", participants=" + participants + "}";
 	}
+
 }
