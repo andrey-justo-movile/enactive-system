@@ -11,5 +11,5 @@ public class Resources {
 	public String index(Model model) {
 		return "index";
 	}
-
+	
 }

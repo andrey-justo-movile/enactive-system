@@ -12,30 +12,35 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.social.enactive.bot.components.authentication.AuthenticationService;
 import com.social.enactive.bot.components.user.credentials.UserCredentials;
+import com.social.enactive.bot.configuration.log.Log;
 
-public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
+public class JWTLoginFilter extends UsernamePasswordAuthenticationFilter  {
 
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 	private final AuthenticationService authenticationService;
 
-	public JWTLoginFilter(String url, AuthenticationManager authManager, AuthenticationService authenticationService) {
-		super(new AntPathRequestMatcher(url));
+	public JWTLoginFilter(AuthenticationManager authManager, AuthenticationService authenticationService) {
 		setAuthenticationManager(authManager);
 		this.authenticationService = authenticationService;
 	}
 
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
-			throws AuthenticationException, IOException, ServletException {
-		UserCredentials credentials = MAPPER.readValue(req.getInputStream(), UserCredentials.class);
-		return getAuthenticationManager().authenticate(new UsernamePasswordAuthenticationToken(
-				credentials.getUserName(), credentials.getPassword(), Collections.emptyList()));
+			throws AuthenticationException {
+		UserCredentials credentials;
+		try {
+			credentials = MAPPER.readValue(req.getInputStream(), UserCredentials.class);
+			return getAuthenticationManager().authenticate(new UsernamePasswordAuthenticationToken(
+					credentials.getUserName(), credentials.getPassword(), Collections.emptyList()));
+		} catch (Exception e) {
+			Log.SYSTEM.error("Couldn't parse request {}", req, e);
+			return null;
+		}
 	}
 
 	@Override

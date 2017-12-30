@@ -11,12 +11,14 @@
     /* @ngInject */
     function AppController($scope) {
         var vm = this;
-		var socket = new SockJS('/ws');
-        var stompClient = Stomp.over(socket);
+		var socket = null;
+        var stompClient = null;
 
         var user = {
-        	id: '1',
-        	name: 'Convidado'
+        	id: '',
+        	name: '',
+        	picture: '',
+        	token: ''
         }
         
         vm.you = {
@@ -26,12 +28,46 @@
             channel: null
         };
         
+        vm.login = function() {
+        	$http({
+        		method: 'POST',
+        		url: '/login',
+        		data: {
+        			'user_name': $scope.user_name,
+        			'password': $scope.password,
+        		}
+        	}).then(function successCallback(response) {
+    			startConntection(response.body);
+  			}, function errorCallback(response) {
+    				// called asynchronously if an error occurs
+    			// or server returns response with an error status.
+  			});
+        }
+        
+        vm.singUp = function() {
+        	$http({
+        		method: 'POST',
+        		url: '/sign_up',
+        		data: {
+        			'user_name': $scope.user_name,
+        			'password': $scope.password,
+        			'name': $scope.name,
+        			'picture': $scope.picture
+        		}
+        	}).then(function successCallback(response) {
+    			startConntection(response.body);
+  			}, function errorCallback(response) {
+    				// called asynchronously if an error occurs
+    			// or server returns response with an error status.
+  			});
+        }
+        
         vm.messages = [];
         
         vm.sendMessage = function(message) {
 			if(message && stompClient) {
 				var chatMessage = {
-					conversation_id: '1',
+					conversation_id: vm.you.channel,
 					sender: {
 						id: user.id
 					},
@@ -41,7 +77,7 @@
 									
 				};
 
-				stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
+				stompClient.send("/app/chat.sendMessage/" + vm.you.channel, {}, JSON.stringify(chatMessage));
 			}
         };
 
@@ -49,12 +85,32 @@
             console.log('onMessagePosted');
         });
         
+        function startConntection(userLogged) {
+        	vm.user.id = userLogged.user.id;
+			vm.user.name = userLogged.user.name;
+			vm.user.picture = userLogged.user.picture;
+			vm.user.token = userLogged.token;
+			vm.you.userId = vm.user.id,
+    		vm.you.avatar = vm.user.picture,
+    		vm.you.userName = vm.user.name,
+    		vm.you.channel = null;
+    		
+        	socket = new SockJS('/ws');
+        	stompClient = Stomp.over(socket);
+        	onConnected()
+        }
+        
         function onConnected() {
+        	if (stompClient == null || socket == null) {
+        		// do nothing
+        		return;
+        	}
+        	
     		// Subscribe to the Public Channel
-    		stompClient.subscribe('/channel/public', onMessageReceived);
+    		stompClient.subscribe('/channel/public/' + vm.you.channel, onMessageReceived);
 
    	 		// Tell your username to the server
-    		stompClient.send("/app/chat.addUser",
+    		stompClient.send("/app/chat.addUser/" + vm.you.channel,
         		{},
         	JSON.stringify(user)
     		)
