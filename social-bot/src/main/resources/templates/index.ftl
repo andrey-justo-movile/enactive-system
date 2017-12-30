@@ -4,29 +4,27 @@
   <head>
   	<meta charset="utf-8">
     <title>Sample "Enactive System using a bot as example" Application</title>
-    <link rel="stylesheet" href="css/simple-chat/angular-simple-chat.min.css">
+    <link rel="stylesheet" href="css/angular-simple-chat.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
   </head>
-  <body ng-controller="AppController as AppView" >
-	<form ng-model="form-login" class="form" role="form" method="post" action="login" accept-charset="UTF-8">
+  <body ng-controller="AppController as AppView" ng-init="logged = false">
+	<form ng-model="form-login" class="form" role="form" ng-show="!logged">
 		<div class="form-group">
-			 <label class="sr-only" for="exampleInputEmail2">User Name</label>
-			 <input ng-model="user_name" type="email" class="form-control" id="exampleInputEmail2" placeholder="your user name" required>
+			 <label class="sr-only" for="user_name">User Name</label>
+			 <input ng-model="user_name" type="email" class="form-control" id="user_name" placeholder="your user name" required>
 		</div>
 		<div class="form-group">
-			 <label class="sr-only" for="exampleInputPassword2">Password</label>
-			 <input ng-model="password" type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+			 <label class="sr-only" for="password">Password</label>
+			 <input ng-model="password" type="password" class="form-control" id="password" placeholder="Password" required>
 		</div>
 		<div class="form-group">
-			 <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+			 <button id="sing-up" type="input" class="btn btn-primary btn-block">Sign up</button>
 		</div>
 		<div class="form-group">
-			 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+			 <button id="sign-in" type="input" class="btn btn-primary btn-block">Sign in</button>
 		</div>
 	</form>
-  	<div ng-model="chat" class="chat-container" style="display: none;">
+  	<div ng-model="chat" class="chat-container content-area show-hide" ng-show="logged">
 		<simple-chat id="chatbot-form" local-user="AppView.you"
 				messages="AppView.messages"
 				send-function="AppView.sendMessage"

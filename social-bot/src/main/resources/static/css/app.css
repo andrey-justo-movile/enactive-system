@@ -4,3 +4,16 @@
     float: left;
     margin-right: 10px;
 }
+
+.content-area {
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.show-hide {
+  transition: all linear 0.5s;
+}
+.show-hide.ng-hide {
+  opacity: 0;
+}

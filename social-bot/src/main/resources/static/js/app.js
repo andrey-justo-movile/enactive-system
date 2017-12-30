@@ -111,6 +111,7 @@
     		vm.you.userName = vm.user.name,
     		vm.you.channel = channel;
     		
+    		$scope.logged = true
         	socket = new SockJS('/ws');
         	stompClient = Stomp.over(socket);
         	onConnected()
