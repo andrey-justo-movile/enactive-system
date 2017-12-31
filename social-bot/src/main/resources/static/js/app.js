@@ -115,6 +115,7 @@
         	socket = new SockJS('/ws');
         	stompClient = Stomp.over(socket);
         	onConnected()
+        	stompClient.connect({}, onConnected, onError);
         }
         
         function onConnected() {
@@ -149,7 +150,5 @@
 				}
 			}
 		}
-
-        stompClient.connect({}, onConnected, onError);
     }
 })();

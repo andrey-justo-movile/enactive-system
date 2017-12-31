@@ -4,7 +4,7 @@
   <head>
   	<meta charset="utf-8">
     <title>Sample "Enactive System using a bot as example" Application</title>
-    <link rel="stylesheet" href="css/angular-simple-chat.min.css">
+    <link rel="stylesheet" href="css/simple-chat/angular-simple-chat.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body ng-controller="AppController as AppView" ng-init="logged = false">
