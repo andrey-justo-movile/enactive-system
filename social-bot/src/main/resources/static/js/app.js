@@ -11,6 +11,7 @@
     /* @ngInject */
     function AppController($scope) {
         var vm = this;
+        vm.logged = false;
 		var socket = null;
         var stompClient = null;
 
@@ -21,6 +22,7 @@
         	token: ''
         }
         
+        
         vm.you = {
             userId: user.id,
             avatar: 'http://www.freelanceweb16.fr/wp-content/uploads/2015/08/Woman_Avatar.gif',
@@ -28,7 +30,7 @@
             channel: null
         };
         
-        vm.login = function() {
+        vm.signIn = function() {
         	$http({
         		method: 'POST',
         		url: '/login',
@@ -101,6 +103,20 @@
   			});
         }
         
+        vm.askCamera = function() {
+        	// Grab elements, create settings, etc.
+			var video = document.getElementById('video');
+
+			// Get access to the camera!
+			if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+			    // Not adding `{ audio: true }` since we only want video now
+			    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+			        video.src = window.URL.createObjectURL(stream);
+			        video.play();
+			    });
+			}  	
+        }
+        
         function startConntection(userLogged, channel) {
         	vm.user.id = userLogged.user.id;
 			vm.user.name = userLogged.user.name;
@@ -112,6 +128,7 @@
     		vm.you.channel = channel;
     		
     		$scope.logged = true
+    		askCamera()
         	socket = new SockJS('/ws');
         	stompClient = Stomp.over(socket);
         	onConnected()

@@ -5,26 +5,29 @@
   	<meta charset="utf-8">
     <title>Sample "Enactive System using a bot as example" Application</title>
     <link rel="stylesheet" href="css/simple-chat/angular-simple-chat.min.css">
+    <link rel="stylesheet" href="css/app.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body ng-controller="AppController as AppView" ng-init="logged = false">
-	<form ng-model="form-login" class="form" role="form" ng-show="!logged">
+  	<input type="hidden" ng-model="logged" />
+	<form id="login-dp" class="form" role="form" ng-hide="logged">
 		<div class="form-group">
 			 <label class="sr-only" for="user_name">User Name</label>
-			 <input ng-model="user_name" type="email" class="form-control" id="user_name" placeholder="your user name" required>
+			 <input ng-model="user_name" class="form-control" id="user_name" placeholder="your user name" required>
 		</div>
 		<div class="form-group">
-			 <label class="sr-only" for="password">Password</label>
+			 <label class="sr-only .social-buttons" for="password">Password</label>
 			 <input ng-model="password" type="password" class="form-control" id="password" placeholder="Password" required>
 		</div>
 		<div class="form-group">
-			 <button id="sing-up" type="input" class="btn btn-primary btn-block">Sign up</button>
+			 <button id="sing-up" ng-click="signUp()" type="input" class="btn btn-primary social-buttons btn-block">Sign up</button>
 		</div>
 		<div class="form-group">
-			 <button id="sign-in" type="input" class="btn btn-primary btn-block">Sign in</button>
+			 <button id="sign-in" ng-click="signIn()" type="input" class="btn btn-primary social-buttons btn-block">Sign in</button>
 		</div>
 	</form>
-  	<div ng-model="chat" class="chat-container content-area show-hide" ng-show="logged">
+  	<div ng-model="chat" class="chat-container content-area show-hide" ng-show="logged" hidden>
+  		<video id="video" width="640" height="480" autoplay></video>
 		<simple-chat id="chatbot-form" local-user="AppView.you"
 				messages="AppView.messages"
 				send-function="AppView.sendMessage"
