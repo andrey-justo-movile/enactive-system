@@ -1,0 +1,76 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/libs-snapshot' }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'net.researchgate.release'
+apply plugin: 'nebula.rpm'
+apply from: '../application.gradle'
+
+/******************************************************************************
+ * DEPENDENCIES                                                               *
+ ******************************************************************************/
+dependencies {
+
+    // APACHE HTTP COMPONENTS
+    compile "org.apache.httpcomponents:httpclient:4.5+"
+    compile "org.apache.httpcomponents:httpmime:4.5+"
+    
+    // APACHE
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
+        
+    // JACKSON
+    compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    compile "com.fasterxml.jackson.module:jackson-module-parameter-names:${jacksonVersion}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:${jacksonVersion}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
+    
+    // GUAVA
+    compile "com.google.guava:guava:19.0"
+
+    // COMMONS
+    compile 'commons-collections:commons-collections:3.2.1'
+    
+    // SPRING
+    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+	compile "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-freemarker:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-devtools"
+
+    // SPRING DATA
+	compile "org.springframework.data:spring-data-mongodb:${springDataMongo}"
+	
+	// JWT
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.0'
+    
+    // ACTIVEMQ
+    compile group: 'org.apache.activemq', name: 'activemq-stomp', version: '5.15.2'
+    compile group: 'org.apache.activemq', name: 'activemq-kahadb-store', version: '5.15.2'
+    
+    // WEBSOCKET
+    compile "org.webjars:webjars-locator"
+    compile "org.webjars:sockjs-client:1.0.2"
+    compile "org.webjars:stomp-websocket:2.3.3"
+    compile "org.webjars:bootstrap:3.3.7"
+    compile "org.webjars:jquery:3.1.0"
+    
+    // API.AI
+    compile 'ai.api:libai:1.4.8'
+
+	// TESTES
+	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.4.RELEASE'
+    testCompile 'junit:junit:4.12'
+}
