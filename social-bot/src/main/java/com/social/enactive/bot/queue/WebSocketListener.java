@@ -1,4 +1,4 @@
-package com.social.enactive.bot.mqtt;
+package com.social.enactive.bot.queue;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;

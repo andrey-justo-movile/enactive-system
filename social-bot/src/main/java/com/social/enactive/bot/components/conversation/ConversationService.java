@@ -22,7 +22,7 @@ public class ConversationService {
 
 	public Conversation joinConversation(final String id, final User user, final BotBehavior botBehavior) {
 		if (StringUtils.isBlank(id)) {
-			Conversation conversation = conversationRepository.findDefault(user.getUserName(), botBehavior.getUserName());
+			Conversation conversation = conversationRepository.findDefault(user.getUsername(), botBehavior.getUsername());
 			return conversation != null ? conversation : create(botBehavior, user);
 		}
 
@@ -40,7 +40,7 @@ public class ConversationService {
 	}
 
 	private Conversation create(final BotBehavior botBehavior, final User user) {
-		Conversation conversation = new Conversation(UUID.randomUUID().toString(), Arrays.asList(user, botBehavior), ConversationType.DEFAULT);
+		Conversation conversation = new Conversation(UUID.randomUUID().toString(), ConversationType.DEFAULT, Arrays.asList(user, botBehavior));
 		return conversationRepository.insert(conversation);
 	}
 

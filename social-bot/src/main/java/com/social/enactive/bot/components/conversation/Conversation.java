@@ -12,15 +12,29 @@ public class Conversation implements Serializable, Cloneable {
 	private static final long serialVersionUID = -7150943699666276487L;
 
 	@Id
-	private final String id;
-	private final ConversationType type;
-	private final List<User> participants;
+	private String id;
+	private ConversationType type;
+	private List<User> participants;
+	
+	public Conversation() {}
 
-	public Conversation(String id, List<User> participants, ConversationType type) {
+	public Conversation(String id, ConversationType type, List<User> participants) {
 		super();
 		this.id = id;
-		this.participants = participants;
 		this.type = type;
+		this.participants = participants;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setType(ConversationType type) {
+		this.type = type;
+	}
+
+	public void setParticipants(List<User> participants) {
+		this.participants = participants;
 	}
 
 	public String getId() {

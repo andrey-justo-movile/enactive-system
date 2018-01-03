@@ -1,4 +1,4 @@
-package com.social.enactive.bot.mqtt.handler;
+package com.social.enactive.bot.queue.handler;
 
 import java.util.Arrays;
 import java.util.List;

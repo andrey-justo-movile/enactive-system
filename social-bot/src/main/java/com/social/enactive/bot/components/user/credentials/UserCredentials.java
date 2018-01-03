@@ -11,29 +11,20 @@ public class UserCredentials implements UserDetails {
 	private static final long serialVersionUID = 2676865993989312384L;
 
 	@Id
-	private final String userName;
-	private final String password;
-	private final String secretAlgVersion;
+	private String username;
+	private String password;
 
-	public UserCredentials(String userName, String password, String secretAlgVersion) {
+	public UserCredentials() {}
+
+	public UserCredentials(String userName, String password) {
 		super();
-		this.userName = userName;
+		this.username = userName;
 		this.password = password;
-		this.secretAlgVersion = secretAlgVersion;
-	}
-
-	public String getUserName() {
-		return userName;
 	}
 
 	public String getPassword() {
 		return password;
 	}
-
-	public String getSecretAlgVersion() {
-		return secretAlgVersion;
-	}
-
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -42,17 +33,17 @@ public class UserCredentials implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return userName;
+		return username;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -68,8 +59,7 @@ public class UserCredentials implements UserDetails {
 
 	@Override
 	public String toString() {
-		return "UserCredentials {userName=" + userName + ", password=" + password + ", secretAlgVersion="
-				+ secretAlgVersion + "}";
+		return "UserCredentials {username=" + username + ", password=" + password + "}";
 	}
 
 }

@@ -10,22 +10,25 @@ public class User implements Serializable {
 	private static final long serialVersionUID = -6021366331686930694L;
 
 	@Id
-	private final String id;
+	private String id;
 	@Indexed(unique = true)
-	private final String userName;
-	private final String name;
-	private final String picture;
+	private String username;
+	private String name;
+	private String picture;
 
-	public User(String id, String name, String userName, String picture) {
+	public User() {
+	}
+
+	public User(String id, String name, String username, String picture) {
 		super();
-		this.userName = userName;
+		this.username = username;
 		this.name = name;
 		this.id = id;
 		this.picture = picture;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
 	public String getId() {
@@ -40,9 +43,25 @@ public class User implements Serializable {
 		return name;
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
 	@Override
 	public String toString() {
-		return "User {id=" + id + ", userName=" + userName + ", name=" + name + ", picture=" + picture + "}";
+		return "User {id=" + id + ", username=" + username + ", name=" + name + ", picture=" + picture + "}";
 	}
 
 }

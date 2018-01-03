@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,8 +20,8 @@ import io.jsonwebtoken.SignatureAlgorithm;
 public class AuthenticationService {
 
 	private static final long EXPIRATION_TIME = 60 * 60 * 24;
-	private static final String BEARER_PREFIX = "Bearer";
-	private static final String HEADER_AUTHORIZATION = "Authorization";
+	public static final String BEARER_PREFIX = "Bearer";
+	public static final String HEADER_AUTHORIZATION = "Authorization";
 
 	private final String secret;
 	private final UserCredentialsService userCredentialsService;
@@ -33,19 +32,12 @@ public class AuthenticationService {
 		this.userCredentialsService = userCredentialsService;
 	}
 
-	public void authenticate(HttpServletResponse response, String username) {
-		String jwt = Jwts.builder().setSubject(username)
-				.setExpiration(Date.from(Instant.now().plus(EXPIRATION_TIME, ChronoUnit.SECONDS)))
-				.signWith(SignatureAlgorithm.RS512, secret).compact();
-		response.addHeader(HEADER_AUTHORIZATION, BEARER_PREFIX + " " + jwt);
-	}
-	
-	public String authenticate(String username, String password) {
+	public String authenticate(String username) {
 		UserDetails userCredentials = userCredentialsService.loadUserByUsername(username);
-		if (userCredentials != null && userCredentials.getPassword().equals(password)) {
+		if (userCredentials != null) {
 			return Jwts.builder().setSubject(username)
 					.setExpiration(Date.from(Instant.now().plus(EXPIRATION_TIME, ChronoUnit.SECONDS)))
-					.signWith(SignatureAlgorithm.RS512, secret).compact();
+					.signWith(SignatureAlgorithm.HS512, secret).compact();
 		}
 		
 		return null;
@@ -54,7 +46,8 @@ public class AuthenticationService {
 	public Authentication getAuthentication(HttpServletRequest request) {
 		String token = request.getHeader(HEADER_AUTHORIZATION);
 		if (StringUtils.isNotBlank(token)) {
-			String user = Jwts.parser().setSigningKey(secret).parseClaimsJws(token.replace(BEARER_PREFIX, "")).getBody()
+			String user = Jwts.parser().setSigningKey(secret).parseClaimsJws(token.replace(BEARER_PREFIX, "").trim())
+					.getBody()
 					.getSubject();
 
 			return user != null ? new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList()) : null;

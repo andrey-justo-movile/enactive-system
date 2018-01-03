@@ -4,6 +4,9 @@ server:
 spring:
     jackson:
          property-naming-strategy: SNAKE_CASE
+         default-property-inclusion: non_null
+         deserialization:
+             fail_on_unknown_properties: false
     freemaker:
         cache: false
     jmx:

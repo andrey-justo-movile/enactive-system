@@ -2,6 +2,7 @@ package com.social.enactive.bot.components.message;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 
@@ -20,18 +21,8 @@ public class Message implements Serializable {
 	private final Instant instant;
 
 	@JsonCreator
-	public Message(String id, String conversationId, User sender, Content content, Instant instant) {
-		super();
-		this.id = id;
-		this.conversationId = conversationId;
-		this.sender = sender;
-		this.content = content;
-		this.instant = instant;
-	}
-
-	public Message(String id, String conversationId, User sender, Content content) {
-		super();
-		this.id = id;
+	public Message(String conversationId, User sender, Content content) {
+		this.id = UUID.randomUUID().toString();
 		this.conversationId = conversationId;
 		this.sender = sender;
 		this.content = content;

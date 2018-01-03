@@ -1,7 +1,7 @@
 package com.social.enactive.bot.rest.login;
 
 
-import org.apache.commons.lang3.StringUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +21,6 @@ import com.social.enactive.bot.rest.login.to.UserSignUpRequest;
 
 @RestController
 public class LoginController {
-
-	private static final String DEFAULT_AUTH_ALG_VERSION = "default";
 	
 	@Autowired
 	private AuthenticationService authenticationService;
@@ -32,17 +30,6 @@ public class LoginController {
 	
 	@Autowired
 	private UserCredentialsService userCredentialsService;
-
-	@RequestMapping(path = Paths.LOGIN, method = RequestMethod.POST)
-	public ResponseEntity<UserLogged> login(@RequestBody(required = true) UserCredentials credentials) {
-		String token = authenticationService.authenticate(credentials.getName(), credentials.getPassword());
-		if (StringUtils.isBlank(token)) {
-			return ResponseEntity.notFound().build();
-		}
-
-		User user = userService.findByUserName(credentials.getName());
-		return ResponseEntity.ok().body(new UserLogged(user, token));
-	}
 	
 	@RequestMapping(path = Paths.SIGN_UP, method = RequestMethod.POST)
 	public ResponseEntity<UserLogged> signUp(@RequestBody(required = true) UserSignUpRequest request) {
@@ -51,9 +38,9 @@ public class LoginController {
 			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
 		}
 		
-		User newUser = userService.create(request.getName(), request.getUsername(), request.getPicture());
-		UserCredentials credentials = userCredentialsService.create(request.getUsername(), request.getPicture(), DEFAULT_AUTH_ALG_VERSION);
-		String token = authenticationService.authenticate(credentials.getName(), credentials.getPassword());
+		User newUser = userService.create(request.getUsername(), request.getName(), request.getPicture());
+		UserCredentials credentials = userCredentialsService.create(request.getUsername(), request.getPassword());
+		String token = authenticationService.authenticate(credentials.getName());
 		return ResponseEntity.ok().body(new UserLogged(newUser, token));
 	}
 

@@ -27,11 +27,6 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		Authentication authentication = authenticationService.getAuthentication((HttpServletRequest) request);
-		if (authentication == null) {
-			chain.doFilter(request, response);
-			return;
-		}
-
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		chain.doFilter(request, response);
 	}

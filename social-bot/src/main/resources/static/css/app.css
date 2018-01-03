@@ -1,8 +1,10 @@
 .chat-container {
-    width: 500px;
-    height: 500px;
-    float: left;
-    margin-right: 10px;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .content-area {
@@ -71,4 +73,18 @@ body{
         background-color: inherit;
         border-top:0 none;
     }
+}
+
+.video-interface {
+	height: 40vh;
+	width: 40vw;
+	display: table;
+	margin: 0 auto;
+}
+
+.chat-view {
+	height: calc(60vh - 10px);
+	width: 100vw;
+	display: table;
+	margin: 0 auto;
 }

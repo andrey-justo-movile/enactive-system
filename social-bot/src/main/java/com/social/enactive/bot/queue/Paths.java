@@ -1,4 +1,4 @@
-package com.social.enactive.bot.mqtt;
+package com.social.enactive.bot.queue;
 
 public interface Paths {
     

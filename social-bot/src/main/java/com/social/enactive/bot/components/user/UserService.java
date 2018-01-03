@@ -2,7 +2,6 @@ package com.social.enactive.bot.components.user;
 
 import java.util.UUID;
 
-
 public class UserService {
 	
 	private final UserRepository userRepository;

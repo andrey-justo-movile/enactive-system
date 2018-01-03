@@ -13,7 +13,7 @@ public class UserRepository extends AbstractRepository<User>{
 	}
 	
 	public User findByUserName(final String userName) {
-		Query query = new Query(Criteria.where("userName").is(userName));
+		Query query = new Query(Criteria.where("username").is(userName));
         return template.findOne(query, objClass, collectionName());
 	}
 	

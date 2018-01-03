@@ -8,7 +8,9 @@ public class BotBehavior extends User implements Serializable {
 
 	private static final long serialVersionUID = 4033625754040969919L;
 
-	private final BehaviorScenario scenario;
+	private BehaviorScenario scenario;
+	
+	public BotBehavior() {}
 
 	public BotBehavior(String id, BehaviorScenario scenario, String name, String userName, String picture) {
 		super(id, name, userName, picture);
@@ -17,6 +19,10 @@ public class BotBehavior extends User implements Serializable {
 	
 	public BehaviorScenario getScenario() {
 		return scenario;
+	}
+	
+	public void setScenario(BehaviorScenario scenario) {
+		this.scenario = scenario;
 	}
 
 	@Override

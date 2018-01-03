@@ -3,19 +3,19 @@
 
     angular
         .module('app', [
-            'angular-simple-chat'
+            'angular-simple-chat', 'ui.bootstrap'
         ])
 
     .controller('AppController', AppController);
 
     /* @ngInject */
-    function AppController($scope) {
+    function AppController($scope, $http) {
         var vm = this;
         vm.logged = false;
 		var socket = null;
         var stompClient = null;
 
-        var user = {
+        vm.user = {
         	id: '',
         	name: '',
         	picture: '',
@@ -24,40 +24,40 @@
         
         
         vm.you = {
-            userId: user.id,
+            userId: vm.user.id,
             avatar: 'http://www.freelanceweb16.fr/wp-content/uploads/2015/08/Woman_Avatar.gif',
-            userName: user.name,
+            userName: vm.user.name,
             channel: null
         };
         
-        vm.signIn = function() {
+        $scope.signIn = function() {
         	$http({
         		method: 'POST',
         		url: '/login',
         		data: {
-        			'user_name': $scope.user_name,
+        			'username': $scope.username,
         			'password': $scope.password
         		}
         	}).then(function successCallback(response) {
-    			startConntection(response.body, vm.you.channel);
+    			startConversation(response.data);
   			}, function errorCallback(response) {
     				// called asynchronously if an error occurs
     			// or server returns response with an error status.
   			});
         }
         
-        vm.singUp = function() {
+        $scope.signUp = function() {
         	$http({
         		method: 'POST',
         		url: '/sign_up',
         		data: {
-        			'user_name': $scope.user_name,
+        			'username': $scope.username,
         			'password': $scope.password,
         			'name': $scope.name,
         			'picture': $scope.picture
         		}
         	}).then(function successCallback(response) {
-    			startConntection(response.body, vm.you.channel);
+    			startConversation(response.data);
   			}, function errorCallback(response) {
     				// called asynchronously if an error occurs
     			// or server returns response with an error status.
@@ -71,7 +71,7 @@
 				var chatMessage = {
 					conversation_id: vm.you.channel,
 					sender: {
-						id: user.id
+						id: vm.user.id
 					},
 					content: {
 						text: message.text
@@ -79,7 +79,7 @@
 									
 				};
 
-				stompClient.send("/app/chat.sendMessage/" + vm.you.channel, {}, JSON.stringify(chatMessage));
+				stompClient.send("/app/chat.sendMessage/" + vm.you.channel, {'Authorization': 'Bearer ' + vm.user.token}, JSON.stringify(chatMessage));
 			}
         };
 
@@ -87,23 +87,27 @@
             console.log('onMessagePosted');
         });
         
-        function startConversation() {
+        function startConversation(userLogged) {
         	$http({
         		method: 'POST',
         		url: '/conversation',
+        		headers: {
+        			'Authorization': 'Bearer ' + userLogged.token
+        		},
         		data: {
-        			'user_id': vm.user.id,
-        			'bot_behavior': 'ECHO'
+        			'user_id': userLogged.user.id,
+        			'bot_behavior': 'ECHO',
+        			'conversation_id': null
         		}
         	}).then(function successCallback(response) {
-    			startConntection(response.body);
+    			startConnection(userLogged, response.data);
   			}, function errorCallback(response) {
     				// called asynchronously if an error occurs
     			// or server returns response with an error status.
   			});
         }
         
-        vm.askCamera = function() {
+        var askCamera = function() {
         	// Grab elements, create settings, etc.
 			var video = document.getElementById('video');
 
@@ -117,7 +121,7 @@
 			}  	
         }
         
-        function startConntection(userLogged, channel) {
+        function startConnection(userLogged, channel) {
         	vm.user.id = userLogged.user.id;
 			vm.user.name = userLogged.user.name;
 			vm.user.picture = userLogged.user.picture;
@@ -125,14 +129,13 @@
 			vm.you.userId = vm.user.id,
     		vm.you.avatar = vm.user.picture,
     		vm.you.userName = vm.user.name,
-    		vm.you.channel = channel;
+    		vm.you.channel = channel.id;
     		
     		$scope.logged = true
     		askCamera()
         	socket = new SockJS('/ws');
         	stompClient = Stomp.over(socket);
-        	onConnected()
-        	stompClient.connect({}, onConnected, onError);
+        	stompClient.connect({'Authorization': 'Bearer ' + vm.user.token}, onConnected, onError);	        	
         }
         
         function onConnected() {
@@ -141,11 +144,8 @@
         		return;
         	}
         	
-    		stompClient.subscribe('/channel/public/' + vm.you.channel, onMessageReceived);
-    		stompClient.send("/app/chat.addUser/" + vm.you.channel,
-        		{},
-        	JSON.stringify(user)
-    		)
+    		stompClient.subscribe('/channel/public/' + vm.you.channel, onMessageReceived, {'Authorization': 'Bearer ' + vm.user.token});
+    		stompClient.send("/app/chat.addUser/" + vm.you.channel, {'Authorization': 'Bearer ' + vm.user.token}, JSON.stringify(vm.user))
 		}
 		
 		function onError(error) {
@@ -156,10 +156,10 @@
 			var messages = JSON.parse(payload.body);
 			console.log(messages);
 			for (var i = 0; i < messages.length; i++) {
-				if (messages[i].text != null) {
+				if (messages[i].content != null && messages[i].content.text != null) {
 					vm.messages.push({
 							id: messages[i].id,
-							text: messages[i].text,
+							text: messages[i].content.text,
 							userId: messages[i].sender.id,
 							userName: messages[i].sender.name,
 							avatar: messages[i].sender.picture
