@@ -74,3 +74,5 @@ dependencies {
 	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.4.RELEASE'
     testCompile 'junit:junit:4.12'
 }
+
+build.mustRunAfter clean
