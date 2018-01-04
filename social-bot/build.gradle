@@ -49,7 +49,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-devtools"
 	compile group: 'org.springframework.security', name: 'spring-security-rsa', version: '1.0.5.RELEASE'
-	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-parent', version: '1.0.0.RELEASE', ext: 'pom'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter', version: '2.0.0.M5'
 
     // SPRING DATA
 	compile "org.springframework.data:spring-data-mongodb:${springDataMongo}"
