@@ -48,6 +48,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-devtools"
+	compile group: 'org.springframework.security', name: 'spring-security-rsa', version: '1.0.5.RELEASE'
 
     // SPRING DATA
 	compile "org.springframework.data:spring-data-mongodb:${springDataMongo}"
