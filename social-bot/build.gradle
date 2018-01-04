@@ -13,7 +13,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'net.researchgate.release'
 apply plugin: 'nebula.rpm'
-apply from: '../application.gradle'
+//apply from: '../application.gradle'
 
 /******************************************************************************
  * DEPENDENCIES                                                               *
