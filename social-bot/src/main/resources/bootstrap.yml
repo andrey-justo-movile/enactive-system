@@ -1,8 +1,4 @@
 spring:
     application:
         name: social-bot
-
-encrypt:
-  keyStore:
-    alias: andrey.justo@gmail.com
-    secret: enactive-social-bot
+        
