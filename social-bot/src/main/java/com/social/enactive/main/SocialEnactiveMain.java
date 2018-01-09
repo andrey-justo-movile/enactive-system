@@ -10,11 +10,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 @EnableAsync
 @Configuration
 @EnableAutoConfiguration
 @EnableConfigurationProperties
+@EnableEncryptableProperties
 @ComponentScan({"com.social.enactive"})
 @SpringBootApplication
 public class SocialEnactiveMain {
