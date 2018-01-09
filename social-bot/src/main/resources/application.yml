@@ -33,8 +33,5 @@ spring:
             
 authentication:
     secret: "ENC(601/Jumv85kffnWbR4VqDAWv5VFcC/lV)"
-    
-jasypt:
-    encryptor:
-        password: ${JASYPT_ENCRYPTOR_PASSWORD:} 
+     
     
