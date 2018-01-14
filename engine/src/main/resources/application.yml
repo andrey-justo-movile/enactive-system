@@ -1,0 +1,49 @@
+spring:
+    jackson:
+         property-naming-strategy: SNAKE_CASE
+         default-property-inclusion: non_null
+         deserialization:
+             fail_on_unknown_properties: false
+    freemaker:
+        cache: false
+    jmx:
+        enabled: true
+    rabbitmq:
+        host: localhost
+        username: admin
+        password: admin
+        cacheMode: CONNECTION
+        virtual-host: social-bot
+    data:
+        mongodb:
+            uri: mongodb://andrey.justo:social_bot@localhost:27017/social_bot
+server:
+    port: 8081
+   
+endpoints:
+    enabled: false
+
+authentication:
+    secret: secret
+
+queue:
+    message-deliver: deliver
+    message-receiver: receiver
+
+---
+
+spring:
+    profiles: prod
+    rabbitmq:
+        host: "ENC(pEp1X1O7cFDO2PwTH/B9ZOcH32Jy1VTysuai402KJswkQhMSjwrYRQ==)"
+        port: 8883
+        username: "ENC(5Fmq+MhqfBSMAmnLceyRca8HQu+qZ0lA)"
+        password: "ENC(JSQKhXfXhzWDrlZ3VNcTaJTr3LhNaSXCUyXir19epK5psB9hgWp5uylRyostqjgG)"
+    data:
+        mongodb:
+            uri: "ENC(E/InbS2JcnCSRA4hWzAflK4CAYrrzl03eZGEIrzSKQK48L48LDuBzWXorWmQ2Y14q6lriPRAdnC9qofGiGoOLuiGeZKUobFYLklyNdhgPZIs9gHcL4XwRuDoNttBxpMD)" 
+            
+authentication:
+    secret: "ENC(601/Jumv85kffnWbR4VqDAWv5VFcC/lV)"
+     
+    

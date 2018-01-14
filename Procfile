@@ -1,1 +1,2 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -Dspring.profiles.active=prod -Djasypt.encryptor.password=$JASYPT_ENCRYPTOR_PASSWORD -jar social-bot/build/libs/social-bot-0.0.1.jar
+web: java $JAVA_OPTS -Dserver.port=$PORT -Dspring.profiles.active=prod -Djasypt.encryptor.password=$JASYPT_ENCRYPTOR_PASSWORD -jar web/build/libsweb-0.0.1.jar
+engine: java $JAVA_OPTS -Dserver.port=$PORT -Dspring.profiles.active=prod -Djasypt.encryptor.password=$JASYPT_ENCRYPTOR_PASSWORD -jar engine/build/libs/engine-0.0.1.jar

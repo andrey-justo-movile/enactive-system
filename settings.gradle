@@ -1,3 +1,5 @@
 rootProject.name = 'enactive-system'
 
-include 'social-bot'
+include 'engine'
+include 'web'
+include 'core'
