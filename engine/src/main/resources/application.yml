@@ -36,7 +36,6 @@ spring:
     profiles: prod
     rabbitmq:
         host: "ENC(pEp1X1O7cFDO2PwTH/B9ZOcH32Jy1VTysuai402KJswkQhMSjwrYRQ==)"
-        port: 8883
         username: "ENC(5Fmq+MhqfBSMAmnLceyRca8HQu+qZ0lA)"
         password: "ENC(JSQKhXfXhzWDrlZ3VNcTaJTr3LhNaSXCUyXir19epK5psB9hgWp5uylRyostqjgG)"
     data:
