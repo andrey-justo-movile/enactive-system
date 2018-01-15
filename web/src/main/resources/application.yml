@@ -36,6 +36,7 @@ spring:
         host: "ENC(pEp1X1O7cFDO2PwTH/B9ZOcH32Jy1VTysuai402KJswkQhMSjwrYRQ==)"
         username: "ENC(5Fmq+MhqfBSMAmnLceyRca8HQu+qZ0lA)"
         password: "ENC(JSQKhXfXhzWDrlZ3VNcTaJTr3LhNaSXCUyXir19epK5psB9hgWp5uylRyostqjgG)"
+        virtual-host: "ENC(pEp1X1O7cFDO2PwTH/B9ZOcH32Jy1VTysuai402KJswkQhMSjwrYRQ==)"
     data:
         mongodb:
             uri: "ENC(LMMP+qGS4Xhd3CaxCJJyZU+5TI5Mu5ID63hhun3s1qbnIWEOKybpVQCt+L7DYrc2YSFB/b0kWzo/ky+mM3GZkJlkbCjgi8ST4v3TrsENJ0storlblkGh5A==)" 
