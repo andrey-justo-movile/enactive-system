@@ -41,7 +41,7 @@ spring:
         password: "ENC(JSQKhXfXhzWDrlZ3VNcTaJTr3LhNaSXCUyXir19epK5psB9hgWp5uylRyostqjgG)"
     data:
         mongodb:
-            uri: "ENC(E/InbS2JcnCSRA4hWzAflK4CAYrrzl03eZGEIrzSKQK48L48LDuBzWXorWmQ2Y14q6lriPRAdnC9qofGiGoOLuiGeZKUobFYLklyNdhgPZIs9gHcL4XwRuDoNttBxpMD)" 
+            uri: "ENC(LMMP+qGS4Xhd3CaxCJJyZU+5TI5Mu5ID63hhun3s1qbnIWEOKybpVQCt+L7DYrc2YSFB/b0kWzo/ky+mM3GZkJlkbCjgi8ST4v3TrsENJ0storlblkGh5A==)" 
             
 authentication:
     secret: "ENC(601/Jumv85kffnWbR4VqDAWv5VFcC/lV)"
