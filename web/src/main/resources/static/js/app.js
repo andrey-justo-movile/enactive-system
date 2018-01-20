@@ -60,7 +60,7 @@
         			'password': $scope.registerPassword,
         			'email': $scope.registerEmail,
         			'name': $scope.name,
-        			'picture': $scope.picture
+        			'picture': $scope.pictureUrl
         		}
         	}).then(function successCallback(response) {
     			startConversation(response.data);

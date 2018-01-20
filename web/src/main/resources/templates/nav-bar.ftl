@@ -38,7 +38,7 @@
 									</div>
 									<div class="form-group">
 										<input id="picture" ng-model="picture" ng-click="uploadAvatar()" name="file" type="button" class="btn btn-info" value="Upload Avatar Photo" required/>
-										<input id="picture-url" type="hidden" />
+										<input id="picture-url" mg-model="pictureUrl" type="hidden" />
 									</div>
 									<div class="form-group">
 										<div class="row">
