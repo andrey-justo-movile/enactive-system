@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import com.social.enactive.bot.components.scenario.BehaviorScenario;
 import com.social.enactive.bot.engine.Engine;
 import com.social.enactive.bot.engine.ScenarioEngineHandler;
+import com.social.enactive.bot.engine.scenario.ArtistAssistentHandler;
 import com.social.enactive.bot.engine.scenario.EchoHandler;
 import com.social.enactive.bot.engine.scenario.SilentHandler;
 
@@ -31,6 +32,7 @@ public class ScenarioHandlerConfiguration implements BeanFactoryAware {
 	public void init() {
 		beanFactory.registerSingleton(BehaviorScenario.ECHO.name(), echo());
 		beanFactory.registerSingleton(BehaviorScenario.SILENT.name(), silent());
+		beanFactory.registerSingleton(BehaviorScenario.ARTS_ASSISTENT.name(), artistAsstistent());
 	}
 
 	private EchoHandler echo() {
@@ -39,6 +41,10 @@ public class ScenarioHandlerConfiguration implements BeanFactoryAware {
 
 	private SilentHandler silent() {
 		return new SilentHandler();
+	}
+
+	private ArtistAssistentHandler artistAsstistent() {
+		return new ArtistAssistentHandler();
 	}
 	
 	@Bean

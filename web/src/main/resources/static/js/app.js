@@ -14,7 +14,7 @@
         vm.logged = false;
 		var socket = null;
         var stompClient = null;
-
+        
         vm.user = {
         	id: '',
         	name: '',
@@ -47,12 +47,18 @@
         }
         
         $scope.signUp = function() {
+        	if ($scope.registerPassword != $scope.registerConfirmPassword) {
+        		// TODO warn message
+        		return;
+        	}
+        	
         	$http({
         		method: 'POST',
         		url: '/sign_up',
         		data: {
-        			'username': $scope.username,
-        			'password': $scope.password,
+        			'username': $scope.registerUsername,
+        			'password': $scope.registerPassword,
+        			'email': $scope.registerEmail,
         			'name': $scope.name,
         			'picture': $scope.picture
         		}
@@ -86,6 +92,10 @@
         $scope.$on('simple-chat-message-posted', function() {
             console.log('onMessagePosted');
         });
+        
+        $scope.uploadAvatar = function() {
+            
+        }
         
         function startConversation(userLogged) {
         	$http({
