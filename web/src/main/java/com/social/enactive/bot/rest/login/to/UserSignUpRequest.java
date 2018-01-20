@@ -8,16 +8,18 @@ public class UserSignUpRequest {
 	private final String username;
 	private final String password;
 	private final String name;
+	private final String email;
 	private final String picture;
 
 	@JsonCreator
-	public UserSignUpRequest(@JsonProperty("username")String username, @JsonProperty("password")String password, 
-			@JsonProperty("name")String name, @JsonProperty("picture")String picture) {
+	public UserSignUpRequest(@JsonProperty("username") String username, @JsonProperty("password") String password,
+			@JsonProperty("name") String name, @JsonProperty("picture") String picture, @JsonProperty("email") String email) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.name = name;
 		this.picture = picture;
+		this.email = email;
 	}
 
 	public String getUsername() {
@@ -36,10 +38,14 @@ public class UserSignUpRequest {
 		return picture;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
 	@Override
 	public String toString() {
-		return "UserSignUpRequest {username=" + username + ", password=" + password + ", name=" + name + ", picture="
-				+ picture + "}";
+		return "UserSignUpRequest {username=" + username + ", password=" + password + ", name=" + name + ", email="
+				+ email + ", picture=" + picture + "}";
 	}
 
 }

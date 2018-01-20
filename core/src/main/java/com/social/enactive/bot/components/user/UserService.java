@@ -10,13 +10,13 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 	
-	public User create(final String userName, final String name, final String picture) {
+	public User create(final String userName, final String name, final String picture, final String email) {
 		User oldUser = userRepository.findByUserName(userName);
 		if (oldUser != null) {
 			throw new IllegalStateException("The user " + oldUser + " already exists");
 		}
 		
-		User newUser = new User(UUID.randomUUID().toString(), name, userName, picture);
+		User newUser = new User(UUID.randomUUID().toString(), name, userName, picture, email);
 		return userRepository.insert(newUser);
 	}
 	

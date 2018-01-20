@@ -38,7 +38,7 @@ public class LoginController {
 			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
 		}
 		
-		User newUser = userService.create(request.getUsername(), request.getName(), request.getPicture());
+		User newUser = userService.create(request.getUsername(), request.getName(), request.getPicture(), request.getEmail());
 		UserCredentials credentials = userCredentialsService.create(request.getUsername(), request.getPassword());
 		String token = authenticationService.authenticate(credentials.getName());
 		return ResponseEntity.ok().body(new UserLogged(newUser, token));

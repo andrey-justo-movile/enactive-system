@@ -15,16 +15,18 @@ public class User implements Serializable {
 	private String username;
 	private String name;
 	private String picture;
+	private String email;
 
 	public User() {
 	}
 
-	public User(String id, String name, String username, String picture) {
+	public User(String id, String name, String username, String picture, String email) {
 		super();
 		this.username = username;
 		this.name = name;
 		this.id = id;
 		this.picture = picture;
+		this.email = email;
 	}
 
 	public String getUsername() {
@@ -59,9 +61,18 @@ public class User implements Serializable {
 		this.picture = picture;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
-		return "User {id=" + id + ", username=" + username + ", name=" + name + ", picture=" + picture + "}";
+		return "User {id=" + id + ", username=" + username + ", name=" + name + ", picture=" + picture + ", email="
+				+ email + "}";
 	}
 
 }
