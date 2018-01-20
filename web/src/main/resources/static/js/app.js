@@ -47,7 +47,7 @@
         }
         
         $scope.signUp = function() {
-        	if ($scope.registerPassword != $scope.registerConfirmPassword || !$scope.registerEmail.$valid) {
+        	if ($scope.registerPassword != $scope.registerConfirmPassword) {
         		// TODO warn message
         		return;
         	}
