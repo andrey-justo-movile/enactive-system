@@ -7,12 +7,12 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-				<a class="navbar-brand" href="">Enactive ChatBots</a>
+				<a class="navbar-brand" ng-class="{'active' : tab=='home'}" ng-click="tab='home'" href="">Enactive ChatBots</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="">Home</a></li>
-					<li><a href="">About</a></li>
+					<li ng-class="{'active' : tab=='chat'}" ng-show="logged" ng-click="tab='chat'"><a href="">Chat</a></li>
+					<li ng-class="{'active' : tab=='about'}" ng-click="tab='about'"><a href="">About</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right" ng-hide="logged">
                     <li class="dropdown" ng-hide="logged">
@@ -70,7 +70,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-xs-5 pull-right">
-                                                <input type="input" ng-click="signUp()" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success btn btn-primary btn-block" value="Log In">
+                                                <input type="input" ng-click="signIn()" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success btn btn-primary btn-block" value="Log In">
                                             </div>
                                         </div>
                                     </div>

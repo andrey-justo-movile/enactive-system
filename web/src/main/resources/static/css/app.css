@@ -1,105 +1,93 @@
-.chat-container {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.content-area {
-  border: 1px solid black;
-  margin-top: 10px;
-  padding: 10px;
-}
-
 .show-hide {
-  transition: all linear 0.5s;
+	transition: all linear 0.5s;
 }
+
 .show-hide.ng-hide {
-  opacity: 0;
+	opacity: 0;
 }
 
-body{
-    padding:50px;
+.content-page {
+	padding: 20px 0 0 0;
 }
 
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+#login-dp {
+	min-width: 250px;
+	padding: 14px 14px 0;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, .8);
 }
-#login-dp .help-block{
-    font-size:12px    
+
+#login-dp .help-block {
+	font-size: 12px
 }
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
+
+#login-dp .bottom {
+	background-color: rgba(255, 255, 255, .8);
+	border-top: 1px solid #ddd;
+	clear: both;
+	padding: 14px;
 }
-#login-dp .social-buttons{
-    margin:12px 0    
+
+#login-dp .social-buttons {
+	margin: 12px 0
 }
-#login-dp .social-buttons a{
-    width: 49%;
+
+#login-dp .social-buttons a {
+	width: 49%;
 }
+
 #login-dp .form-group {
-    margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc 
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
-}
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
+	margin-bottom: 10px;
 }
 
-.video-interface {
-	height: 40vh;
-	width: 40vw;
-	display: table;
-	margin: 0 auto;
+.btn-fb {
+	color: #fff;
+	background-color: #3b5998;
 }
 
-.chat-view {
-	height: calc(60vh - 10px);
-	width: 100vw;
-	display: table;
-	margin: 0 auto;
+.btn-fb:hover {
+	color: #fff;
+	background-color: #496ebc
 }
 
-/* Fixed navbar */
+.btn-tw {
+	color: #fff;
+	background-color: #55acee;
+}
+
+.btn-tw:hover {
+	color: #fff;
+	background-color: #59b5fa;
+}
+
+@media ( max-width :768px) {
+	#login-dp {
+		background-color: inherit;
+		color: #fff;
+	}
+	#login-dp .bottom {
+		background-color: inherit;
+		border-top: 0 none;
+	}
+}
+
 body {
-    padding-top: 90px;
-}
-/* General sizing */
-ul.dropdown-lr {
-  width: 300px;
+	padding-top: 90px;
+	color: #5e5e5e;
+	font-family: 'Cabin';
+	font-weight: 400;
+	padding: 50px;
 }
 
-/* mobile fix */
-@media (max-width: 768px) {
+ul.dropdown-lr {
+	width: 300px;
+}
+
+p {
+	margin: 0 0 24px;
+}
+
+@media ( max-width : 768px) {
 	.dropdown-lr h3 {
 		color: #eee;
 	}
@@ -107,4 +95,3 @@ ul.dropdown-lr {
 		color: #eee;
 	}
 }
-

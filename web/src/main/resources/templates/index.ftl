@@ -10,21 +10,25 @@
     <link rel="stylesheet" href="css/simple-chat/angular-simple-chat.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/chat.css">
   </head>
-  <body ng-controller="AppController as AppView" ng-init="logged = false">
-  	<input type="hidden" ng-model="logged" />
+  <body ng-controller="AppController as AppView" ng-init="logged = false; tab = 'home'">
+  	<input type="hidden" ng-model="logged">
+  	<input type="hidden" ng-model="tab">
   	<#include "nav-bar.ftl">
-  	<div ng-model="chat" class="chat-container show-hide" ng-show="logged">
-  		<video id="video" class="video-interface" autoplay></video>
-		<simple-chat id="chatbot-form" local-user="AppView.you" class="chat-view"
-				messages="AppView.messages"
-				send-function="AppView.sendMessage"
-		        send-button-text="Send"
-		        show-user-avatar="true"
-		        show-composer="true"
-		        composer-placeholder-text="Write your message here">
-		</simple-chat>
-    </div>
+  	<div class="content-page">
+	  	<div class="show-hide" ng-show="tab == 'home'">
+		  	<#include "home.ftl">
+	  	</div>
+	  	<div class="show-hide" ng-show="logged && tab == 'chat'">
+			<#include "chat.ftl">
+	  	</div>
+	  	<div class="show-hide" ng-show="tab == 'about'">
+	  		<#include "about.ftl">
+	  	</div>
+  	</div>
+  	
   	
   	<!-- this time we're not serving sockjs and stomp.js ourselves -->
   	<script type="text/javascript" src="//cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
@@ -58,6 +62,7 @@
 	            }
         	);
   	</script>
+  	<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 	<script src="js/angular.min.js"></script>
 	<script src="js/moment.js"></script>
 	<script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
@@ -65,6 +70,7 @@
 	<script src="js/angular-touch.min.js"></script>
 	<script src="js/angular-animate.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/chat.js"></script>
 	
 	<!-- Simple Chat -->
 	<script src="js/simple-chat/angular-simple-chat.min.js"></script>

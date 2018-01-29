@@ -1,0 +1,28 @@
+.video-interface {
+	height: 40vh;
+	width: 40vw;
+	display: table;
+	margin: 0 auto;
+}
+
+.chat-view {
+	height: calc(60vh - 10px);
+	width: 100vw;
+	display: table;
+	margin: 0 auto;
+}
+
+.chat-container {
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.content-area {
+	border: 1px solid black;
+	margin-top: 10px;
+	padding: 10px;
+}
