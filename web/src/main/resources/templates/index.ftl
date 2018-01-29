@@ -21,10 +21,10 @@
 	  	<div class="show-hide" ng-show="tab == 'home'">
 		  	<#include "home.ftl">
 	  	</div>
-	  	<div class="show-hide" ng-show="logged && tab == 'chat'">
+	  	<div class="ng-cloak" ng-show="logged && tab == 'chat'">
 			<#include "chat.ftl">
 	  	</div>
-	  	<div class="show-hide" ng-show="tab == 'about'">
+	  	<div class="ng-cloak" ng-show="tab == 'about'">
 	  		<#include "about.ftl">
 	  	</div>
   	</div>

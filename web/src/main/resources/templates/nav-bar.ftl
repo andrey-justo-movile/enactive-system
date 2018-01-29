@@ -11,7 +11,7 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li ng-class="{'active' : tab=='chat'}" ng-show="logged" ng-click="tab='chat'"><a href="">Chat</a></li>
+					<li class="ng-cloak" ng-class="{'active' : tab=='chat'}" ng-show="logged" ng-click="tab='chat'"><a href="">Chat</a></li>
 					<li ng-class="{'active' : tab=='about'}" ng-click="tab='about'"><a href="">About</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right" ng-hide="logged">

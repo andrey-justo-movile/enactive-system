@@ -87,6 +87,10 @@ p {
 	margin: 0 0 24px;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 @media ( max-width : 768px) {
 	.dropdown-lr h3 {
 		color: #eee;
