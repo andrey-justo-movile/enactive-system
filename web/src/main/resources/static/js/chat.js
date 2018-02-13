@@ -100,9 +100,19 @@ function ChatController($scope, $http) {
             // do nothing
             return;
         }
+        
+        var newUser = {
+                conversation_id: vm.you.channel,
+                sender: {
+                    id: vm.user.id
+                },
+                content: {
+                    text: ''
+                }
+            };
 
         stompClient.subscribe("/channel/public/" + vm.you.channel, onMessageReceived, { 'Authorization': 'Bearer ' + vm.user.token });
-        stompClient.send("/app/chat.addUser/" + vm.you.channel, { 'Authorization': 'Bearer ' + vm.user.token }, JSON.stringify( vm.user ));
+        stompClient.send("/app/chat.addUser/" + vm.you.channel, { 'Authorization': 'Bearer ' + vm.user.token }, JSON.stringify( newUser ));
     }
 
     function onError( error ) {

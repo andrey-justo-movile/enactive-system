@@ -1,8 +1,6 @@
 package com.social.enactive.bot.queue.handler;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.amqp.core.AmqpTemplate;
@@ -15,7 +13,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
@@ -63,14 +60,12 @@ public class MessagingSenderHandlerRouter {
 	}
 
 	@MessageMapping("/chat.addUser/{channel}")
-	@SendTo("/channel/public/{channel}")
-	public List<Message> addUser(@Payload Message chatMessage, SimpMessageHeaderAccessor headerAccessor,
+	public void addUser(@Payload Message chatMessage, SimpMessageHeaderAccessor headerAccessor,
 			@DestinationVariable String channel) {
 		Message newMessage = fillMessage(chatMessage);
 		Log.SYSTEM.info("Message received={}", newMessage);
 		MessageListenerAdapter listenerAdapter = new MessageListenerAdapter(new MessagingReceiverHandlerRouter(webSocket), messageConverter);
 		containers.put(newMessage.getSender().getUsername(), RabbitConfiguration.container(connectionFactory, listenerAdapter, messageDeliver, newMessage.getConversationId()));
-		return Arrays.asList(newMessage);
 	}
 	
 	public void removeContainer(String username) {
