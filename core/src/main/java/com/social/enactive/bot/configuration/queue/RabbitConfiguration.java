@@ -30,10 +30,12 @@ public class RabbitConfiguration {
 	}
 	
     public static SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
-            MessageListenerAdapter listenerAdapter, String queueName) {
+            MessageListenerAdapter listenerAdapter, String queueName, String lookup) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
         container.setQueueNames(queueName);
+        container.setConcurrency("1-3");
+        container.setLookupKeyQualifier(lookup);
         container.setMessageListener(listenerAdapter);
         return container;
     }

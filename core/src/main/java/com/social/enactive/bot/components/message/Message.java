@@ -31,10 +31,6 @@ public class Message implements Serializable {
 		this.instant = instant;
 	}
 	
-	public Message copy() {
-		return new Message(this.conversationId, this.sender, this.content);
-	}
-	
 	public Message(String conversationId, User sender, Content content) {
 		this.id = UUID.randomUUID().toString();
 		this.conversationId = conversationId;

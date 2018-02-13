@@ -35,7 +35,7 @@ public class MessagingHandler {
 	public void receiveMessage(@Payload Message message) {
 		Log.SYSTEM.info("Message received={}", message);
 		try {
-			rabbitTemplate.convertAndSend(messageDeliver + "/" + message.getConversationId(), engine.process(conversationService.find(message.getConversationId()), message));
+			rabbitTemplate.convertAndSend(messageDeliver, message.getConversationId(), engine.process(conversationService.find(message.getConversationId()), message));
 		} catch (Exception e) {
 			Log.EXCEPTION.error("Couldn't send message", e);
 		} finally {
