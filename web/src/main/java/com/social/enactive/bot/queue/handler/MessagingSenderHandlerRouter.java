@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +47,7 @@ public class MessagingSenderHandlerRouter {
 	@Autowired
 	private UserService userService;
 	
-	private Map<String, SimpleMessageListenerContainer> containers = new HashMap<>();
+	private Map<String, DirectMessageListenerContainer> containers = new HashMap<>();
 	
 	@MessageMapping("/chat.sendMessage/{channel}")
 	public void sendMessage(@Payload Message message, @DestinationVariable String channel) {
@@ -69,6 +69,10 @@ public class MessagingSenderHandlerRouter {
 	}
 	
 	public void removeContainer(String username) {
+		DirectMessageListenerContainer currentConnection = containers.get(username);
+		if (currentConnection != null) {
+			currentConnection.stop();
+		}
 		containers.remove(username);
 	}
 	

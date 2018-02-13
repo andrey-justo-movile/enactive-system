@@ -2,7 +2,7 @@ package com.social.enactive.bot.configuration.queue;
 
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+import org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
@@ -29,15 +29,15 @@ public class RabbitConfiguration {
 		return new Jackson2JsonMessageConverter(JacksonMapper.standardConfiguration(new ObjectMapper()));
 	}
 	
-    public static SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
+    public static DirectMessageListenerContainer container(ConnectionFactory connectionFactory,
             MessageListenerAdapter listenerAdapter, String queueName, String lookup) {
-        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
+    	DirectMessageListenerContainer container = new DirectMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        container.setQueueNames(queueName);
-        container.setConcurrency("1-3");
+        container.setConsumersPerQueue(3);
         container.setLookupKeyQualifier(lookup);
         container.setMessageListener(listenerAdapter);
         container.start();
+        container.addQueueNames(queueName);
         return container;
     }
 
