@@ -15,11 +15,11 @@ public class MessagingReceiverHandlerRouter {
 	public MessagingReceiverHandlerRouter(SimpMessagingTemplate webSocket) {
 		this.webSocket = webSocket;
 	}
-	
+
 	public void handleMessage(List<Message> messages) {
 		Log.SYSTEM.info("Sending messages={}", messages);
-		messages.stream().collect(Collectors.groupingBy(Message::getConversationId, Collectors.toList())).entrySet()
-				.stream().forEach(item -> {
+		messages.stream().collect(Collectors.groupingBy(Message::getConversationId)).entrySet().stream()
+				.forEach(item -> {
 					Log.SYSTEM.info("Messages to={}, {}", item.getKey(), item.getValue());
 					webSocket.convertAndSend("/channel/public/" + item.getKey(), item.getValue());
 				});
