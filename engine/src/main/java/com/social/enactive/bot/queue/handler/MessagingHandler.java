@@ -1,38 +1,30 @@
 	package com.social.enactive.bot.queue.handler;
 
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.stereotype.Controller;
 
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import com.social.enactive.bot.components.conversation.ConversationService;
 import com.social.enactive.bot.components.message.Message;
 import com.social.enactive.bot.components.message.MessageService;
 import com.social.enactive.bot.configuration.log.Log;
 import com.social.enactive.bot.engine.Engine;
 
-@Controller
 public class MessagingHandler {
 
-	@Value("${queue.message-deliver}")
-	private String messageDeliver;
+	private final String messageDeliver;
+	private final RabbitTemplate rabbitTemplate;
+	private final ConversationService conversationService;
+	private final Engine engine;
+	private final MessageService messageService;
 	
-	@Autowired
-	private RabbitTemplate rabbitTemplate;
+	public MessagingHandler(String messageDeliver, RabbitTemplate rabbitTemplate, ConversationService conversationService, Engine engine, MessageService messageService) {
+		this.messageDeliver = messageDeliver;
+		this.rabbitTemplate = rabbitTemplate;
+		this.conversationService = conversationService;
+		this.engine = engine;
+		this.messageService = messageService;
+	}
 	
-	@Autowired
-	private ConversationService conversationService;
-	
-	@Autowired
-	private Engine engine;
-	
-	@Autowired
-	private MessageService messageService;
-	
-	@RabbitListener(queues = "${queue.message-receiver}", concurrency = "1-10")
-	public void receiveMessage(@Payload Message message) {
+	public void handleMessage(Message message) {
 		Log.SYSTEM.info("Message received={}", message);
 		try {
 			rabbitTemplate.convertAndSend(messageDeliver, message.getConversationId(), engine.process(conversationService.find(message.getConversationId()), message));
