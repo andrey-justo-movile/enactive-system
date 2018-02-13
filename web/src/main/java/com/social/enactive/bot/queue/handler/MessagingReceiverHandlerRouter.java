@@ -1,6 +1,7 @@
 package com.social.enactive.bot.queue.handler;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -18,7 +19,8 @@ public class MessagingReceiverHandlerRouter {
 
 	public void handleMessage(List<Message> messages) {
 		Log.SYSTEM.info("Sending messages={}", messages);
-		messages.stream().collect(Collectors.groupingBy(Message::getConversationId)).forEach((key, value) -> {
+		Map<String, List<Message>> grouppedMessages = messages.stream().collect(Collectors.groupingBy(Message::getConversationId));
+		grouppedMessages.forEach((key, value) -> {
 			Log.SYSTEM.info("Messages to={}, {}", key, value);
 			webSocket.convertAndSend("/channel/public/" + key, value);
 		});
