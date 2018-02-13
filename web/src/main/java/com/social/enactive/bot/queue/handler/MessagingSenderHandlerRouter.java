@@ -78,7 +78,7 @@ public class MessagingSenderHandlerRouter {
 	}
 	
 	public Message fillMessage(Message oldMessage) {
-		User sender = userService.find(oldMessage.getId());
+		User sender = userService.find(oldMessage.getSender().getId());
 		return new Message(oldMessage.getConversationId(), sender, oldMessage.getContent());
 	}
 
