@@ -1,3 +1,5 @@
+'use strict';
+
 myModule.controller('ChatController', ChatController);
 
 /* @ngInject */

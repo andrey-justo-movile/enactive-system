@@ -1,8 +1,7 @@
-package com.social.enactive.bot.queue.handler;
+	package com.social.enactive.bot.queue.handler;
 
-
-import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -21,7 +20,7 @@ public class MessagingHandler {
 	private String messageDeliver;
 	
 	@Autowired
-	private AmqpTemplate amqpTemplate;
+	private RabbitTemplate rabbitTemplate;
 	
 	@Autowired
 	private ConversationService conversationService;
@@ -32,11 +31,11 @@ public class MessagingHandler {
 	@Autowired
 	private MessageService messageService;
 	
-	@RabbitListener(queues = "${queue.message-receiver}")
+	@RabbitListener(queues = "${queue.message-receiver}", concurrency = "1-10")
 	public void receiveMessage(@Payload Message message) {
 		Log.SYSTEM.info("Message received={}", message);
 		try {
-			amqpTemplate.convertAndSend(messageDeliver, engine.process(conversationService.find(message.getConversationId()), message));
+			rabbitTemplate.convertAndSend(messageDeliver + "/" + message.getConversationId(), engine.process(conversationService.find(message.getConversationId()), message));
 		} catch (Exception e) {
 			Log.EXCEPTION.error("Couldn't send message", e);
 		} finally {

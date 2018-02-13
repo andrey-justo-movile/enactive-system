@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 
+import com.social.enactive.bot.componentes.message.ResponseBuilder;
 import com.social.enactive.bot.components.conversation.Conversation;
 import com.social.enactive.bot.components.message.Message;
 import com.social.enactive.bot.components.scenario.BotBehavior;
@@ -28,16 +29,19 @@ public class ScenarioEngineHandler implements Engine {
 			throw new UserNotInConversationException(conversation, currentUser);
 		}
 		
-		return execute(currentUser, message, behavior);
+		ResponseBuilder builder = new ResponseBuilder(conversation.getId(), behavior);
+		return execute(currentUser, message, behavior, builder);
 	}
 	
-	private List<Message> execute(User user, Message message, BotBehavior behavior) {
+	private List<Message> execute(User user, Message message, BotBehavior behavior, ResponseBuilder builder) {
+		
 		MessageHandler handler = context.getBean(SilentHandler.class);
 		if (behavior != null) {
 			handler = (MessageHandler) context.getBean(behavior.getScenario().name());
 		}
 		
-		return handler.handler(user, message, behavior);
+		handler.handler(user, message, behavior, builder);
+		return builder.build();
 	}
 	
 }

@@ -1,0 +1,26 @@
+version: '2'
+volumes:
+  mongostorage: 
+
+services:
+  mongodb:
+    image: alexpunct/mongo:3.4
+    volumes: 
+      - /data/db
+    ports: 
+      - "27017:27017"
+    environment:
+      MONGODB_APPLICATION_DATABASE: social_bot
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    volumes:
+      - "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
+

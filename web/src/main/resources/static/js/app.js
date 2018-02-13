@@ -1,3 +1,5 @@
+'use strict';
+
 var myModule = angular.module( 'app', ['angular-simple-chat', 'ui.bootstrap'] );
 myModule.controller( 'AppController', AppController )
 

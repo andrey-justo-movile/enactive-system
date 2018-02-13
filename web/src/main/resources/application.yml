@@ -10,10 +10,11 @@ spring:
         enabled: true
     rabbitmq:
         host: localhost
-        username: admin
-        password: admin
         cacheMode: CONNECTION
         virtual-host: admin
+        username: admin
+        password: admin
+        
     data:
         mongodb:
             uri: "ENC(LMMP+qGS4Xhd3CaxCJJyZU+5TI5Mu5ID63hhun3s1qbnIWEOKybpVQCt+L7DYrc2YSFB/b0kWzo/ky+mM3GZkJlkbCjgi8ST4v3TrsENJ0storlblkGh5A==)"

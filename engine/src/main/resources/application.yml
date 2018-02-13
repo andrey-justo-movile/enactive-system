@@ -9,11 +9,11 @@ spring:
     jmx:
         enabled: true
     rabbitmq:
+        cacheMode: CONNECTION
         host: localhost
+        virtual-host: admin
         username: admin
         password: admin
-        cacheMode: CONNECTION
-        virtual-host: admin
     data:
         mongodb:
             uri: mongodb://andrey.justo:social_bot@localhost:27017/social_bot
