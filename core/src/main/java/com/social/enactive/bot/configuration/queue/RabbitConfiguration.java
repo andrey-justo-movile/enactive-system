@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.social.enactive.bot.configuration.mapper.JacksonMapper;
 
 @Configuration
 public class RabbitConfiguration {
@@ -25,7 +26,7 @@ public class RabbitConfiguration {
 	
 	@Bean
 	public MessageConverter messageConverter() {
-		return new Jackson2JsonMessageConverter(new ObjectMapper());
+		return new Jackson2JsonMessageConverter(JacksonMapper.standardConfiguration(new ObjectMapper()));
 	}
 	
     public static SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,

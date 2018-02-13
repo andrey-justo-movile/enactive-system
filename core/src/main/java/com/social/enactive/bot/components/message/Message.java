@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.springframework.data.annotation.Id;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.social.enactive.bot.components.user.User;
 
 public class Message implements Serializable {
@@ -21,6 +22,19 @@ public class Message implements Serializable {
 	private final Instant instant;
 
 	@JsonCreator
+	public Message(@JsonProperty("id")String id, @JsonProperty("conversation_id")String conversationId, @JsonProperty("sender")User sender, @JsonProperty("content")Content content, 
+			@JsonProperty("instant") Instant instant) {
+		this.id = id;
+		this.conversationId = conversationId;
+		this.sender = sender;
+		this.content = content;
+		this.instant = instant;
+	}
+	
+	public Message copy() {
+		return new Message(this.conversationId, this.sender, this.content);
+	}
+	
 	public Message(String conversationId, User sender, Content content) {
 		this.id = UUID.randomUUID().toString();
 		this.conversationId = conversationId;
@@ -28,6 +42,7 @@ public class Message implements Serializable {
 		this.content = content;
 		this.instant = Instant.now();
 	}
+
 
 	public String getId() {
 		return id;

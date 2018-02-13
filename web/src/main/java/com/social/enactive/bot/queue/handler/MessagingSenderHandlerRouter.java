@@ -46,7 +46,7 @@ public class MessagingSenderHandlerRouter {
 	public void sendMessage(@Payload Message message, @DestinationVariable String channel) {
 		Log.SYSTEM.info("Message received={}", message);
 		try {
-			ampqTemplate.convertAndSend(messageReceiver, message);
+			ampqTemplate.convertAndSend(messageReceiver, message.copy());
 		} catch (Exception e) {
 			Log.EXCEPTION.error("Couldn't send message", e);
 		}
@@ -56,10 +56,11 @@ public class MessagingSenderHandlerRouter {
 	@SendTo("/channel/public/{channel}")
 	public List<Message> addUser(@Payload Message chatMessage, SimpMessageHeaderAccessor headerAccessor,
 			@DestinationVariable String channel) {
-		Log.SYSTEM.info("Message received={}", chatMessage);
+		Message newMessage = chatMessage.copy();
+		Log.SYSTEM.info("Message received={}", newMessage);
 		MessageListenerAdapter listenerAdapter = new MessageListenerAdapter(new MessagingReceiverHandlerRouter(webSocket), messageConverter);
-		RabbitConfiguration.container(connectionFactory, listenerAdapter, messageDeliver + "/" + chatMessage.getConversationId());
-		return Arrays.asList(chatMessage);
+		RabbitConfiguration.container(connectionFactory, listenerAdapter, messageDeliver + "/" + newMessage.getConversationId());
+		return Arrays.asList(newMessage);
 	}
 
 }
