@@ -37,6 +37,7 @@ public class RabbitConfiguration {
         container.setConcurrency("1-3");
         container.setLookupKeyQualifier(lookup);
         container.setMessageListener(listenerAdapter);
+        container.start();
         return container;
     }
 
