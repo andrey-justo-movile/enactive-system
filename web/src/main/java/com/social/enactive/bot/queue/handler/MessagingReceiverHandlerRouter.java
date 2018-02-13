@@ -18,11 +18,10 @@ public class MessagingReceiverHandlerRouter {
 
 	public void handleMessage(List<Message> messages) {
 		Log.SYSTEM.info("Sending messages={}", messages);
-		messages.stream().collect(Collectors.groupingBy(Message::getConversationId)).entrySet().stream()
-				.forEach(item -> {
-					Log.SYSTEM.info("Messages to={}, {}", item.getKey(), item.getValue());
-					webSocket.convertAndSend("/channel/public/" + item.getKey(), item.getValue());
-				});
+		messages.stream().collect(Collectors.groupingBy(Message::getConversationId)).forEach((key, value) -> {
+			Log.SYSTEM.info("Messages to={}, {}", key, value);
+			webSocket.convertAndSend("/channel/public/" + key, value);
+		});
 	}
 
 }
