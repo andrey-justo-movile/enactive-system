@@ -1,10 +1,8 @@
-package com.social.enactive.bot.componentes.message;
+package com.social.enactive.bot.components.message;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.social.enactive.bot.components.message.Content;
-import com.social.enactive.bot.components.message.Message;
 import com.social.enactive.bot.components.user.User;
 
 public class ResponseBuilder {

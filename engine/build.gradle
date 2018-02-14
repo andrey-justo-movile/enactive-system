@@ -20,6 +20,7 @@ apply plugin: 'nebula.rpm'
 dependencies {
 
 	compile project(":core")
+	compile project(":reasoner")
 
 }
 

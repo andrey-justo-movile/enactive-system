@@ -2,6 +2,7 @@
 
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+
 import com.social.enactive.bot.components.conversation.ConversationService;
 import com.social.enactive.bot.components.message.Message;
 import com.social.enactive.bot.components.message.MessageService;

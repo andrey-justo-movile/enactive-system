@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/libs-snapshot' }
+    }
+    dependencies {
+    	classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}" 
+	}
+}
+
+apply plugin: 'application'
+apply plugin: 'net.researchgate.release'
+apply plugin: 'nebula.rpm'
+
+mainClassName="com.nees.senactivos.main.APIMain"
+apply from: '../application.gradle'
+
+/******************************************************************************
+ * DEPENDENCIES                                                               *
+ ******************************************************************************/
+dependencies {
+
+	compile project(":core")
+
+	// OWL API
+   	compile group: 'net.sourceforge.owlapi', name: 'owlapi-api', version: "${owlapiVersion}"
+   	compile group: 'net.sourceforge.owlapi', name: 'owlapi-apibinding', version: "${owlapiVersion}"
+   	compile group: 'net.sourceforge.owlapi', name: 'owlapi-parsers', version: "${owlapiVersion}"
+   	compile group: 'net.sourceforge.owlapi', name: 'owlapi-distribution', version: "${owlapiVersion}"
+   	compile group: 'net.sourceforge.owlapi', name: 'owlapi-impl', version: "${owlapiVersion}"
+   	compile group: 'net.sourceforge.owlapi', name: 'owlapi-oboformat', version: "${owlapiVersion}"
+   	compile('com.github.ansell.pellet:pellet-owlapiv3:2.3.6-ansell') {
+   		exclude group: 'com.github.ansell.owlapi', module: 'owlapi-tools'
+   		exclude group: 'com.github.ansell.owlapi', module: 'owlapi-api'
+   		exclude group: 'com.github.ansell.owlapi', module: 'owlapi-impl'
+   		exclude group: 'com.github.ansell.owlapi', module: 'owlapi-parsers'
+   	}
+   
+	// TESTS
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}

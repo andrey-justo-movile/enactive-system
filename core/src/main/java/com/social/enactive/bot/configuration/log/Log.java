@@ -13,4 +13,6 @@ public interface Log {
 
     Logger SYSTEM = LoggerFactory.getLogger("system");
     
+    Logger CLIENT = LoggerFactory.getLogger("client");
+    
 }

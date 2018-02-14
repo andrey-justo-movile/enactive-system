@@ -1,0 +1,25 @@
+server:
+    port: 8089
+    error:
+        whitelabel:
+            enabled: false
+
+spring:
+    jmx:
+        enabled: true
+
+---
+
+spring:
+    profiles: test
+
+---
+
+spring:
+    profiles: stag
+
+
+---
+
+spring:
+    profiles: prod

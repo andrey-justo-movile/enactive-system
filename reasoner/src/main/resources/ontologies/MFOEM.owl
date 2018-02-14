@@ -1,0 +1,3407 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/"
+     xml:base="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:go="http://purl.obolibrary.org/obo/go#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:iao="http://purl.obolibrary.org/obo/iao/"
+     xmlns:MFO="http://purl.obolibrary.org/obo/MFO#"
+     xmlns:ace_lexicon="http://attempto.ifi.uzh.ch/ace_lexicon#"
+     xmlns:MF="http://purl.obolibrary.org/obo/MF#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:snap="http://www.ifomis.org/bfo/1.1/snap#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/MFOEM.owl">
+        <rdfs:label>The Emotion Ontology is an ontology for affective phenomena such as emotions and moods. It is being developed collaboratively between the Swiss Centre of Affective Sciences and the University at Buffalo. It builds on the Ontology of Mental Functioning (MFO) and the Basic Formal Ontology (BFO). The latest version of the ontology can always be found at http://code.google.com/p/emotion-ontology/source/browse/#svn%2Ftrunk%2Fontology.</rdfs:label>
+        <rdfs:comment>Sources for definitions:
+OCEAS =&gt; Oxford Companion to Emotion and the Affective Sciences, ed. David Sander and Klaus Scherer, Oxford University Press, 2009.
+</rdfs:comment>
+        <rdfs:comment>Sources for terms and synonyms / translations :
+-- GRID project vocabulary resources (Cristina Soriano)</rdfs:comment>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/MF.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/MF/external/GO_import.owl"/>
+        <owl:versionInfo>beta 2013-07-23</owl:versionInfo>
+        <comment>The Emotion Ontology is an ontology for affective phenomena such as emotions and moods.  It is being developed collaboratively between the Swiss Centre of Affective Sciences and the University at Buffalo. It builds on the Ontology of Mental Functioning (MFO) and the Basic Formal Ontology (BFO). 
+
+The latest version of the ontology can always be found at http://code.google.com/p/emotion-ontology/source/browse/#svn%2Ftrunk%2Fontology. </comment>
+        <dc:contributor>Barry Smith</dc:contributor>
+        <dc:contributor>Janna Hastings</dc:contributor>
+        <dc:contributor>Kevin Mulligan</dc:contributor>
+        <dc:title>Emotion Ontology</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- definition -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- synonym -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/MFOEM_000010">
+        <rdfs:label>synonym</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- tag display synonym -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/MFOEM_000165">
+        <rdfs:label>tag display synonym</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- BFO_0000133 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000133"/>
+    
+
+
+    <!-- isOutputOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/MFOEM_000008">
+        <rdfs:label>isOutputOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/MFOEM_000213">
+        <rdfs:label xml:lang="en">hasOutput</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- userEmotionalState -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/userEmotionalState"/>
+    
+
+
+    <!-- hasAgent -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/MF#hasAgent"/>
+    
+
+
+    <!-- hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/MF#hasPart"/>
+    
+
+
+    <!-- inheresIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/MF#inheresIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- actionEmotions -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/actionEmotions"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- Action -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/Action"/>
+    
+
+
+    <!-- crying behavior -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0060273">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000031"/>
+    </rdf:Description>
+    
+
+
+    <!-- emotion process -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000001">
+        <rdfs:label>emotion process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000195"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MF#hasAgent"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000087"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MF#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000002"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MF#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MF#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>An emotion process is a complex mental process that is a synchronized aggregate of constituent mental processes including an appraisal process as part, and which gives rise to an action tendency.</IAO_0000115>
+        <MFOEM_000010>occurrent emotion</MFOEM_000010>
+        <MFOEM_000010>short-term emotion</MFOEM_000010>
+    </owl:Class>
+    
+
+
+    <!-- appraisal process -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000002">
+        <rdfs:label>appraisal process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MF_0000020"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>An appraisal process is a mental process that gives rise to an appraisal.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- physiological response to emotion process -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000003">
+        <rdfs:label>physiological response to emotion process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000060"/>
+        <IAO_0000115>A physiological response to emotion process is a bodily process which encompasses all the neurophysiological changes caused by the appraisal, which take place in the central nervous system (CNS), neuro-endocrine system (NES) and autonomous nervous system (ANS).</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- emotional behavioural process -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000004">
+        <rdfs:label>emotional behavioural process</rdfs:label>
+        <rdfs:comment>This branch is still very much under construction and will be worked on in collaboration with the Behaviour Ontology (George Gkoutos). </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0007610"/>
+        <IAO_0000115>An emotional behavioural process is the behaviour of the organism in response to the appraisal, which includes the characteristic facial expressions for particular emotion types.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000005">
+        <rdfs:label>appraisal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MF_0000031"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000008"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000002"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>An appraisal is a cognitive representation which represents an evaluation of the relevance of some triggering object or event to the organism. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- subjective emotional feeling -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000006">
+        <rdfs:label>subjective emotional feeling</rdfs:label>
+        <rdfs:comment>Excluded the following subjective feelings which appear on the GRID questionnaire since they seem debatable to what extent they are really *feelings* and to what extent they are actually *evaluations* or other things:
+
+-- felt submissive/dominant
+-- felt powerless/powerful
+
+
+
+</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000195"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>The subjective emotional feeling is that (fiat) part of the emotion process by which the organism experiences its own emotion.</IAO_0000115>
+        <MFOEM_000010>affective consciousness</MFOEM_000010>
+    </owl:Class>
+    
+
+
+    <!-- emotional action tendency -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000007">
+        <rdfs:label>emotional action tendency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MF#inheresIn"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000087"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>An emotional action tendency is a disposition to behaviour that inheres in an organism by virtue of the physical changes brought about by an emotion process.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- anger -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000009">
+        <rdfs:label xml:lang="en">anger</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MFOEM_000002"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000213"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000102"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Anger is a negative emotion, characterised by feelings of unpleasantness and high arousal, in the form of antagonistic feelings and action tendencies. [Source: OCEAS]
+</IAO_0000115>
+        <MFOEM_000010 xml:lang="fr">colère</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">ira</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">wut</MFOEM_000010>
+        <MFOEM_000165>angry</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- irritation -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000011">
+        <rdfs:label>irritation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>An unpleasant emotion closely related to anger but lower in intensity and without the moral dimension of blame and seriousness that is implicated in anger. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">irritación</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">irritation</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">Ärger</MFOEM_000010>
+        <MFOEM_000165>irritated</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- annoyance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000012">
+        <rdfs:label>annoyance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000009"/>
+        <MFOEM_000165>annoyed</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- fury -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000013">
+        <rdfs:label>fury</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000009"/>
+        <MFOEM_000165>furious</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- rage -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000014">
+        <rdfs:label>rage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000009"/>
+        <MFOEM_000165>enraged</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- aggression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000015">
+        <rdfs:label>aggression</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/NBO_0000015"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000004"/>
+        <IAO_0000115>Any behaviour that is intended to harm another person who wants to avoid the harm. [Source: OCEAS]</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- grief -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000016">
+        <rdfs:label>grief</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Grief is an intense negative emotion following a bereavement, i.e. the loss of a significant person through that person&apos;s death. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000165>grieving</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- violence -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000017">
+        <rdfs:label>violence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000015"/>
+        <IAO_0000115>Violence is aggression that has extreme physical harm as its goal. [Source: OCEAS]</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- contempt -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000018">
+        <rdfs:label>contempt</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A negative emotion generally elicited by the negative evaluation of others and their actions. Usually elicited by violations of community codes. Closely related to anger and disgust. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">desprecio</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">mépris</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">verachtung</MFOEM_000010>
+        <MFOEM_000165>contemptuous</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- disgust -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000019">
+        <rdfs:label>disgust</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A negative emotion which guards the body against dangerous foods and microbial infections. The basic physiological disgust has also culturally evolved to incorporate moral disgust which protects the self from nonphysical threats such as moral violations.  [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">asco</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">dégoût</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">ekel</MFOEM_000010>
+        <MFOEM_000165>disgusted</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- core disgust -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000020">
+        <rdfs:label>core disgust</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000019"/>
+        <IAO_0000115>Disgust elicited by &quot;contaminated&quot; food substances: rotten food, culturally variable &quot;bad&quot; food, certain animals associated with rotten food (maggots, rats), and every body product except tears. [Source: OCEAS]</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- animal-nature disgust -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000021">
+        <rdfs:label>animal-nature disgust</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000019"/>
+        <IAO_0000115>Disgust elicited by poor hygeine, inappropriate sex, gore or violations of bodily boundaries, and death or the odor of decay. [Source: OCEAS]</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- interpersonal disgust -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000022">
+        <rdfs:label>interpersonal disgust</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000019"/>
+        <IAO_0000115>Disgust elicited by contact with others, especially contact with strangers or other individuals or groups we are averse to. [Source: OCEAS]</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- moral disgust -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000023">
+        <rdfs:label>moral disgust</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MFOEM_000002"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000213"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000096"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Disgust elicited by some kinds of especially egregious moral violations. [Source: OCEAS]</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- hate -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000024">
+        <rdfs:label>hate</rdfs:label>
+        <rdfs:comment>The linguistic use of the verb &apos;hate&apos; in English is ambiguous between registering any kind of aversion (e.g. in the sentence &apos;I hate spinach&apos;), and the much stronger meaning which is associated with descriptions of the emotion hatred. [Source: OCEAS]</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000199"/>
+        <IAO_0000115>A strong, negatively valenced emotion directed against a whole person for who or what they are. Often directed at whole groups based on religion, ethnicity, or race. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="fr">haine</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">hass</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">odio</MFOEM_000010>
+        <MFOEM_000165>hateful</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- jealousy -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000025">
+        <rdfs:label>jealousy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A negative emotion aroused when a person feels threatened by a rival in his or her relationship with another individual, in particular an intimate partner. Involves feelings of threat, fear, suspicion, distrust, anxiety, anger, betrayal, and rejection. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">celos</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">eifersucht</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">jalousie</MFOEM_000010>
+        <MFOEM_000165>jealous</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- fear -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000026">
+        <rdfs:label>fear</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MFOEM_000002"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000213"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000104"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>An activated, aversive emotion that motivates attempts to cope with events that provide threats to the survival or well-being of organisms. Characterised by feelings of threat and impending doom, and by an urge to get out of the situation. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="de">angst</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">miedo</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">peur</MFOEM_000010>
+        <MFOEM_000165>afraid</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- terror -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000027">
+        <rdfs:label>terror</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000026"/>
+        <MFOEM_000165>terrified</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- anxiety -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000028">
+        <rdfs:label>anxiety</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A negative, aversive emotion provoked by the prospect of future threat. Distinguished from fear since it is triggered by a distal threat whereas fear is triggered by an immediate threat. Often gradual and long-lasting, whereas fear usually has sudden onset and offset.   [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">ansiedad</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">anxiété</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">besorgnis</MFOEM_000010>
+        <MFOEM_000165>anxious</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- stress (emotion) -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000029">
+        <rdfs:label>stress (emotion)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A negative emotion in response to a stressful elicitor. May be acute or chronic.  Associated with health implications, such as impaired resistance to infectious diseases. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">estrés</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">stress</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">stress</MFOEM_000010>
+        <MFOEM_000165>stressed</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- despair -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000030">
+        <rdfs:label>despair</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A negative, high intensity emotion characterised by loss of hope and loss of interest. Associated with action tendencies of harm to self or others. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">desesperación</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">désespoir</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">verzweiflung</MFOEM_000010>
+        <MFOEM_000165>despairing</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- crying -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000031">
+        <rdfs:label>crying</rdfs:label>
+        <rdfs:comment>Not sure whether this should be seen as a synonym for &apos;having tears in the eyes&apos; -- there probably need to be different degrees of crying. </rdfs:comment>
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/NBO_0000618"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000004"/>
+        <IAO_0000115>A multimodal behaviour consisting of tears, non-verbal vocalisations (wails, sobs), and facial expressions of distress. [Source: OCEAS]</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- surprise -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000032">
+        <rdfs:label>surprise</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MFOEM_000002"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000213"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000069"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Surprise is a neutral emotion caused by encountering unexpected events of all kinds. May be experienced as negative if the surprising event is evaluated as negative, or positive if the surprising event is evaluated as positive. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">sorpresa</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">surprise</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">Überraschung</MFOEM_000010>
+        <MFOEM_000165>surprised</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- interest -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000033">
+        <rdfs:label>interest</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Interest is a positive emotion which motivates learning, exploration and curiosity. Feelings of interest are associated with the novelty and complexity of stimuli. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="de">interesse</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">interés</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">intérêt</MFOEM_000010>
+        <MFOEM_000165>interested</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- joy -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000034">
+        <rdfs:label>joy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000042"/>
+        <IAO_0000115>A pleasant, positive emotion which arises in safe and familiar circumstances, when people have made progress towards important personal goals, especially when the progress is better than expected. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="de">freude</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">gozo</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">joie</MFOEM_000010>
+        <MFOEM_000165>joyful</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- pleasure (emotion) -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000035">
+        <rdfs:label>pleasure (emotion)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MFOEM_000002"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000213"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000070"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A positively experienced emotion which is sought out (approached) and is associated with happiness, enjoyment, and satisfaction.  [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">placer</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">plaisir</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">vergnügen</MFOEM_000010>
+        <MFOEM_000165>pleased</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- sensory pleasure -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000036">
+        <rdfs:label>sensory pleasure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000035"/>
+        <IAO_0000115>Pleasure in smell, touch, sight, sound and taste. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000165>sensory pleasure</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- mastery pleasure -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000037">
+        <rdfs:label>mastery pleasure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000035"/>
+        <IAO_0000115>Pleasure derived from mastery, including the experience of flow. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000165>a feeling of mastery</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- social pleasure -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000038">
+        <rdfs:label>social pleasure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000035"/>
+        <IAO_0000115>Pleasure derived from social contact. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000165>social pleasure</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- aesthetic pleasure -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000039">
+        <rdfs:label>aesthetic pleasure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000035"/>
+        <MFOEM_000165>aesthetic pleasure</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- sexual pleasure -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000040">
+        <rdfs:label>sexual pleasure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000035"/>
+        <MFOEM_000165>sexual pleasure</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- pride -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000041">
+        <rdfs:label>pride</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A positive emotion associated with the appraisal of one&apos;s positive social worth, a signal that one is likely to be socially accepted. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="fr">fierté</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">orgullo</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">stolz</MFOEM_000010>
+        <MFOEM_000165>proud</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- happiness -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000042">
+        <rdfs:label>happiness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A positive emotion which is experienced in reaction to a positive experience or event. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="fr">bonheur</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">felicidad</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">glück</MFOEM_000010>
+        <MFOEM_000165>happy</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- serenity -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000043">
+        <rdfs:label>serenity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000042"/>
+        <MFOEM_000165>serene</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- amusement -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000044">
+        <rdfs:label>amusement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000042"/>
+        <MFOEM_000165>amused</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- elation -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000045">
+        <rdfs:label>elation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000042"/>
+        <MFOEM_000165>elated</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- euphoria -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000046">
+        <rdfs:label>euphoria</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000042"/>
+        <MFOEM_000165>euphoric</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- contentment -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000047">
+        <rdfs:label>contentment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000042"/>
+        <IAO_0000115>A pleasant emotion, which can be defined as a milder form of joy. Associated with physical inactivity (&apos;do nothing&apos; action tendencies). [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="fr">contentement</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">satisfacción</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">zufriedenheit</MFOEM_000010>
+        <MFOEM_000165>contented</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- love -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000048">
+        <rdfs:label>love</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000199"/>
+        <IAO_0000115>A strong emotion associated with feelings of desire, warmth and intimacy for another person. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">amor</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">amour</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">liebe</MFOEM_000010>
+        <MFOEM_000165>loving</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- companionate love -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000049">
+        <rdfs:label>companionate love</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000048"/>
+        <IAO_0000115>Less intense, longer-lasting love which is characterised by affection, commitment, intimacy and a concern for the welfare of the loved one. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000165>compassionately loving</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- passionate love -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000050">
+        <rdfs:label>passionate love</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000048"/>
+        <IAO_0000115>A powerful longing for union with the beloved, characterised by a confusion of feelings -- elation and pain, tenderness and sexuality, altruism and jealousy.</IAO_0000115>
+        <MFOEM_000165>passionately loving</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- disappointment -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000051">
+        <rdfs:label>disappointment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Disappointment is a negative emotion which is triggered by the disconfirmation of the prospect of a desirable event. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="fr">Déception</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">desilusión</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">enttäuschung</MFOEM_000010>
+        <MFOEM_000165>disappointed</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- compassion -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000052">
+        <rdfs:label>compassion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115 xml:lang="es">An emotion evoked for a person who is in distress. The conditions for compassion involve perceiving the other as in need, and valuing the other&apos;s welfare. Associated with altruistic motivation. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">compasión</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">compassion</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">mitgefühl</MFOEM_000010>
+        <MFOEM_000165>compassionate</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- guilt -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000053">
+        <rdfs:label>guilt</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A self-conscious emotion that occurs when a person brings about a negative outcome by acts of commission or omission. Associated wtih violations of internal or external moral standards. Closely related to embarrassment and shame. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="es">culpa</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">culpabilité</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">schuld</MFOEM_000010>
+        <MFOEM_000165>guilty</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- embarrassment -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000054">
+        <rdfs:label>embarrassment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000165>embarrassed</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- shame -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000055">
+        <rdfs:label>shame</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000010 xml:lang="fr">honte</MFOEM_000010>
+        <MFOEM_000010 xml:lang="de">scham</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">vengüenza</MFOEM_000010>
+        <MFOEM_000165>ashamed</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- sadness -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000056">
+        <rdfs:label>sadness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A negative emotion felt when an event is appraised as unpleasant, obstructive to one&apos;s goals and concerns, and one feels unable to cope with it or modify it. [Source: OCEAS]</IAO_0000115>
+        <MFOEM_000010 xml:lang="de">trauer</MFOEM_000010>
+        <MFOEM_000010 xml:lang="fr">tristesse</MFOEM_000010>
+        <MFOEM_000010 xml:lang="es">tristeza</MFOEM_000010>
+        <MFOEM_000165>sad</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of suddenness -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000057">
+        <rdfs:label>appraisal of suddenness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal which represents an evaluation of how suddenly an event occurred. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of familiarity -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000058">
+        <rdfs:label>appraisal of familiarity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of how familiar an object or event is. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of predictability -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000059">
+        <rdfs:label>appraisal of predictability</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of how predictable an event was. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of expectedness -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000060">
+        <rdfs:label>appraisal of expectedness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of whether an event was expected to occur. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of pleasantness -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000061">
+        <rdfs:label>appraisal of pleasantness</rdfs:label>
+        <rdfs:comment>GRID questionnaire distinguishes between appraisal of pleasantness FOR SELF and appraisal of pleasantness FOR SOME OTHER.  So far we have defined appraisal as evaluation of relevance FOR SELF, thus, we only include one appraisal of pleasantness (for the time being), although we may expand this later -- although I suspect that all or most of the appraisal types would have to be so qualified. </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of the pleasantness of an object or event. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as sudden -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000062">
+        <rdfs:label>appraisal as sudden</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000057"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event occurred suddenly. </IAO_0000115>
+        <MFOEM_000165>this is sudden</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as not sudden -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000063">
+        <rdfs:label>appraisal as not sudden</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000057"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event did not occur suddenly. </IAO_0000115>
+        <MFOEM_000165>this is not sudden</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as familiar -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000064">
+        <rdfs:label>appraisal as familiar</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000058"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an object or event is familiar. </IAO_0000115>
+        <MFOEM_000165>this is familiar</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as not familiar -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000065">
+        <rdfs:label>appraisal as not familiar</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000058"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an object or event is not familiar. </IAO_0000115>
+        <MFOEM_000165>this is not familiar</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as predictable -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000066">
+        <rdfs:label>appraisal as predictable</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000059"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was easy to predict. </IAO_0000115>
+        <MFOEM_000165>this is predictable</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as not predictable -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000067">
+        <rdfs:label>appraisal as not predictable</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000059"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was not easy to predict. </IAO_0000115>
+        <MFOEM_000165>this is not predictable</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as expected -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000068">
+        <rdfs:label>appraisal as expected</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000060"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was expected. </IAO_0000115>
+        <MFOEM_000165>this is expected</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as not expected -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000069">
+        <rdfs:label>appraisal as not expected</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000060"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was not expected.</IAO_0000115>
+        <MFOEM_000165>this is not expected</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as pleasant -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000070">
+        <rdfs:label>appraisal as pleasant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000061"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an object or event is pleasant.</IAO_0000115>
+        <MFOEM_000165>this is pleasant</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as unpleasant -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000071">
+        <rdfs:label>appraisal as unpleasant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000061"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an object or event is unpleasant.</IAO_0000115>
+        <MFOEM_000165>this is unpleasant</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of goal importance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000072">
+        <rdfs:label>appraisal of goal importance</rdfs:label>
+        <rdfs:comment>Like pleasantness, the GRID questionnaire distinguishes between evaluations of goal importance/relevance for SELF and for an OTHER. </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of whether an event or object is important to the person&apos;s goals or needs. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- evaluation as important to goals -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000073">
+        <rdfs:label>evaluation as important to goals</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000072"/>
+        <IAO_0000115>An appraisal that represents an evaluation that the event or object is important to the person&apos;s goals or needs. </IAO_0000115>
+        <MFOEM_000165>this is important for my goals</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- evaluation as not important to goals -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000074">
+        <rdfs:label>evaluation as not important to goals</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000072"/>
+        <IAO_0000115>An appraisal that represents an evaluation that the event or object is not important to the person&apos;s goals or needs. </IAO_0000115>
+        <MFOEM_000165>this is not important for my goals</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of causal agency -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000075">
+        <rdfs:label>appraisal of causal agency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of who or what caused an event. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as caused by self -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000076">
+        <rdfs:label>appraisal as caused by self</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000075"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was caused by the self. </IAO_0000115>
+        <MFOEM_000165>this is being caused by me</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as caused by chance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000077">
+        <rdfs:label>appraisal as caused by chance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000075"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was caused by chance. </IAO_0000115>
+        <MFOEM_000165>this is being caused by chance</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as caused by an other -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000078">
+        <rdfs:label>appraisal as caused by an other</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000075"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was caused by another person.</IAO_0000115>
+        <MFOEM_000165>this is being caused by someone else</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling good -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000079">
+        <rdfs:label>feeling good</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective emotional feeling of feeling good, positive.  </IAO_0000115>
+        <MFOEM_000010>feeling positive</MFOEM_000010>
+        <MFOEM_000165>good</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling tired -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000080">
+        <rdfs:label>feeling tired</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective emotional feeling of tiredness, needing sleep.</IAO_0000115>
+        <MFOEM_000165>tired</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as caused supernaturally -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000081">
+        <rdfs:label>appraisal as caused supernaturally</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000075"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was caused by a supernatural agent (God, the ancestors, ghosts...).</IAO_0000115>
+        <MFOEM_000165>this is being caused supernaturally</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of causal intent -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000082">
+        <rdfs:label>appraisal of causal intent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of the causal intent of the person who (is evaluated to have) caused an event.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as deliberate -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000083">
+        <rdfs:label>appraisal as deliberate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000082"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was deliberately (intentionally) caused. </IAO_0000115>
+        <MFOEM_000165>this is being deliberately caused</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as unintended -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000084">
+        <rdfs:label>appraisal as unintended</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000082"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event was caused unintentionally.</IAO_0000115>
+        <MFOEM_000165>this is not being deliberately caused</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of desirability of consequences -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000085">
+        <rdfs:label>appraisal of desirability of consequences</rdfs:label>
+        <rdfs:comment>Distinguished in GRID questionnaire between FOR SELF and FOR OTHER. </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of the desirability of the expected consequences of an event. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as desirable consequences -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000086">
+        <rdfs:label>appraisal as desirable consequences</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000085"/>
+        <IAO_0000115>An appraisal that represents an evaluation that the expected consequences of an event are desirable. </IAO_0000115>
+        <MFOEM_000165>this has desirable consequences</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as undesirable consequences -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000087">
+        <rdfs:label>appraisal as undesirable consequences</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000085"/>
+        <IAO_0000115>An appraisal that represents an evaluation that the expected consequences of an event are undesirable. </IAO_0000115>
+        <MFOEM_000165>this has undesirable consequences</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of urgency of response -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000088">
+        <rdfs:label>appraisal of urgency of response</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents an evaluation of the urgency of responding to an event. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as urgent response -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000089">
+        <rdfs:label>appraisal as urgent response</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000088"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event requires an urgent (immediate) response. </IAO_0000115>
+        <MFOEM_000165>a response is needed urgently</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as not urgent response -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000090">
+        <rdfs:label>appraisal as not urgent response</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000088"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an event does not require an urgent response. </IAO_0000115>
+        <MFOEM_000165>a response is needed but not urgently</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of avoidability of consequences -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000091">
+        <rdfs:label>appraisal of avoidability of consequences</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal which represents a judgement about how avoidable the expected consequences of an event will be. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as avoidable consequences -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000092">
+        <rdfs:label>appraisal as avoidable consequences</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000091"/>
+        <IAO_0000115>An appraisal that represents a judgement that the expected consequences of an event are in principle avoidable or modfiable. </IAO_0000115>
+        <MFOEM_000165>there are consequences but they are avoidable</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as unavoidable consequences -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000093">
+        <rdfs:label>appraisal as unavoidable consequences</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000091"/>
+        <IAO_0000115>An appraisal that represents a judgement that the expected consequences of an event will be difficult to avoid or modify. </IAO_0000115>
+        <MFOEM_000165>there are consequences and they are unavoidable</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of congruence with ideals -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000094">
+        <rdfs:label>appraisal of congruence with ideals</rdfs:label>
+        <rdfs:comment>Can also be defined FOR SELF and FOR OTHER, where a special case of OTHER is &apos;society&apos; (=&gt; a judgement that an event violated laws or socially accepted norms)
+
+May want to distinguish violation of &apos;standards&apos; from that of &apos;ideals&apos;, &apos;norms&apos; and &apos;laws&apos;. At the moment they are all lumped together. </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal which represents a judgement about whether an event is consistent with the person&apos;s standards or ideals. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as congruent with ideals -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000095">
+        <rdfs:label>appraisal as congruent with ideals</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000094"/>
+        <IAO_0000115>An appraisal which represents a judgement that an event is consistent with the person&apos;s standards or ideals.</IAO_0000115>
+        <MFOEM_000165>this is in line with my ideals</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as not congruent with ideals -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000096">
+        <rdfs:label>appraisal as not congruent with ideals</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000094"/>
+        <IAO_0000115>An appraisal that represents a judgement that an event is inconsistent with a person&apos;s standards or ideals. </IAO_0000115>
+        <MFOEM_000165>this is against my ideals</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of social attention -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000097">
+        <rdfs:label>appraisal of social attention</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal which represents a judgement about the direction and nature of the social attention surrounding an event. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as being at the centre of attention -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000098">
+        <rdfs:label>appraisal as being at the centre of attention</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000097"/>
+        <IAO_0000115>An appraisal which represents a judgement that the person is at the centre of the surrounding social attention. (That is, that all other nearby persons are paying attention to him/her.)</IAO_0000115>
+        <MFOEM_000165>I am at the centre of attention</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as not being at the centre of attention -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000099">
+        <rdfs:label>appraisal as not being at the centre of attention</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000097"/>
+        <IAO_0000115>An appraisal that represents a judgement that a person is not at the centre of the surrounding social attention. </IAO_0000115>
+        <MFOEM_000165>I am not at the centre of attention</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of justice of treatment -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000100">
+        <rdfs:label>appraisal of justice of treatment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>Appraisal which represents an evaluation of whether the person was treated justly or unjustly by another person. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as just treatment -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000101">
+        <rdfs:label>appraisal as just treatment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000100"/>
+        <IAO_0000115>An appraisal which represents an evaluation that the person was treated justly by another person. </IAO_0000115>
+        <MFOEM_000165>I am being treated justly</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as unjust treatment -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000102">
+        <rdfs:label>appraisal as unjust treatment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000100"/>
+        <IAO_0000115>An appraisal that represents an evaluation that the person was treated unjustly by another person. (Injustice.) </IAO_0000115>
+        <MFOEM_000165>I am being treated unjustly</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of dangerousness -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000103">
+        <rdfs:label>appraisal of dangerousness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal which represents an evaluation of the dangerousness of an object or situation. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as dangerous -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000104">
+        <rdfs:label>appraisal as dangerous</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000103"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an object or situation is dangerous to the person. </IAO_0000115>
+        <MFOEM_000165>this is dangerous</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as not dangerous -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000105">
+        <rdfs:label>appraisal as not dangerous</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000103"/>
+        <IAO_0000115>An appraisal that represents an evaluation that an object or situation is not dangerous to the person. </IAO_0000115>
+        <MFOEM_000165>this is not dangerous</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- appraisal of loss -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000106">
+        <rdfs:label>appraisal of loss</rdfs:label>
+        <rdfs:comment>This appraisal category stands alone:  appraisal of loss is not a continuum like the others (pleasant---unpleasant; expected---unexpected).  Rather it is quite discrete, loss or no loss, and is better defined by WHAT has been lost, or at least, in which relation the thing that has been lost stands to the person experiencing the emotion.  Loss of a loved person, loss of the expectation of achieving a hoped for life goal, and loss of a limb are all kinds of loss.  
+
+While it is tempting not to categorise this as an appraisal at all, it should be noted that the loss does not actually have to occur -- it only has to be believed, judged, or (in other words) appraised to have occurred -- for the emotion to take place. </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>An appraisal that represents a belief that something or someone that is important to the person has been lost to the person. </IAO_0000115>
+        <MFOEM_000165>I have irrevocably lost something important</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling at ease -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000107">
+        <rdfs:label>feeling at ease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective emotional feeling of being at ease, comfortable, relaxed. </IAO_0000115>
+        <MFOEM_000165>at ease</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling bad -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000108">
+        <rdfs:label>feeling bad</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective emotional feeling of feeling bad, negative.</IAO_0000115>
+        <MFOEM_000010>feeling negative</MFOEM_000010>
+        <MFOEM_000165>bad</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling energetic -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000109">
+        <rdfs:label>feeling energetic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective emotional feeling of having lots of energy, being energetic. </IAO_0000115>
+        <MFOEM_000165>energetic</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling in control -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000110">
+        <rdfs:label>feeling in control</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective emotional feeling that one is in control of oneself, that one is fully the agent of one&apos;s behavior. </IAO_0000115>
+        <MFOEM_000165>in control</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling restless -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000111">
+        <rdfs:label>feeling restless</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective emotional feeling of restlessness, a state of not being calm, of an agitation to do something. </IAO_0000115>
+        <MFOEM_000165>restless</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling exhausted -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000112">
+        <rdfs:label>feeling exhausted</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000080"/>
+        <IAO_0000115>The subjective emotional feeling of exhaustion, an extremely strong form of feeling tired. </IAO_0000115>
+        <MFOEM_000165>exhausted</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- shivering -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000113">
+        <rdfs:label>shivering</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+        <IAO_0000115></IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- feeling calm -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000114">
+        <rdfs:label>feeling calm</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective feeling of being calm, being relaxed, being at peace. </IAO_0000115>
+        <MFOEM_000165>calm</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- limb weakening -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000115">
+        <rdfs:label>limb weakening</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- feeling out of control -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000116">
+        <rdfs:label>feeling out of control</rdfs:label>
+        <rdfs:comment>May have an evaluative component as well as a feeling component. Needs discussing.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective feeling of not being in control, not being able to gain agency of one&apos;s own behavior. </IAO_0000115>
+        <MFOEM_000165>out of control</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- becoming pale -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000117">
+        <rdfs:label>becoming pale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- feeling strong -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000118">
+        <rdfs:label>feeling strong</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective feeling of strength, capability, energy and capacity to do things. </IAO_0000115>
+        <MFOEM_000165>strong</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- feeling weak -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000119">
+        <rdfs:label>feeling weak</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective feeling of weakness, lack of energy and/or capability, faintness, absence of strength. </IAO_0000115>
+        <MFOEM_000165>weak</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- experiencing a lump in the throat -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000120">
+        <rdfs:label>experiencing a lump in the throat</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- feeling alert -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000121">
+        <rdfs:label>feeling alert</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective feeling of being wide awake, alert, having active attention and perception. </IAO_0000115>
+        <MFOEM_000165>alert</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- experiencing discomfort in the stomach -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000122">
+        <rdfs:label xml:lang="en">experiencing discomfort in the stomach</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- heart beating at slower rate -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000123">
+        <rdfs:label>heart beating at slower rate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- feeling nervous -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000124">
+        <rdfs:label>feeling nervous</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000006"/>
+        <IAO_0000115>The subjective feeling of being not at ease, of being anxious or nervous or agitated. </IAO_0000115>
+        <MFOEM_000165>nervous</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- facial expression behaviour -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000125">
+        <rdfs:label>facial expression behaviour</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000004"/>
+        <IAO_0000115>A behavioural process that involves a change in the expression of the face. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- smiling -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000126">
+        <rdfs:label>smiling</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <IAO_0000115>A facial expression behaviour in which the person smiles. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- jaw dropping -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000127">
+        <rdfs:label>jaw dropping</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <IAO_0000115>A facial expression behaviour in which the jaw drops.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- pressing lips together -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000128">
+        <rdfs:label>pressing lips together</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <IAO_0000115>A facial expression behaviour in which the lips are tightly pressed together. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- raising eyebrows -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000129">
+        <rdfs:label>raising eyebrows</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <IAO_0000115>A facial expression behaviour in which the eyebrows are raised. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- frowning -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000130">
+        <rdfs:label>frowning</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <IAO_0000115>A facial expression behaviour in which the person frowns. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- closing eyes -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000131">
+        <rdfs:label>closing eyes</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <IAO_0000115>A facial expression behaviour in which the eyes are closed. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- opening eyes widely -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000132">
+        <rdfs:label>opening eyes widely</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <IAO_0000115>A facial expression behaviour in which the eyes are opened widely. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- neutral expression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000133">
+        <rdfs:label>neutral expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <IAO_0000115>A facial expression behaviour which appears very neutral (showing no expression). </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- emotional bodily movement behaviour -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000134">
+        <rdfs:label>emotional bodily movement behaviour</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000004"/>
+    </owl:Class>
+    
+
+
+    <!-- moving abruptly -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000135">
+        <rdfs:label>moving abruptly</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000134"/>
+        <IAO_0000115>A bodily movement behaviour which involves abrupt movements.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- moving towards people -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000136">
+        <rdfs:label>moving towards people</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000134"/>
+        <IAO_0000115>A bodily movement behaviour which involves moving, or leaning, towards people (approach).</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- moving away from people -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000137">
+        <rdfs:label>moving away from people</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000134"/>
+        <IAO_0000115>A bodily movement behaviour which involves moving, or leaning, away from people (avoidance). </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- staying still -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000138">
+        <rdfs:label>staying still</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000134"/>
+        <IAO_0000115>A bodily movement behaviour which involves remaining still. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- heart beating at faster rate -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000139">
+        <rdfs:label>heart beating at faster rate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- muscles relaxing -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000140">
+        <rdfs:label>muscles relaxing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- muscles becoming tense -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000141">
+        <rdfs:label>muscles becoming tense</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- breathing at a more rapid rate -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000142">
+        <rdfs:label>breathing at a more rapid rate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- breathing at a slower rate -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000143">
+        <rdfs:label>breathing at a slower rate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- temperature rising (experienced as feeling warm) -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000144">
+        <rdfs:label>temperature rising (experienced as feeling warm)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- perspiring -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000145">
+        <rdfs:label>perspiring</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- perspiring (hands) -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000146">
+        <rdfs:label>perspiring (hands)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000145"/>
+    </owl:Class>
+    
+
+
+    <!-- perspiring (whole body) -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000147">
+        <rdfs:label>perspiring (whole body)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000145"/>
+    </owl:Class>
+    
+
+
+    <!-- experiencing heat in cheeks or chest -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000148">
+        <rdfs:label>experiencing heat in cheeks or chest</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000144"/>
+    </owl:Class>
+    
+
+
+    <!-- experiencing warm sensation in whole body -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000149">
+        <rdfs:label>experiencing warm sensation in whole body</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000144"/>
+    </owl:Class>
+    
+
+
+    <!-- blushing -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000150">
+        <rdfs:label>blushing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- temperature falling (experienced as feeling cold) -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000151">
+        <rdfs:label>temperature falling (experienced as feeling cold)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000003"/>
+    </owl:Class>
+    
+
+
+    <!-- emotional speaking behaviour -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000152">
+        <rdfs:label>emotional speaking behaviour</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0071625"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000004"/>
+    </owl:Class>
+    
+
+
+    <!-- speaking loudly -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000153">
+        <rdfs:label>speaking loudly</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking with a voice louder than usual. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking softly -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000154">
+        <rdfs:label>speaking softly</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking with a voice softer than usual.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking with trembling voice -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000155">
+        <rdfs:label>speaking with trembling voice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking with a voice that is hesitant or trembling. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking assertively -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000156">
+        <rdfs:label>speaking assertively</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking with a voice that is confident and assertive.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- not speaking -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000157">
+        <rdfs:label>not speaking</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Remaining silent, not producing spoken utterances. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking a short utterance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000158">
+        <rdfs:label>speaking a short utterance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking behaviour in which a short utterance is produced.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking a long utterance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000159">
+        <rdfs:label>speaking a long utterance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking behaviour in which a long utterance is produced. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking with altered speech melody -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000160">
+        <rdfs:label>speaking with altered speech melody</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking with an altered rhythm or melody of speech relative to the norm for that person. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking in a disturbed fashion -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000161">
+        <rdfs:label>speaking in a disturbed fashion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking in a manner which is disturbed relative to what is the norm for that person. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking at a faster rate -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000162">
+        <rdfs:label>speaking at a faster rate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking in a manner that is faster than the norm for that person.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- speaking at a slower rate -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000163">
+        <rdfs:label>speaking at a slower rate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>Speaking in a manner that is slower than the norm for that person. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- panic -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000164">
+        <rdfs:label>panic</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000026"/>
+        <IAO_0000115>A severe episode of fear with strong associated discomfort and thoughts of impending harm. </IAO_0000115>
+        <MFOEM_000165>panicked</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- boredom -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000166">
+        <rdfs:label>boredom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000165>bored</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- curiosity -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000167">
+        <rdfs:label xml:lang="en">curiosity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000010>intrigued</MFOEM_000010>
+        <MFOEM_000165>curious</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- concern -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000168">
+        <rdfs:label xml:lang="en">concern</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000165>concerned</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- amusement -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000169">
+        <rdfs:label xml:lang="en">amusement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000165>amused</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- dubious -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000170">
+        <rdfs:label xml:lang="en">dubious</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- worry -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000171">
+        <rdfs:label>worry</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000165 xml:lang="en">worried</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- canonical angry facial expression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000172">
+        <rdfs:label xml:lang="en">canonical angry facial expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000174"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000130"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000009"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>The canonical facial expression associated with the experience of anger. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- confusion -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000173">
+        <rdfs:label xml:lang="en">confusion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000165>confused</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- canonical emotional facial expression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000174">
+        <rdfs:label xml:lang="en">canonical emotional facial expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000125"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Characteristic facial expressions that are made when a person is undergoing a so-called &quot;basic&quot; emotions. These are canonical, that is, individual facial expressions when undergoing emotions can vary or not change at all. However, research indicates evidence for the existence of characteristic canonical facial expressions that are displayed when experiencing certain emotions even across cultures. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- expectant -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000175">
+        <rdfs:label xml:lang="en">expectant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000010>anticipative</MFOEM_000010>
+    </owl:Class>
+    
+
+
+    <!-- canonical fearful facial expression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000176">
+        <rdfs:label xml:lang="en">canonical fearful facial expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000174"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000132"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>The canonical facial expression associated with the experience of fear. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- hope -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000177">
+        <rdfs:label xml:lang="en">hope</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000165>hopeful</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- inspiration (emotion) -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000178">
+        <rdfs:label xml:lang="en">inspiration (emotion)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <MFOEM_000165>inspired</MFOEM_000165>
+    </owl:Class>
+    
+
+
+    <!-- schadenfreude -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000179">
+        <rdfs:label xml:lang="en">schadenfreude</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000035"/>
+        <IAO_0000115>A complex emotion that consists of the experience of pleasure as caused by the misfortune of others. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical happy facial expression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000180">
+        <rdfs:label xml:lang="en">canonical happy facial expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000174"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000126"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000042"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>The canonical facial expression associated with the experience of happiness. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical disgusted facial expression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000181">
+        <rdfs:label xml:lang="en">canonical disgusted facial expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000174"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>The canonical facial expression associated with the experience of disgust. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical sad facial expression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000182">
+        <rdfs:label xml:lang="en">canonical sad facial expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000174"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000056"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>The canonical facial expression associated with the experience of sadness. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical emotional voice utterances -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000183">
+        <rdfs:label xml:lang="en">canonical emotional voice utterances</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000152"/>
+        <IAO_0000115>The vocal utterances associated with the characteristic sound of an emotion. Obviously, any particular emotional instance may be associated with a great variety of different types of voice utterances or no voice utterances at all. However, &quot;canonical&quot; or characteristic voice utterances can be associated with core emotions. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical angry voice utterance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000184">
+        <rdfs:label xml:lang="en">canonical angry voice utterance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000183"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000153"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000009"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Vocal utterances canonically associated with the experience of anger</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical fearful voice utterance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000185">
+        <rdfs:label xml:lang="en">canonical fearful voice utterance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000183"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Vocal utterances canonically associated with the experience of fear</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical disgusted voice utterance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000186">
+        <rdfs:label xml:lang="en">canonical disgusted voice utterance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000183"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000019"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Voice utterances characteristically associated with the experience of disgust. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical happy voice utterance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000187">
+        <rdfs:label xml:lang="en">canonical happy voice utterance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000183"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000042"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Voice utterance characteristically associated with the experience of happiness.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical sad voice utterance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000188">
+        <rdfs:label xml:lang="en">canonical sad voice utterance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000183"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000031"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000056"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Voice utterance characteristically associated with the experience of sadness.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical surprised voice utterance -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000189">
+        <rdfs:label xml:lang="en">canonical surprised voice utterance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000183"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000032"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Voice utterance canonically associated with the experience of surprise</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- canonical surprised facial expression -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000190">
+        <rdfs:label xml:lang="en">canonical surprised facial expression</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000174"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000127"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000132"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000032"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Characteristic facial expression made when a person is undergoing an experience of surprise. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as being disliked -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000191">
+        <rdfs:label xml:lang="en">appraisal as being disliked</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>Appraisal that one is being disliked</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- appraisal as being liked -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000192">
+        <rdfs:label xml:lang="en">appraisal as being liked</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000005"/>
+        <IAO_0000115>appraisal that one is being liked</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- mood process -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000193">
+        <rdfs:label xml:lang="en">mood process</rdfs:label>
+        <rdfs:comment>Moods are more difficult to individuate into types than emotions. We may speak of a good mood, a bad mood, or suchlike. We may also speak of being in an angry mood or other moods which take their identity from emotions. These often accompany a heightened disposition to undergo the emotion they are named for. </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000195"/>
+        <IAO_0000115>A mood process is a mental process that involves affect (is valenced), and gives rise to a number of behavioural dispositions, but unlike an emotion has no object. Moods are usually longer-lived than emotion processes, but there are exceptions.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- valence -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000194">
+        <rdfs:label xml:lang="en">valence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000144"/>
+    </owl:Class>
+    
+
+
+    <!-- affective process -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000195">
+        <rdfs:label xml:lang="en">affective process</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MF_0000020"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000133"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000194"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MF_0000020"/>
+        <IAO_0000115>An affective process is any process that has positive or negative valence. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- anxious mood -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000196">
+        <rdfs:label xml:lang="en">anxious mood</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000193"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>An anxious mood is a general feeling of mild fearfulness and a heightened disposition to experience fear and other negatively valenced emotions. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- irritable mood -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000197">
+        <rdfs:label xml:lang="en">irritable mood</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000193"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>An irritable mood is a general feeling of mild annoyance, a heightened disposition to anger and other negatively valenced emotions. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- cheerful mood -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000198">
+        <rdfs:label xml:lang="en">cheerful mood</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000193"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>A cheerful mood is a general feeling of well-being and a heightened disposition to happiness, amusement and other positively valenced emotions.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- emotion disposition -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000199">
+        <rdfs:label xml:lang="en">emotion disposition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <IAO_0000115>An emotion disposition is a disposition to repeated emotion process individuated by being of the same type and about the same object.</IAO_0000115>
+        <MFOEM_000010>dispositional emotion</MFOEM_000010>
+        <MFOEM_000010>long-term emotion</MFOEM_000010>
+    </owl:Class>
+    
+
+
+    <!-- bodily feeling -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000202">
+        <rdfs:label xml:lang="en">bodily feeling</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000195"/>
+    </owl:Class>
+    
+
+
+    <!-- pain -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000203">
+        <rdfs:label xml:lang="en">pain</rdfs:label>
+        <rdfs:comment>Here `phenomenologically similar&apos; means inter alia: (1) that the experience is `of&apos; or is `targeted towards&apos; some region R of the body of S, so that all pain is in this sense (and however diffusely) localized; (2) that the experience involves a dimension of unpleasantness which -- as is shown by the case of pain asymbolia -- is not necessarily of the sort that involves suffering or aversion on the part of the subject S. </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000202"/>
+        <IAO_0000115>pain is a bodily process in an organism S, involving two integrated levels: 
+(a) activation of the nociceptive system and associated emotion generating brain components of S, and 
+(b) a simultaneous aversive sensory and emotional experience on the part of S, 
+where (b) is phenomenologically similar to the sort of aversive experience involved in pain with concordant tissue damage.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- emotional personality trait -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000204">
+        <rdfs:label xml:lang="en">emotional personality trait</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MF_0000203"/>
+        <IAO_0000115>An emotional personality trait is a personality trait, a part of an overall personality, which predisposes the individual to repeated occurrences of a characteristic emotional process. </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- hunger -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000205">
+        <rdfs:label xml:lang="en">hunger</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000202"/>
+    </owl:Class>
+    
+
+
+    <!-- thirst -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000206">
+        <rdfs:label xml:lang="en">thirst</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000202"/>
+    </owl:Class>
+    
+
+
+    <!-- positive valence -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000207">
+        <rdfs:label xml:lang="en">positive valence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000194"/>
+    </owl:Class>
+    
+
+
+    <!-- negative valence -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000208">
+        <rdfs:label xml:lang="en">negative valence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000194"/>
+    </owl:Class>
+    
+
+
+    <!-- positive surprise -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000209">
+        <rdfs:label xml:lang="en">positive surprise</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Surprise with a positive valence</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- negative surprise -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000210">
+        <rdfs:label xml:lang="en">negative surprise</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <IAO_0000115>Surprise with a negative valence.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- positive emotion -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000211">
+        <rdfs:label xml:lang="en">positive emotion</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000207"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <IAO_0000115>A positive emotion is an emotion that has a positive valence.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- negative emotion -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000212">
+        <rdfs:label xml:lang="en">negative emotion</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000208"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000001"/>
+        <IAO_0000115>A negative emotion is an emotion that has a negative valence.</IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- physical pleasure -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000214">
+        <rdfs:label xml:lang="en">physical pleasure</rdfs:label>
+        <rdfs:comment>Physical pleasure is not named just &apos;pleasure&apos; as that has already been used for emotional pleasure.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000202"/>
+    </owl:Class>
+    
+
+
+    <!-- ticklish -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MFOEM_000215">
+        <rdfs:label xml:lang="en">ticklish</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000202"/>
+    </owl:Class>
+    
+
+
+    <!-- mental process -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MF_0000020">
+        <IAO_0000115>Valence is a process profile of an emotion, mood, or affective bodily feeling (such as pleasure and pain). Valence can be positive or negative, with different strengths in both directions. For example, pleasure is positively valenced while pain is negatively valenced.  </IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- irascibility -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MF_0000029">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000204"/>
+    </rdf:Description>
+    
+
+
+    <!-- cognitive representation -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MF_0000031"/>
+    
+
+
+    <!-- affective representation -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MF_0000039"/>
+    
+
+
+    <!-- emotional behavior -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NBO_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000004"/>
+    </rdf:Description>
+    
+
+
+    <!-- aggressive behavior -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NBO_0000015"/>
+    
+
+
+    <!-- fear-related behavior -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NBO_0000091">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- anxiety-related behavior -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NBO_0000092">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000028"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- pleasure behavior -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NBO_0000230">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000132"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000035"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- crying behavior -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NBO_0000618"/>
+    
+
+
+    <!-- User -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/User"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- Felipe -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/Felipe">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/User"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- joy1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/joy1"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#u">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/User"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000009"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#e"/>
+                                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/userEmotionalState"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:argument2>surprise, sadness, joy</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/actionEmotions"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/User"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000019"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#e"/>
+                                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/userEmotionalState"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:argument2>surprise, sadness, anger,  joy</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/actionEmotions"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/User"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000026"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#e"/>
+                                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/userEmotionalState"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:argument2>disgust, anger, joy</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/actionEmotions"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/User"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000032"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#e"/>
+                                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/userEmotionalState"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:argument2>surprise, joy</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/actionEmotions"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/User"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000034"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#e"/>
+                                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/userEmotionalState"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:argument2>joy, surprise</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/actionEmotions"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/User"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#e"/>
+                                <swrl:classPredicate rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000056"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#e"/>
+                                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/userEmotionalState"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#u"/>
+                        <swrl:argument2>surprise, joy</swrl:argument2>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/actionEmotions"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.0.2.20150417-2043) http://owlapi.sourceforge.net -->
+

@@ -1,6 +1,7 @@
 package com.social.enactive.bot.configuration.mapper;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.function.Consumer;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -116,6 +117,38 @@ public class JacksonMapper {
         return OBJECT_MAPPER.convertValue(obj, typeReference);
     }
 
+    /**
+     * Read json and convert it into the requested object
+     *
+     * @param value JSON content
+     * @param clazz The target conversion class
+     * @param <T>   Generic target type
+     * @return Requested object populated with JSON data
+     */
+    public <T> T readJson(InputStream value, Class<T> clazz) {
+        try {
+            return OBJECT_MAPPER.readValue(value, clazz);
+        } catch (IOException e) {
+            throw new IllegalStateException("Unable to read json string", e);
+        }
+    }
+    
+    /**
+     * Read json and convert it into the requested object
+     *
+     * @param value JSON content
+     * @param clazz The target conversion class
+     * @param <T>   Generic target type
+     * @return Requested object populated with JSON data
+     */
+    public <T> T readJson(InputStream value, TypeReference<T> typeReference) {
+        try {
+            return OBJECT_MAPPER.readValue(value, typeReference);
+        } catch (IOException e) {
+            throw new IllegalStateException("Unable to read json string", e);
+        }
+    }
+    
     /**
      * Read json and convert it into the requested object
      *

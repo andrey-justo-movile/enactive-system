@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.social.enactive.bot.components.scenario.BehaviorScenario;
+import com.social.enactive.bot.components.user.state.UserStateService;
 import com.social.enactive.bot.engine.Engine;
 import com.social.enactive.bot.engine.ScenarioEngineHandler;
 import com.social.enactive.bot.engine.scenario.ArtistAssistentHandler;
@@ -49,8 +50,8 @@ public class ScenarioHandlerConfiguration implements BeanFactoryAware {
 	
 	@Bean
 	@Autowired
-	public Engine engine(ApplicationContext context) {
-		return new ScenarioEngineHandler(context);
+	public Engine engine(ApplicationContext context, UserStateService userStateService) {
+		return new ScenarioEngineHandler(context, userStateService);
 	}
 
 

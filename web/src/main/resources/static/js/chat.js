@@ -53,7 +53,7 @@ function ChatController($scope, $http) {
             },
             data: {
                 'user_id': userLogged.user.id,
-                'bot_behavior': 'ECHO',
+                'bot_behavior': 'ARTS_ASSISTENT',
                 'conversation_id': null
             }
         } ).then( function successCallback( response ) {

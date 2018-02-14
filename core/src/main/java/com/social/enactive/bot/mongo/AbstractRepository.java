@@ -1,6 +1,10 @@
 package com.social.enactive.bot.mongo;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 
 public abstract class AbstractRepository<T> {
 	
@@ -28,6 +32,14 @@ public abstract class AbstractRepository<T> {
 	
 	public String collectionName() {
 		return objClass.getSimpleName();
+	}
+	
+	public List<T> list() {
+		return template.findAll(objClass, collectionName());
+	}
+	
+	public List<T> list(List<String> ids) {
+		return template.find(new Query(Criteria.where("id").all(ids)), objClass);
 	}
 
 }

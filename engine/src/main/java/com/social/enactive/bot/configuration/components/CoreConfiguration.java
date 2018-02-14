@@ -3,8 +3,10 @@ package com.social.enactive.bot.configuration.components;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+import com.social.enactive.configuration.EmotionReasonerConfiguration;
+
 @Configuration
-@Import({BotBehaviorConfiguration.class, ConversationConfiguration.class, MessageConfiguration.class, UserConfiguration.class})
+@Import({BotBehaviorConfiguration.class, ConversationConfiguration.class, MessageConfiguration.class, UserConfiguration.class, EmotionReasonerConfiguration.class})
 public class CoreConfiguration {
 
 }
