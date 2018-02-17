@@ -11,6 +11,7 @@ public class KnowledgeQuestion {
 	@Id
 	private String id;
 	private BehaviorScenario knowledgeDatabase;
+	private String customDecision;
 	private String originQuestion;
 	private List<String> answerIds;
 
@@ -46,10 +47,18 @@ public class KnowledgeQuestion {
 		this.answerIds = answerIds;
 	}
 
+	public String getCustomDecision() {
+		return customDecision;
+	}
+
+	public void setCustomDecision(String customDecision) {
+		this.customDecision = customDecision;
+	}
+
 	@Override
 	public String toString() {
-		return "KnowledgeQuestion {id=" + id + ", knowledgeDatabase=" + knowledgeDatabase + ", originQuestion="
-				+ originQuestion + ", answerIds=" + answerIds + "}";
+		return "KnowledgeQuestion {id=" + id + ", knowledgeDatabase=" + knowledgeDatabase + ", customDecision="
+				+ customDecision + ", originQuestion=" + originQuestion + ", answerIds=" + answerIds + "}";
 	}
 
 }

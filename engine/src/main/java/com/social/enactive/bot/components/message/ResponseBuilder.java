@@ -3,6 +3,8 @@ package com.social.enactive.bot.components.message;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.ObjectUtils;
+
 import com.social.enactive.bot.components.user.User;
 
 public class ResponseBuilder {
@@ -18,6 +20,11 @@ public class ResponseBuilder {
 	
 	public ResponseBuilder add(String text) {
 		messages.add(new Message(conversationId, sender, new Content(text)));
+		return this;
+	}
+	
+	public ResponseBuilder add(Content content) {
+		messages.add(new Message(conversationId, sender, ObjectUtils.clone(content)));
 		return this;
 	}
 	

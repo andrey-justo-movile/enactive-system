@@ -19,6 +19,9 @@ spring:
             uri: mongodb://andrey.justo:social_bot@localhost:27017/social_bot
 server:
     port: 8081
+    
+wit:
+    endpoint: https://api.wit.ai
    
 endpoints:
     enabled: false
