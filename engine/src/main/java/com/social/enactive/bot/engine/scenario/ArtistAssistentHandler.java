@@ -1,13 +1,13 @@
 package com.social.enactive.bot.engine.scenario;
 
 import com.social.enactive.bot.components.decision.ResultDecisionService;
+import com.social.enactive.bot.components.knowledge.Knowledge;
 import com.social.enactive.bot.components.knowledge.KnowledgeService;
 import com.social.enactive.bot.components.message.ResponseBuilder;
 import com.social.enactive.bot.components.scenario.BotBehavior;
 import com.social.enactive.bot.components.scenario.IntentDetectionService;
 import com.social.enactive.bot.components.user.UserInteraction;
 import com.social.enactive.bot.engine.handler.MessageHandler;
-import com.social.enactive.bot.integration.wit.WitClient;
 
 public class ArtistAssistentHandler implements MessageHandler {
 
@@ -17,7 +17,6 @@ public class ArtistAssistentHandler implements MessageHandler {
 
 	public ArtistAssistentHandler(KnowledgeService knowledgeService, ResultDecisionService resultDecisionService,
 			IntentDetectionService intentDetectionService) {
-		super();
 		this.knowledgeService = knowledgeService;
 		this.resultDecisionService = resultDecisionService;
 		this.intentDetectionService = intentDetectionService;
@@ -25,7 +24,9 @@ public class ArtistAssistentHandler implements MessageHandler {
 
 	@Override
 	public void handler(UserInteraction userInteraction, BotBehavior behavior, ResponseBuilder builder) {
-		// TODO Auto-generated method stub
+		String questionId = intentDetectionService.recognize(behavior.getIntentDetectionId(), userInteraction);
+		Knowledge foundKnowledge = knowledgeService.knowlegde(questionId);
+		resultDecisionService.generate(foundKnowledge, builder);
 	}
 
 }

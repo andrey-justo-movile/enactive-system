@@ -14,6 +14,7 @@ public class KnowledgeService {
 	}
 
 	public Knowledge knowlegde(String questionId) {
+		// TODO: create an unknown answer and not return null
 		return Optional.ofNullable(questionRepository.find(questionId))
 				.map(q -> new Knowledge(q, answerRepository.list(q.getAnswerIds()))).orElse(null);
 	}

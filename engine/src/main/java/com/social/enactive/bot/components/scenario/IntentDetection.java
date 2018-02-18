@@ -9,6 +9,7 @@ public class IntentDetection {
 	private String token;
 	private String version;
 	private IntentDetectionType type;
+	private float threshold;
 
 	public String getId() {
 		return id;
@@ -42,10 +43,18 @@ public class IntentDetection {
 		this.type = type;
 	}
 
+	public float getThreshold() {
+		return threshold;
+	}
+
+	public void setThreshold(float threshold) {
+		this.threshold = threshold;
+	}
+
 	@Override
 	public String toString() {
-		return "IntentDetectionConfiguration {id=" + id + ", token=" + token + ", version=" + version + ", type=" + type
-				+ "}";
+		return "IntentDetection {id=" + id + ", token=" + token + ", version=" + version + ", type=" + type
+				+ ", threshold=" + threshold + "}";
 	}
 
 }

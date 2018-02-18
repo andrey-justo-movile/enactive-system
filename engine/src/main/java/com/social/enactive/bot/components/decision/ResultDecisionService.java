@@ -16,7 +16,6 @@ public class ResultDecisionService {
 			DecisionType.DEFAULT, new HashMap<>());
 
 	public ResultDecisionService(DecisionRepository repository) {
-		super();
 		this.repository = repository;
 	}
 
