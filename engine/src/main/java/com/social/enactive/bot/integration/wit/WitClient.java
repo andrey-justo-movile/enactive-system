@@ -42,7 +42,11 @@ public class WitClient {
 							.addParameter("thread_id", request.getThreadId()).addParameter("v", version).build())
 					.addParameter(authorization(token)).build());
 
-			return mapper.readJson(response.getEntity().getContent(), WitResponse.class);
+			if (response.getStatusLine().getStatusCode() == 200) {
+				return mapper.readJson(response.getEntity().getContent(), WitResponse.class);
+			}
+			
+			Log.CLIENT.warn("Client provided error {} for {}", response, request);
 		} catch (Exception e) {
 			Log.CLIENT.error("Couldn't call wit with {}", request, e);
 		}

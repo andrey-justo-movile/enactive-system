@@ -12,6 +12,10 @@ public class EmotionService {
 	public EmotionService(EmotionReasoner emotionReasoner) {
 		this.emotionReasoner = emotionReasoner;
 	}
+	
+	public String[] interact(String username, String emotion) throws OWLOntologyStorageException {
+		return interact(new EmotionRecognitionParams(username, emotion));
+	}
 
 	public String[] interact(EmotionRecognitionParams params) throws OWLOntologyStorageException {
 		Emotion emotion = Emotion.valueOf(params.getUserEmotion());
