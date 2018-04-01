@@ -19,9 +19,6 @@ apply plugin: 'nebula.rpm'
  ******************************************************************************/
 dependencies {
 
-	compile project(":core") {
-	   exclude group: 'org.springframework.boot', module: 'spring-boot-starter-jetty' 
-	}
-	compile project(":reasoner")
+	compile project(":core")
 
 }
