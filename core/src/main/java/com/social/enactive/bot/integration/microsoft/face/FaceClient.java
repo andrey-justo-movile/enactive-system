@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import org.apache.commons.lang3.BooleanUtils;
-import org.apache.http.NameValuePair;
+import org.apache.http.Header;
 import org.apache.http.client.entity.EntityBuilder;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.RequestBuilder;
@@ -12,7 +12,7 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.message.BasicHeader;
 
 import com.social.enactive.bot.configuration.log.Log;
 import com.social.enactive.bot.configuration.mapper.JacksonMapper;
@@ -36,8 +36,8 @@ public class FaceClient {
 		this.token = token;
 	}
 
-	private NameValuePair authorization() {
-		return new BasicNameValuePair("Authorization", "Ocp-Apim-SUbscription-Key " + token);
+	private Header authorization() {
+		return new BasicHeader("Authorization", "Ocp-Apim-SUbscription-Key " + token);
 	}
 
 	public FaceDetectionResponse detect(File image, String fileExt, List<String> faceAttributes, boolean faceId,
@@ -53,8 +53,8 @@ public class FaceClient {
 											.addParameter("returnFaceLandmarks",
 													BooleanUtils.toStringTrueFalse(landmarks))
 											.build())
-									.setHeader("Content-type", ContentType.APPLICATION_OCTET_STREAM.toString())
-									.addParameter(authorization()).setEntity(multipartBuilder.build()).build());
+									.addHeader("Content-type", ContentType.APPLICATION_OCTET_STREAM.toString())
+									.addHeader(authorization()).setEntity(multipartBuilder.build()).build());
 
 			if (response.getStatusLine().getStatusCode() == 200) {
 				return mapper.readJson(response.getEntity().getContent(), FaceDetectionResponse.class);
@@ -79,8 +79,8 @@ public class FaceClient {
 											.addParameter("returnFaceLandmarks",
 													BooleanUtils.toStringTrueFalse(landmarks))
 											.build())
-									.setHeader("Content-type", ContentType.APPLICATION_JSON.toString())
-									.addParameter(authorization()).setEntity(entityBuilder.build()).build());
+									.addHeader("Content-type", ContentType.APPLICATION_JSON.toString())
+									.addHeader(authorization()).setEntity(entityBuilder.build()).build());
 
 			if (response.getStatusLine().getStatusCode() == 200) {
 				return mapper.readJson(response.getEntity().getContent(), FaceDetectionResponse.class);
