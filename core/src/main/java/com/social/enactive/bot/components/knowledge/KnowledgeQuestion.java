@@ -5,13 +5,11 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 
 import com.social.enactive.bot.components.decision.DecisionHandling;
-import com.social.enactive.bot.components.scenario.BehaviorScenario;
 
 public class KnowledgeQuestion {
 
 	@Id
 	private String id;
-	private BehaviorScenario knowledgeDatabase;
 	private DecisionHandling customDecision;
 	private String originQuestion;
 	private List<String> answerIds;
@@ -22,14 +20,6 @@ public class KnowledgeQuestion {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public BehaviorScenario getKnowledgeDatabase() {
-		return knowledgeDatabase;
-	}
-
-	public void setKnowledgeDatabase(BehaviorScenario knowledgeDatabase) {
-		this.knowledgeDatabase = knowledgeDatabase;
 	}
 
 	public String getOriginQuestion() {
@@ -58,8 +48,8 @@ public class KnowledgeQuestion {
 
 	@Override
 	public String toString() {
-		return "KnowledgeQuestion {id=" + id + ", knowledgeDatabase=" + knowledgeDatabase + ", customDecision="
-				+ customDecision + ", originQuestion=" + originQuestion + ", answerIds=" + answerIds + "}";
+		return "KnowledgeQuestion {id=" + id + ", customDecision=" + customDecision + ", originQuestion="
+				+ originQuestion + ", answerIds=" + answerIds + "}";
 	}
 
 }

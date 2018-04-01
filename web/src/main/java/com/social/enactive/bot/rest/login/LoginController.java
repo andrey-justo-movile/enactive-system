@@ -40,7 +40,7 @@ public class LoginController {
 		
 		User newUser = userService.create(request.getUsername(), request.getName(), request.getPicture(), request.getEmail());
 		UserCredentials credentials = userCredentialsService.create(request.getUsername(), request.getPassword());
-		String token = authenticationService.authenticate(credentials.getName());
+		String token = authenticationService.authenticate(credentials.getUsername());
 		return ResponseEntity.ok().body(new UserLogged(newUser, token));
 	}
 

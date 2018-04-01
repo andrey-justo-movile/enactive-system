@@ -4,21 +4,13 @@ spring:
          default-property-inclusion: non_null
          deserialization:
              fail_on_unknown_properties: false
-    freemaker:
-        cache: false
     jmx:
         enabled: true
-    rabbitmq:
-        cacheMode: CONNECTION
-        host: localhost
-        virtual-host: admin
-        username: admin
-        password: admin
     data:
         mongodb:
             uri: mongodb://andrey.justo:social_bot@localhost:27017/social_bot
 server:
-    port: 8081
+    port: 8083
     
 wit:
     endpoint: https://api.wit.ai
@@ -26,27 +18,12 @@ wit:
 endpoints:
     enabled: false
 
-authentication:
-    secret: secret
-
-queue:
-    message-deliver: deliver
-    message-receiver: receiver
-
 ---
 
 spring:
     profiles: prod
-    rabbitmq:
-        host: "ENC(pEp1X1O7cFDO2PwTH/B9ZOcH32Jy1VTysuai402KJswkQhMSjwrYRQ==)"
-        username: "ENC(5Fmq+MhqfBSMAmnLceyRca8HQu+qZ0lA)"
-        password: "ENC(JSQKhXfXhzWDrlZ3VNcTaJTr3LhNaSXCUyXir19epK5psB9hgWp5uylRyostqjgG)"
-        virtual-host: "ENC(5Fmq+MhqfBSMAmnLceyRca8HQu+qZ0lA)"
     data:
         mongodb:
             uri: "ENC(LMMP+qGS4Xhd3CaxCJJyZU+5TI5Mu5ID63hhun3s1qbnIWEOKybpVQCt+L7DYrc2YSFB/b0kWzo/ky+mM3GZkJlkbCjgi8ST4v3TrsENJ0storlblkGh5A==)" 
-            
-authentication:
-    secret: "ENC(601/Jumv85kffnWbR4VqDAWv5VFcC/lV)"
      
     

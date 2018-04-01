@@ -20,5 +20,7 @@ apply plugin: 'nebula.rpm'
 dependencies {
 
 	compile project(":core")
-
+    
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
+    
 }

@@ -9,12 +9,10 @@ import com.social.enactive.bot.configuration.components.IntentDetectionConfigura
 import com.social.enactive.bot.configuration.components.KnowledgeConfiguration;
 import com.social.enactive.bot.configuration.components.MessageConfiguration;
 import com.social.enactive.bot.configuration.components.UserConfiguration;
-import com.social.enactive.configuration.EmotionReasonerConfiguration;
 
 @Configuration
 @Import({ BotBehaviorConfiguration.class, ConversationConfiguration.class, MessageConfiguration.class,
-		UserConfiguration.class, EmotionReasonerConfiguration.class, IntentDetectionConfiguration.class,
-		KnowledgeConfiguration.class })
+		UserConfiguration.class, IntentDetectionConfiguration.class, KnowledgeConfiguration.class })
 public class CoreConfiguration {
 
 }
