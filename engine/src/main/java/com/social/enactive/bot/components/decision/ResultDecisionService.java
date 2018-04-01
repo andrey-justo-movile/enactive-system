@@ -11,16 +11,11 @@ import com.social.enactive.bot.components.message.ResponseBuilder;
 
 public class ResultDecisionService {
 
-	private final DecisionRepository repository;
 	private final DecisionHandling defaultHandling = new DecisionHandling(UUID.randomUUID().toString(),
 			DecisionType.DEFAULT, new HashMap<>());
 
-	public ResultDecisionService(DecisionRepository repository) {
-		this.repository = repository;
-	}
-
 	public void generate(Knowledge knowledge, ResponseBuilder builder) {
-		DecisionHandling handling = Optional.ofNullable(repository.find(knowledge.getQuestion().getCustomDecision()))
+		DecisionHandling handling = Optional.ofNullable(knowledge.getQuestion().getCustomDecision())
 				.orElse(defaultHandling);
 
 		switch (handling.getType()) {

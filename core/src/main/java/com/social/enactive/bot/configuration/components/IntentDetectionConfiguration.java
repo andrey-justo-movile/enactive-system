@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
-import com.social.enactive.bot.components.scenario.IntentDetectionRepository;
-import com.social.enactive.bot.components.scenario.IntentDetectionService;
+import com.social.enactive.bot.components.scenario.intent.IntentDetectionRepository;
+import com.social.enactive.bot.components.scenario.intent.IntentDetectionService;
 import com.social.enactive.bot.configuration.mapper.JacksonMapper;
 import com.social.enactive.bot.integration.wit.WitClient;
 

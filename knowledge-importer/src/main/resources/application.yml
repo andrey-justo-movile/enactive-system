@@ -6,35 +6,23 @@ spring:
              fail_on_unknown_properties: false
     freemaker:
         cache: false
-        
     jmx:
         enabled: true
-        
     rabbitmq:
-        host: localhost
         cacheMode: CONNECTION
+        host: localhost
         virtual-host: admin
         username: admin
         password: admin
-        
     data:
         mongodb:
-            uri: "ENC(LMMP+qGS4Xhd3CaxCJJyZU+5TI5Mu5ID63hhun3s1qbnIWEOKybpVQCt+L7DYrc2YSFB/b0kWzo/ky+mM3GZkJlkbCjgi8ST4v3TrsENJ0storlblkGh5A==)"
-
-    servlet:
-        multipart:
-            max-file-size: 50KB
-            max-request-size: 50KB
-            
-cloudinary:
-    name:
-    api-key:
-    api-secret:
-
-jasypt:
-    encryptor:
-        password: enactive-social-bot
-
+            uri: mongodb://andrey.justo:social_bot@localhost:27017/social_bot
+server:
+    port: 8081
+    
+wit:
+    endpoint: https://api.wit.ai
+   
 endpoints:
     enabled: false
 
@@ -60,10 +48,5 @@ spring:
             
 authentication:
     secret: "ENC(601/Jumv85kffnWbR4VqDAWv5VFcC/lV)"
-    
-cloudinary:
-    name:
-    api-key:
-    api-secret:
      
     

@@ -54,4 +54,3 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-build.mustRunAfter clean

@@ -1,8 +1,7 @@
-package com.social.enactive.bot.components.scenario;
+package com.social.enactive.bot.components.scenario.intent;
 
 import java.util.Optional;
 
-import com.social.enactive.bot.components.user.UserInteraction;
 import com.social.enactive.bot.configuration.mapper.JacksonMapper;
 import com.social.enactive.bot.integration.wit.WitClient;
 import com.social.enactive.bot.integration.wit.response.Intent;
@@ -21,18 +20,18 @@ public class IntentDetectionService {
 		this.mapper = mapper;
 	}
 
-	public String recognize(String intentDetectionId, UserInteraction userInteraction) {
+	public String recognize(String intentDetectionId, String query) {
 		IntentDetection intentDetection = intentDetectionRepository.find(intentDetectionId);
 		if (intentDetection == null) {
-			throw new IllegalStateException("Can't recognize " + userInteraction + " for " + intentDetectionId);
+			throw new IllegalStateException("Can't recognize " + query + " for " + intentDetectionId);
 		}
 
 		// For now, we only have one intent prediction client
-		return witRecognition(intentDetection, userInteraction);
+		return witRecognition(intentDetection, query);
 	}
 	
-	public String witRecognition(IntentDetection intentDetection, UserInteraction userInteraction) {
-		WitResponse response = client.query(userInteraction.getMessage().getContent().getText(), intentDetection.getToken(), intentDetection.getVersion());
+	public String witRecognition(IntentDetection intentDetection, String query) {
+		WitResponse response = client.query(query, intentDetection.getToken(), intentDetection.getVersion());
 		Intent intent = mapper.readJson(response.getEntities().get("intent"), Intent.class);
 		float threshold = intentDetection.getThreshold() == 0 ? defaultThreshold : intentDetection.getThreshold();
 		

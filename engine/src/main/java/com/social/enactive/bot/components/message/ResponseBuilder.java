@@ -19,7 +19,7 @@ public class ResponseBuilder {
 	}
 	
 	public ResponseBuilder add(String text) {
-		messages.add(new Message(conversationId, sender, new Content(text)));
+		messages.add(new Message(conversationId, sender, new Content(text, null)));
 		return this;
 	}
 	

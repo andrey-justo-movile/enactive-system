@@ -23,5 +23,3 @@ dependencies {
 	compile project(":reasoner")
 
 }
-
-build.mustRunAfter clean

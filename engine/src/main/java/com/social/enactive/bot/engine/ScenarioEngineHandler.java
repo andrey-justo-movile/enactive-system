@@ -47,7 +47,7 @@ public class ScenarioEngineHandler implements Engine {
 			handler = (MessageHandler) context.getBean(behavior.getScenario().name());
 		}
 
-		handler.handler(userInteraction, behavior, builder);
+		handler.handle(userInteraction, behavior, builder);
 		return builder.build();
 	}
 

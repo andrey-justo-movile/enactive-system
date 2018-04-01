@@ -6,6 +6,6 @@ import com.social.enactive.bot.components.user.UserInteraction;
 
 public interface MessageHandler {
 	
-	void handler(UserInteraction userInteraction, BotBehavior behavior, ResponseBuilder responseBuilder);
+	void handle(UserInteraction userInteraction, BotBehavior behavior, ResponseBuilder responseBuilder);
 
 }

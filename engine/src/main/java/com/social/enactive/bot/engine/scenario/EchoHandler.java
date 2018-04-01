@@ -8,7 +8,7 @@ import com.social.enactive.bot.engine.handler.MessageHandler;
 public class EchoHandler implements MessageHandler {
 
 	@Override
-	public void handler(UserInteraction userInteraction, BotBehavior behavior, ResponseBuilder builder) {
+	public void handle(UserInteraction userInteraction, BotBehavior behavior, ResponseBuilder builder) {
 		builder.add(userInteraction.getMessage().getContent().getText());
 	}
 

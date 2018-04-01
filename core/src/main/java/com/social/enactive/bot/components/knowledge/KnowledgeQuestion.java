@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
+import com.social.enactive.bot.components.decision.DecisionHandling;
 import com.social.enactive.bot.components.scenario.BehaviorScenario;
 
 public class KnowledgeQuestion {
@@ -11,7 +12,7 @@ public class KnowledgeQuestion {
 	@Id
 	private String id;
 	private BehaviorScenario knowledgeDatabase;
-	private String customDecision;
+	private DecisionHandling customDecision;
 	private String originQuestion;
 	private List<String> answerIds;
 
@@ -47,11 +48,11 @@ public class KnowledgeQuestion {
 		this.answerIds = answerIds;
 	}
 
-	public String getCustomDecision() {
+	public DecisionHandling getCustomDecision() {
 		return customDecision;
 	}
 
-	public void setCustomDecision(String customDecision) {
+	public void setCustomDecision(DecisionHandling customDecision) {
 		this.customDecision = customDecision;
 	}
 

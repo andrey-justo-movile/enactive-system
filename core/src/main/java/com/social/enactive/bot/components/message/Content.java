@@ -10,15 +10,21 @@ public class Content implements Serializable, Cloneable {
 	private static final long serialVersionUID = 5822704870178462085L;
 	
 	private final String text;
+	private final String imageUrl;
 
 	@JsonCreator
-	public Content(@JsonProperty("text")String text) {
+	public Content(@JsonProperty("text")String text, @JsonProperty("image_url")String imageUrl) {
 		super();
 		this.text = text;
+		this.imageUrl = imageUrl;
 	}
 
 	public String getText() {
 		return text;
+	}
+	
+	public String getImageUrl() {
+		return imageUrl;
 	}
 	
 	@Override
@@ -28,7 +34,7 @@ public class Content implements Serializable, Cloneable {
 
 	@Override
 	public String toString() {
-		return "Content {text=" + text + "}";
+		return "Content {text=" + text + ", imageUrl=" + imageUrl + "}";
 	}
 
 }

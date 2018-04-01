@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import;
 import com.social.enactive.bot.components.decision.ResultDecisionService;
 import com.social.enactive.bot.components.knowledge.KnowledgeService;
 import com.social.enactive.bot.components.scenario.BehaviorScenario;
-import com.social.enactive.bot.components.scenario.IntentDetectionService;
+import com.social.enactive.bot.components.scenario.intent.IntentDetectionService;
 import com.social.enactive.bot.components.user.state.UserStateService;
 import com.social.enactive.bot.configuration.components.IntentDetectionConfiguration;
 import com.social.enactive.bot.configuration.components.KnowledgeConfiguration;

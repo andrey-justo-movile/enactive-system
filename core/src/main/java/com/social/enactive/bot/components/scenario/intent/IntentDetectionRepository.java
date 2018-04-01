@@ -1,4 +1,4 @@
-package com.social.enactive.bot.components.scenario;
+package com.social.enactive.bot.components.scenario.intent;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
 
