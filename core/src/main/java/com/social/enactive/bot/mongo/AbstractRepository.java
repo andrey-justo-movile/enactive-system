@@ -26,6 +26,15 @@ public abstract class AbstractRepository<T> {
 		template.save(obj, collectionName());
 		return obj;
 	}
+	
+	public List<T> inserAll(List<T> objs) {
+		template.insert(objs, collectionName());
+		return objs;
+	}
+	
+	public List<T> removeAll(List<String> ids) {
+		return template.findAllAndRemove(Query.query(Criteria.where("id").in(ids)), objClass, collectionName());
+	}
 
 	public T find(String id) {
 		if (StringUtils.isBlank(id)) {

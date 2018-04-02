@@ -6,6 +6,13 @@ public class SampleEntity {
 	private String value;
 	private int start;
 	private int end;
+	
+	public SampleEntity() {}
+	
+	public SampleEntity(String value) {
+		entity = "intent";
+		this.value = value;
+	}
 
 	public String getEntity() {
 		return entity;
