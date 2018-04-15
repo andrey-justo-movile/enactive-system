@@ -34,6 +34,12 @@ cloudinary:
 jasypt:
     encryptor:
         password: enactive-social-bot
+        
+microsoft:
+    face:
+        endpoint: "https://[location].api.cognitive.microsoft.com"
+        version: "v1.0"
+        token: test
 
 endpoints:
     enabled: false

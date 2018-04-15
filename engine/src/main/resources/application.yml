@@ -22,6 +22,12 @@ server:
     
 wit:
     endpoint: https://api.wit.ai
+    
+microsoft:
+    face:
+        endpoint: "https://[location].api.cognitive.microsoft.com"
+        version: "v1.0"
+        token: test
    
 endpoints:
     enabled: false
