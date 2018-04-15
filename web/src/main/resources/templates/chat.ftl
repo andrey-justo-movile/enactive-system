@@ -1,6 +1,7 @@
 <div class="ng-scope" ng-controller="ChatController as ChatView">
 	<div ng-model="chat" class="chat-container">
 	  		<video id="video" class="video-interface" autoplay></video>
+	  		<div id="avatarContainer"></div>
 			<simple-chat id="chatbot-form" local-user="ChatView.you" class="chat-view"
 					messages="ChatView.messages"
 					send-function="ChatView.sendMessage"

@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/chat.css">
+    <script src="js/avatar.js"></script>
+    <script type="text/javascript" language="javascript">
+        var gameInstance = UnityLoader.instantiate("avatarContainer");
+    </script>
   </head>
   <body ng-controller="AppController as AppView" ng-init="logged = false; tab = 'home'">
   	<input type="hidden" ng-model="logged">

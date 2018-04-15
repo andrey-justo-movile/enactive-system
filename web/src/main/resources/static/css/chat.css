@@ -26,3 +26,10 @@
 	margin-top: 10px;
 	padding: 10px;
 }
+
+#avatarContainer {
+	height: calc(60vh - 10px);
+    width: 100vw;
+    display: table;
+    margin: 0 auto;
+}
