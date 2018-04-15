@@ -28,7 +28,7 @@ dependencies {
     compile 'com.cloudinary:cloudinary-http44:1.18.0'
     
     // WEBSOCKET
-    compile "org.webjars:webjars-locator"
+    compile "org.webjars:webjars-locator:0.34"
     compile "org.webjars:sockjs-client:1.0.2"
     compile "org.webjars:stomp-websocket:2.3.3"
     compile "org.webjars:bootstrap:3.3.7"
