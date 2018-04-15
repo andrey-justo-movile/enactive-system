@@ -34,6 +34,9 @@ cloudinary:
 jasypt:
     encryptor:
         password: enactive-social-bot
+
+wit:
+    endpoint: https://api.wit.ai   
         
 microsoft:
     face:
