@@ -1,18 +1,3 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url 'https://repo.spring.io/libs-snapshot' }
-    }
-    dependencies {
-    	classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}" 
-	}
-}
-
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: 'net.researchgate.release'
-apply plugin: 'nebula.rpm'
-
 /******************************************************************************
  * DEPENDENCIES                                                               *
  ******************************************************************************/
