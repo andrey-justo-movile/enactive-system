@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/chat.css">
-    <script src="js/avatar.js"></script>
+    <script src="js/webgl/avatar.js"></script>
     <script type="text/javascript" language="javascript">
-        var gameInstance = UnityLoader.instantiate("avatarContainer");
+        var gameInstance = UnityLoader.instantiate("avatarContainer", "js/webgl/build.json");
     </script>
   </head>
   <body ng-controller="AppController as AppView" ng-init="logged = false; tab = 'home'">
