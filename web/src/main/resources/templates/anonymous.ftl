@@ -19,9 +19,6 @@
   <body ng-controller="AppController as AppView" ng-init="logged = false; tab = 'home'">
   	<input type="hidden" ng-model="logged">
     <input id="anonymous" type="hidden" ng-click="anonymous()" tabindex="4">
-    <script type="text/javascript" language="javascript">
-        $("#anonymous").click();
-    </script>
   	<div class="content-page">
 	  	<div class="ng-cloak" ng-show="logged">
 			<#include "chat.ftl">
@@ -44,7 +41,9 @@
 	<script src="js/angular-animate.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/chat.js"></script>
-	
+    <script type="text/javascript" language="javascript">
+        $("#anonymous").click();
+    </script>
 	<!-- Simple Chat -->
 	<script src="js/simple-chat/angular-simple-chat.min.js"></script>
   </body>
