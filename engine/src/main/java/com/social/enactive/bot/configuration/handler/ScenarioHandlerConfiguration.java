@@ -23,7 +23,7 @@ import com.social.enactive.bot.configuration.components.ResultDecisionConfigurat
 import com.social.enactive.bot.configuration.components.UserStateConfiguration;
 import com.social.enactive.bot.engine.Engine;
 import com.social.enactive.bot.engine.ScenarioEngineHandler;
-import com.social.enactive.bot.engine.scenario.ArtistAssistentHandler;
+import com.social.enactive.bot.engine.scenario.SocialEnactiveHandler;
 import com.social.enactive.bot.engine.scenario.EchoHandler;
 import com.social.enactive.bot.engine.scenario.SilentHandler;
 
@@ -50,7 +50,7 @@ public class ScenarioHandlerConfiguration implements BeanFactoryAware {
 	public void init() {
 		beanFactory.registerSingleton(BehaviorScenario.ECHO.name(), echo());
 		beanFactory.registerSingleton(BehaviorScenario.SILENT.name(), silent());
-		beanFactory.registerSingleton(BehaviorScenario.ARTS_ASSISTENT.name(), artistAsstistent());
+		beanFactory.registerSingleton(BehaviorScenario.SOCIAL_ENACTIVE.name(), socialEnactive());
 	}
 
 	private EchoHandler echo() {
@@ -61,8 +61,8 @@ public class ScenarioHandlerConfiguration implements BeanFactoryAware {
 		return new SilentHandler();
 	}
 
-	private ArtistAssistentHandler artistAsstistent() {
-		return new ArtistAssistentHandler(knowledgeService, resultDecisionService, intentDetectionService);
+	private SocialEnactiveHandler socialEnactive() {
+		return new SocialEnactiveHandler(knowledgeService, resultDecisionService, intentDetectionService);
 	}
 
 	@Bean

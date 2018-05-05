@@ -2,6 +2,8 @@ package com.social.enactive.bot.components.user;
 
 import java.util.UUID;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class UserService {
 	
 	private final UserRepository userRepository;
@@ -16,11 +18,21 @@ public class UserService {
 			throw new IllegalStateException("The user " + oldUser + " already exists");
 		}
 		
-		User newUser = new User(UUID.randomUUID().toString(), name, userName, picture, email);
+		User newUser = new User(UUID.randomUUID().toString(), name, userName, picture, email, false);
+		return userRepository.insert(newUser);
+	}
+	
+	public User createAnonymous() {
+		String userId = UUID.randomUUID().toString();
+		User newUser = new User(userId, null, userId, null, null, true);
 		return userRepository.insert(newUser);
 	}
 	
 	public User find(final String id) {
+		if (StringUtils.isBlank(id)) {
+			return null;
+		}
+		
 		return userRepository.find(id);
 	}
 	

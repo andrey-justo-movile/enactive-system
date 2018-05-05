@@ -53,7 +53,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 		String token = authenticationService.authenticate(credentials.getUsername());
 		res.setHeader(AuthenticationService.HEADER_AUTHORIZATION, AuthenticationService.BEARER_PREFIX + " " + token);
 		User user = userService.findByUserName(credentials.getUsername());
-		res.getWriter().print(MAPPER.writeValueAsString(new UserLogged(user, token)));
+		res.getWriter().print(MAPPER.writeValueAsString(new UserLogged(user, token, false)));
 	}
 
 }

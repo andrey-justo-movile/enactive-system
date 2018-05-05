@@ -11,13 +11,13 @@ import com.social.enactive.bot.components.scenario.intent.IntentDetectionService
 import com.social.enactive.bot.components.user.UserInteraction;
 import com.social.enactive.bot.engine.handler.MessageHandler;
 
-public class ArtistAssistentHandler implements MessageHandler {
+public class SocialEnactiveHandler implements MessageHandler {
 
 	private final KnowledgeService knowledgeService;
 	private final ResultDecisionService resultDecisionService;
 	private final IntentDetectionService intentDetectionService;
 
-	public ArtistAssistentHandler(KnowledgeService knowledgeService, ResultDecisionService resultDecisionService,
+	public SocialEnactiveHandler(KnowledgeService knowledgeService, ResultDecisionService resultDecisionService,
 			IntentDetectionService intentDetectionService) {
 		this.knowledgeService = knowledgeService;
 		this.resultDecisionService = resultDecisionService;

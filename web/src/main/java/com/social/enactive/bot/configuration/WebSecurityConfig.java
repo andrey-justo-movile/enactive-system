@@ -17,6 +17,9 @@ import com.social.enactive.bot.components.user.UserService;
 import com.social.enactive.bot.components.user.credentials.UserCredentialsService;
 import com.social.enactive.bot.configuration.http.filter.JWTAuthorizationFilter;
 import com.social.enactive.bot.configuration.http.filter.JWTLoginFilter;
+import com.social.enactive.bot.web.Paths;
+
+import static com.social.enactive.bot.rest.Paths.*;
 
 @Configuration
 @EnableWebSecurity
@@ -39,10 +42,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/css/**", "/images/**", "/js/**", "/favicon.ico").permitAll()
 		// TODO: create another security config only for web sockets
 		.antMatchers("/", "/index", "/channel/**").permitAll()
-		.antMatchers(HttpMethod.POST, "/login", "/sign_up").permitAll()
+		.antMatchers(Paths.ANONYMOUS, Paths.ANONYMOUS_SHORT).permitAll()
+		.antMatchers(HttpMethod.POST, ANONYMOUS_SESSION).permitAll()
+		.antMatchers(HttpMethod.POST, LOGIN, SIGN_UP).permitAll()
 		.anyRequest().authenticated()
 		.and()
-		.addFilterBefore(new JWTLoginFilter("/login", authenticationManager(), authenticationService, userService), 
+		.addFilterBefore(new JWTLoginFilter(LOGIN, authenticationManager(), authenticationService, userService), 
 				UsernamePasswordAuthenticationFilter.class)
 		.addFilterBefore(new JWTAuthorizationFilter(authenticationService, authenticationManager()), 
 				UsernamePasswordAuthenticationFilter.class)

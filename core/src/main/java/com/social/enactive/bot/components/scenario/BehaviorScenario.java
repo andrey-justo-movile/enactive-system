@@ -4,6 +4,6 @@ public enum BehaviorScenario {
 	
 	ECHO,
 	SILENT,
-	ARTS_ASSISTENT;
+	SOCIAL_ENACTIVE;
 
 }

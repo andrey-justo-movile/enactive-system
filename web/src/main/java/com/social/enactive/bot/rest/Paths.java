@@ -7,5 +7,6 @@ public interface Paths {
     String UPLOAD = "/upload/{conversation}";
     String LOGIN = "/login";
     String SIGN_UP = "/sign_up";
+    String ANONYMOUS_SESSION = "/anonymous_session";
     
 }

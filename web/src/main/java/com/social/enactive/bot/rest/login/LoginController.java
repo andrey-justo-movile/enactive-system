@@ -17,6 +17,7 @@ import com.social.enactive.bot.components.user.credentials.UserCredentials;
 import com.social.enactive.bot.components.user.credentials.UserCredentialsService;
 import com.social.enactive.bot.configuration.http.filter.to.UserLogged;
 import com.social.enactive.bot.rest.Paths;
+import com.social.enactive.bot.rest.login.to.AnonymousSession;
 import com.social.enactive.bot.rest.login.to.UserSignUpRequest;
 
 @RestController
@@ -41,7 +42,21 @@ public class LoginController {
 		User newUser = userService.create(request.getUsername(), request.getName(), request.getPicture(), request.getEmail());
 		UserCredentials credentials = userCredentialsService.create(request.getUsername(), request.getPassword());
 		String token = authenticationService.authenticate(credentials.getUsername());
-		return ResponseEntity.ok().body(new UserLogged(newUser, token));
+		return ResponseEntity.ok().body(new UserLogged(newUser, token, false));
+	}
+	
+	@RequestMapping(path = Paths.ANONYMOUS_SESSION, method = RequestMethod.POST)
+	public ResponseEntity<UserLogged> anonymousSession(@RequestBody(required = false) AnonymousSession request) {
+		// TODO: let old users use it
+		User currentUser = userService.find(request.getUserId());
+		if (currentUser != null && !currentUser.isAnonymous()) {
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+		} else if (currentUser == null) {
+			currentUser = userService.createAnonymous();
+		}
+		
+		String token = authenticationService.authenticate(currentUser.getUsername());
+		return ResponseEntity.ok().body(new UserLogged(currentUser, token, true));
 	}
 
 }

@@ -6,7 +6,7 @@ myModule.controller( 'AppController', AppController )
 /* @ngInject */
 function AppController( $scope, $http ) {
     var vm = this;
-
+    
     $scope.signIn = function() {
         $http( {
             method: 'POST',
@@ -41,6 +41,24 @@ function AppController( $scope, $http ) {
                 'picture': $scope.pictureUrl
             }
         } ).then( function successCallback( response ) {
+            $scope.logged = true;
+            $scope.$broadcast('startConversation', response.data);
+        }, function errorCallback( response ) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+        } );
+    }
+    
+    $scope.signIn = function() {
+        $http( {
+            method: 'POST',
+            url: '/anonymous_session',
+            data: {
+                'conversation_id': $scope.username,
+                'user_id': Cookies.get('anonymous_id')
+            }
+        } ).then( function successCallback( response ) {
+            Cookies.set('anonymous_id', response.data.user.id)
             $scope.logged = true;
             $scope.$broadcast('startConversation', response.data);
         }, function errorCallback( response ) {

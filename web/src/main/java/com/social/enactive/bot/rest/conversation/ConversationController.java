@@ -35,11 +35,12 @@ public class ConversationController {
 	private Cloudinary cloudinary;
 
 	@RequestMapping(path = Paths.CONVERSATION, method = RequestMethod.POST)
-	public ResponseEntity<Conversation> sendConversation(@RequestBody(required = false) JoinConversation join) {
+	public ResponseEntity<Conversation> joinConversation(@RequestBody(required = false) JoinConversation join) {
 		return ResponseEntity.ok()
 				.body(conversationService.joinConversation(join.getConversationId(),
 						userService.find(join.getUserId()),
-						botBehaviorService.find(BehaviorScenario.valueOf(join.getBotBehavior()))));
+						botBehaviorService.find(BehaviorScenario.valueOf(join.getBotBehavior())),
+						join.getType()));
 	}
 	
 	@RequestMapping(path = Paths.UPLOAD, method = RequestMethod.POST)

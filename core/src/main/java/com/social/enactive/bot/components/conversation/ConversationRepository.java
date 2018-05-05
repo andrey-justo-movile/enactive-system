@@ -12,8 +12,8 @@ public class ConversationRepository extends AbstractRepository<Conversation> {
 		super(template, Conversation.class);
 	}
 	
-	public Conversation findDefault(final String currentUserName, final String otherUserName) {
-		Query query = new Query(Criteria.where("type").is(ConversationType.DEFAULT)
+	public Conversation find(final String currentUserName, final String otherUserName, final ConversationType type) {
+		Query query = new Query(Criteria.where("type").is(type)
 				.and("participants")
 				.elemMatch(Criteria.where("username").is(currentUserName)
 						.and("participants").elemMatch(Criteria.where("username").is(otherUserName))));

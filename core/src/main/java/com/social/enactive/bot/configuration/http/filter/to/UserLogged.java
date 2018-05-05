@@ -6,11 +6,13 @@ public class UserLogged {
 
 	private final User user;
 	private final String token;
+	private final boolean anonymous;
 
-	public UserLogged(User user, String token) {
+	public UserLogged(User user, String token, boolean anonymous) {
 		super();
 		this.user = user;
 		this.token = token;
+		this.anonymous = anonymous;
 	}
 
 	public User getUser() {
@@ -21,9 +23,13 @@ public class UserLogged {
 		return token;
 	}
 
+	public boolean isAnonymous() {
+		return anonymous;
+	}
+
 	@Override
 	public String toString() {
-		return "UserLogged {user=" + user + ", token=" + token + "}";
+		return "UserLogged {user=" + user + ", token=" + token + ", anonymous=" + anonymous + "}";
 	}
 
 }

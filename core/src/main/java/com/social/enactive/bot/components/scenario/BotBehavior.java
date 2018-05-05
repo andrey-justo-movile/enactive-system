@@ -10,12 +10,13 @@ public class BotBehavior extends User implements Serializable {
 
 	private BehaviorScenario scenario;
 	private String intentDetectionId;
+	private String avatarFolder;
 
 	public BotBehavior() {
 	}
 
 	public BotBehavior(String id, BehaviorScenario scenario, String name, String userName, String picture) {
-		super(id, name, userName, picture, null);
+		super(id, name, userName, picture, null, false);
 		this.scenario = scenario;
 	}
 
@@ -35,10 +36,18 @@ public class BotBehavior extends User implements Serializable {
 		this.intentDetectionId = intentDetectionId;
 	}
 
+	public String getAvatarFolder() {
+		return avatarFolder;
+	}
+
+	public void setAvatarFolder(String avatarFolder) {
+		this.avatarFolder = avatarFolder;
+	}
+
 	@Override
 	public String toString() {
-		return "BotBehavior {scenario=" + scenario + ", intentDetectionId=" + intentDetectionId + super.toString()
-				+ "}";
+		return "BotBehavior { " + super.toString() + ", scenario=" + scenario + ", intentDetectionId="
+				+ intentDetectionId + ", avatarFolder=" + avatarFolder + "}";
 	}
 
 }
