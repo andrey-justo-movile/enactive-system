@@ -30,31 +30,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<!-- Latest compiled and minified JavaScript -->
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  	<!-- Dependencies -->
-  	<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-  	<script type="text/javascript">
-  		$("#picture").cloudinary_upload_widget({
-        	        cloud_name: "hl5w3dog6", 
-        	        secure: true,
-        	        api_key: '952724658153242',
-        	        cropping: 'server', 
-        	        upload_preset: 'avatars',
-        	        multiple:false,
-        	        cropping_aspect_ratio: 1,
-        	        max_image_width: 120,
-        	        max_image_height: 120,
-        	        button_class: 'btn btn-info form-control',
-        	        button_caption: 'Upload Avatar Image',
-        	        theme: 'white'
-	            },
-	            function(error, result) {
-	            	if (error == null) {
-	            		$("#picture-url").value = result.secure_url;
-	            	}
-	            	console.log(error, result);
-	            }
-        	);
-  	</script>
   	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   	<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 	<script src="js/angular.min.js"></script>

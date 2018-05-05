@@ -54,7 +54,6 @@ function AppController( $scope, $http ) {
             method: 'POST',
             url: '/anonymous_session',
             data: {
-                'conversation_id': $scope.username,
                 'user_id': Cookies.get('anonymous_id')
             }
         } ).then( function successCallback( response ) {

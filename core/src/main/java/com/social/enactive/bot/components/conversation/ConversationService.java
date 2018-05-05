@@ -20,6 +20,16 @@ public class ConversationService {
 		return conversationRepository.find(id);
 	}
 
+	public BotBehavior findBotIn(final String chatId) {
+		Conversation conversation = find(chatId);
+		if (conversation == null) {
+			return null;
+		}
+		
+		return (BotBehavior) conversation.getParticipants().stream().filter(p -> p instanceof BotBehavior).findFirst()
+				.orElse(null);
+	}
+
 	public Conversation joinConversation(final String id, final User user, final BotBehavior botBehavior,
 			final String type) {
 		if (StringUtils.isBlank(id)) {
