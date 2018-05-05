@@ -49,7 +49,7 @@ function AppController( $scope, $http ) {
         } );
     }
     
-    $scope.signIn = function() {
+    $scope.anonymous = function() {
         $http( {
             method: 'POST',
             url: '/anonymous_session',

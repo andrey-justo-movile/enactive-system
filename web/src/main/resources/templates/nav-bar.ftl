@@ -46,7 +46,7 @@
 												<input type="input" ng-click="signUp()" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Register Now">
 											</div>
 										</div>
-									</li>
+									</div>
 									</form>
                             </div>
                         </ul>

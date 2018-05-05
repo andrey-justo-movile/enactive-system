@@ -18,6 +18,10 @@
   </head>
   <body ng-controller="AppController as AppView" ng-init="logged = false; tab = 'home'">
   	<input type="hidden" ng-model="logged">
+    <input id="anonymous" type="hidden" ng-click="anonymous()" tabindex="4">
+    <script type="text/javascript" language="javascript">
+        $("#anonymous").click();
+    </script>
   	<div class="content-page">
 	  	<div class="ng-cloak" ng-show="logged">
 			<#include "chat.ftl">
