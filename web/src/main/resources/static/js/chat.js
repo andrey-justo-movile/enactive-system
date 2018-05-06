@@ -90,7 +90,7 @@ function ChatController($scope, $http) {
         askCamera()
         socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
-        stompClient.heartbeat.outgoing = 0;
+        stompClient.heartbeat.outgoing = 20000;
         stompClient.heartbeat.incoming = 0;
         stompClient.connect({ 'Authorization': 'Bearer ' + vm.user.token }, onConnected, onError);
     }
