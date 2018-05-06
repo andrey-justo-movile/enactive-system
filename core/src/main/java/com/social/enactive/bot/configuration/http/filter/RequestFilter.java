@@ -63,15 +63,6 @@ public class RequestFilter implements Filter {
         Log.CORE.info("{}", sb.append(" ]").toString());
         Log.CORE.debug("Elapsed time: {} ms", chronometer.getTime());
 
-        StringBuffer buffer = new StringBuffer();
-        Enumeration<String> headers = httpRequest.getHeaderNames();
-        while (headers.hasMoreElements()) {
-            String currentHeader = headers.nextElement();
-            buffer.append(currentHeader).append(": ").append(httpRequest.getHeader(currentHeader)).append("\n");
-        }
-
-        Log.CORE.info("HEADERS [{}]", buffer.toString());
-
         chain.doFilter(request, response);
     }
 
