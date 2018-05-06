@@ -1,7 +1,7 @@
 .video-interface {
 	height: 40vh;
 	width: 40vw;
-	display: table;
+	display: none;
 	margin: 0 auto;
 }
 

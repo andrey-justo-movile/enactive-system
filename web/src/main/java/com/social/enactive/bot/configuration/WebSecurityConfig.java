@@ -41,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/css/**", "/images/**", "/js/**", "/favicon.ico").permitAll()
 		// TODO: create another security config only for web sockets
-		.antMatchers("/", "/index", "/channel/**").permitAll()
+		.antMatchers("/", "/index", "/channel/**", "/ws/info").permitAll()
 		.antMatchers(Paths.ANONYMOUS, Paths.ANONYMOUS_SHORT).permitAll()
 		.antMatchers(HttpMethod.POST, ANONYMOUS_SESSION).permitAll()
 		.antMatchers(HttpMethod.POST, LOGIN, SIGN_UP).permitAll()
