@@ -67,7 +67,7 @@ public class AuthenticationService {
 
             if (user != null) {
                 return (Boolean) parsedToken.getHeader().getOrDefault(HEADER_IS_ANONYMOUS, false) ?
-                        new AnonymousAuthenticationToken(user, user, Arrays.asList(new SimpleGrantedAuthority(Authorities.CONVERSATION.name()))) :
+                        new UsernamePasswordAuthenticationToken(user, user, Arrays.asList(new SimpleGrantedAuthority(Authorities.CONVERSATION.name()))) :
                         new UsernamePasswordAuthenticationToken(user, null, Arrays.asList(new SimpleGrantedAuthority(Authorities.CONVERSATION.name()), new SimpleGrantedAuthority(Authorities.PROFILE.name())));
             }
         }

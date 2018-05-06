@@ -44,7 +44,7 @@
 	<!-- Simple Chat -->
 	<script src="js/simple-chat/angular-simple-chat.min.js"></script>
 	<script type="text/javascript" language="javascript">
-        $timeout(function () { $("#anonymous").click(); }, 0);
+        setTimeout(function () { $("#anonymous").click(); }, 0);
     </script>
   </body>
 </html>
