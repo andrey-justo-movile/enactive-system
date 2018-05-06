@@ -18,8 +18,8 @@
     </script>
   </head>
   <body ng-controller="AppController as AppView" ng-init="logged = false; tab = 'home'">
-  	<input type="hidden" ng-model="logged">
-  	<input type="hidden" ng-model="tab">
+  	<input type="hidden" ng-model="logged"/>
+  	<input type="hidden" ng-model="tab"/>
   	<#include "nav-bar.ftl">
   	<div class="content-page">
 	  	<div class="show-hide" ng-show="tab == 'home'">
