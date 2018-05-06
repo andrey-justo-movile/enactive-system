@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(Paths.ANONYMOUS, Paths.ANONYMOUS_SHORT).permitAll()
                 .antMatchers(HttpMethod.POST, ANONYMOUS_SESSION).permitAll()
                 .antMatchers(HttpMethod.POST, LOGIN, SIGN_UP).permitAll()
-                .antMatchers("/ws/channel/**", "/ws/app/**").permitAll()
+                .antMatchers("/ws/channel/**", "/ws/app/**").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new JWTLoginFilter(LOGIN, authenticationManager(), authenticationService, userService),
