@@ -22,30 +22,30 @@ import com.social.enactive.bot.rest.conversation.to.JoinConversation;
 @RestController
 public class ConversationController {
 
-	@Autowired
-	private ConversationService conversationService;
+    @Autowired
+    private ConversationService conversationService;
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private UserService userService;
 
-	@Autowired
-	private BotBehaviorService botBehaviorService;
-	
-	@Autowired
-	private Cloudinary cloudinary;
+    @Autowired
+    private BotBehaviorService botBehaviorService;
 
-	@RequestMapping(path = Paths.CONVERSATION, method = RequestMethod.POST)
-	public ResponseEntity<Conversation> joinConversation(@RequestBody(required = false) JoinConversation join) {
-		return ResponseEntity.ok()
-				.body(conversationService.joinConversation(join.getConversationId(),
-						userService.find(join.getUserId()),
-						botBehaviorService.find(BehaviorScenario.valueOf(join.getBotBehavior())),
-						join.getType()));
-	}
-	
-	@RequestMapping(path = Paths.UPLOAD, method = RequestMethod.POST)
-	public ResponseEntity<Void> upload(HttpServletResponse response, @PathVariable("conversation") String conversation) {
-		return ResponseEntity.ok().build();
-	}
-	
+    @Autowired
+    private Cloudinary cloudinary;
+
+    @RequestMapping(path = Paths.CONVERSATION, method = RequestMethod.POST)
+    public ResponseEntity<Conversation> joinConversation(@RequestBody(required = false) JoinConversation join) {
+        return ResponseEntity.ok()
+                .body(conversationService.joinConversation(join.getConversationId(),
+                        userService.find(join.getUserId()),
+                        botBehaviorService.find(BehaviorScenario.valueOf(join.getBotBehavior())),
+                        join.getType()));
+    }
+
+    @RequestMapping(path = Paths.UPLOAD, method = RequestMethod.POST)
+    public ResponseEntity<Void> upload(HttpServletResponse response, @PathVariable("conversation") String conversation) {
+        return ResponseEntity.ok().build();
+    }
+
 }

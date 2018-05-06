@@ -1,7 +1,6 @@
 package com.social.enactive.bot.rest.login;
 
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,41 +21,41 @@ import com.social.enactive.bot.rest.login.to.UserSignUpRequest;
 
 @RestController
 public class LoginController {
-	
-	@Autowired
-	private AuthenticationService authenticationService;
 
-	@Autowired
-	private UserService userService;
-	
-	@Autowired
-	private UserCredentialsService userCredentialsService;
-	
-	@RequestMapping(path = Paths.SIGN_UP, method = RequestMethod.POST)
-	public ResponseEntity<UserLogged> signUp(@RequestBody(required = true) UserSignUpRequest request) {
-		UserCredentials oldCredentials = userCredentialsService.findByUserName(request.getUsername());
-		if (oldCredentials != null) {
-			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-		}
-		
-		User newUser = userService.create(request.getUsername(), request.getName(), request.getPicture(), request.getEmail());
-		UserCredentials credentials = userCredentialsService.create(request.getUsername(), request.getPassword());
-		String token = authenticationService.authenticate(credentials.getUsername());
-		return ResponseEntity.ok().body(new UserLogged(newUser, token, false));
-	}
-	
-	@RequestMapping(path = Paths.ANONYMOUS_SESSION, method = RequestMethod.POST)
-	public ResponseEntity<UserLogged> anonymousSession(@RequestBody(required = false) AnonymousSession request) {
-		// TODO: let old users use it
-		User currentUser = userService.find(request.getUserId());
-		if (currentUser != null && !currentUser.isAnonymous()) {
-			return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-		} else if (currentUser == null) {
-			currentUser = userService.createAnonymous();
-		}
-		
-		String token = authenticationService.authenticate(currentUser.getUsername());
-		return ResponseEntity.ok().body(new UserLogged(currentUser, token, true));
-	}
+    @Autowired
+    private AuthenticationService authenticationService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private UserCredentialsService userCredentialsService;
+
+    @RequestMapping(path = Paths.SIGN_UP, method = RequestMethod.POST)
+    public ResponseEntity<UserLogged> signUp(@RequestBody(required = true) UserSignUpRequest request) {
+        UserCredentials oldCredentials = userCredentialsService.findByUserName(request.getUsername());
+        if (oldCredentials != null) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        User newUser = userService.create(request.getUsername(), request.getName(), request.getPicture(), request.getEmail());
+        UserCredentials credentials = userCredentialsService.create(request.getUsername(), request.getPassword());
+        String token = authenticationService.authenticate(credentials.getUsername());
+        return ResponseEntity.ok().body(new UserLogged(newUser, token, false));
+    }
+
+    @RequestMapping(path = Paths.ANONYMOUS_SESSION, method = RequestMethod.POST)
+    public ResponseEntity<UserLogged> anonymousSession(@RequestBody(required = false) AnonymousSession request) {
+        // TODO: let old users use it
+        User currentUser = userService.find(request.getUserId());
+        if (currentUser != null && !currentUser.isAnonymous()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        } else if (currentUser == null) {
+            currentUser = userService.createAnonymous();
+        }
+
+        String token = authenticationService.anonymous(currentUser.getUsername());
+        return ResponseEntity.ok().body(new UserLogged(currentUser, token, true));
+    }
 
 }

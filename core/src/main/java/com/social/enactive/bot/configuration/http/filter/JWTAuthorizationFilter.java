@@ -16,19 +16,19 @@ import com.social.enactive.bot.components.authentication.AuthenticationService;
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
-	private AuthenticationService authenticationService;
+    private AuthenticationService authenticationService;
 
-	public JWTAuthorizationFilter(AuthenticationService authenticationService, AuthenticationManager manager) {
-		super(manager);
-		this.authenticationService = authenticationService;
-	}
+    public JWTAuthorizationFilter(AuthenticationService authenticationService, AuthenticationManager manager) {
+        super(manager);
+        this.authenticationService = authenticationService;
+    }
 
-	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		Authentication authentication = authenticationService.getAuthentication((HttpServletRequest) request);
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		chain.doFilter(request, response);
-	}
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+        Authentication authentication = authenticationService.getAuthentication((HttpServletRequest) request);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        chain.doFilter(request, response);
+    }
 
 }

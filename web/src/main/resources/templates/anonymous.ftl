@@ -41,10 +41,10 @@
 	<script src="js/angular-animate.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/chat.js"></script>
-    <script type="text/javascript" language="javascript">
-        $("#anonymous").click();
-    </script>
 	<!-- Simple Chat -->
 	<script src="js/simple-chat/angular-simple-chat.min.js"></script>
+	<script type="text/javascript" language="javascript">
+        $("#anonymous").click();
+    </script>
   </body>
 </html>
