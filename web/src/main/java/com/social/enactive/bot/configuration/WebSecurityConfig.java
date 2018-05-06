@@ -25,38 +25,39 @@ import static com.social.enactive.bot.rest.Paths.*;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private UserCredentialsService userCredentialsService;
-	
-	@Autowired
-	private AuthenticationService authenticationService;
-	
-	@Autowired
-	private UserService userService;
-	
-	public static PasswordEncoder DEFAULT_ENCODER = new BCryptPasswordEncoder();
+    @Autowired
+    private UserCredentialsService userCredentialsService;
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests()
-		.antMatchers("/css/**", "/images/**", "/js/**", "/favicon.ico").permitAll()
-		// TODO: create another security config only for web sockets
-		.antMatchers("/", "/index", "/channel/**", "/ws/info").permitAll()
-		.antMatchers(Paths.ANONYMOUS, Paths.ANONYMOUS_SHORT).permitAll()
-		.antMatchers(HttpMethod.POST, ANONYMOUS_SESSION).permitAll()
-		.antMatchers(HttpMethod.POST, LOGIN, SIGN_UP).permitAll()
-		.anyRequest().authenticated()
-		.and()
-		.addFilterBefore(new JWTLoginFilter(LOGIN, authenticationManager(), authenticationService, userService), 
-				UsernamePasswordAuthenticationFilter.class)
-		.addFilterBefore(new JWTAuthorizationFilter(authenticationService, authenticationManager()), 
-				UsernamePasswordAuthenticationFilter.class)
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-	}
+    @Autowired
+    private AuthenticationService authenticationService;
 
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userCredentialsService).passwordEncoder(DEFAULT_ENCODER);
-	}
+    @Autowired
+    private UserService userService;
+
+    public static PasswordEncoder DEFAULT_ENCODER = new BCryptPasswordEncoder();
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable().authorizeRequests()
+                .antMatchers("/css/**", "/images/**", "/js/**", "/favicon.ico").permitAll()
+                // TODO: create another security config only for web sockets
+                .antMatchers("/", "/index", "/ws/**").permitAll()
+                .antMatchers(Paths.ANONYMOUS, Paths.ANONYMOUS_SHORT).permitAll()
+                .antMatchers(HttpMethod.POST, ANONYMOUS_SESSION).permitAll()
+                .antMatchers(HttpMethod.POST, LOGIN, SIGN_UP).permitAll()
+                .antMatchers("/ws/channel/**", "/ws/app/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .addFilterBefore(new JWTLoginFilter(LOGIN, authenticationManager(), authenticationService, userService),
+                        UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new JWTAuthorizationFilter(authenticationService, authenticationManager()),
+                        UsernamePasswordAuthenticationFilter.class)
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userCredentialsService).passwordEncoder(DEFAULT_ENCODER);
+    }
 
 }

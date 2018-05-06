@@ -69,7 +69,7 @@ public class RequestFilter implements Filter {
             String currentHeader = headers.nextElement();
             buffer.append(currentHeader).append(": ").append(httpRequest.getHeader(currentHeader)).append("\n");
         }
-        
+
         Log.CORE.info("HEADERS [{}]", buffer.toString());
 
         chain.doFilter(request, response);
