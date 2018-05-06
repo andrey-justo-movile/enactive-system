@@ -65,7 +65,7 @@ public class AuthenticationService {
 
             if (user != null) {
                 return (Boolean)parsedToken.getHeader().getOrDefault(HEADER_IS_ANONYMOUS, false) ?
-                    new AnonymousAuthenticationToken(user, null, Collections.emptyList()):
+                    new AnonymousAuthenticationToken(user, user, Collections.emptyList()):
                     new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList());
             }
 		}
