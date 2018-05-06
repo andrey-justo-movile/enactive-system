@@ -44,8 +44,7 @@
 	<!-- Simple Chat -->
 	<script src="js/simple-chat/angular-simple-chat.min.js"></script>
 	<script type="text/javascript" language="javascript">
-	    <!-- Below code is example about how I need a function for AngularJS loaded event -->
-        app.onAngularLoaded(function () { $("#anonymous").click(); });
+        $timeout(function () { $("#anonymous").click(); }, 0);
     </script>
   </body>
 </html>
