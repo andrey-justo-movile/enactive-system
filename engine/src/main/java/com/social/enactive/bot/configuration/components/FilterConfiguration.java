@@ -1,5 +1,6 @@
 package com.social.enactive.bot.configuration.components;
 
+import javax.servlet.DispatcherType;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebFilter;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.social.enactive.bot.configuration.http.filter.RequestFilter;
 
-@WebFilter(pported = true)
+@WebFilter(asyncSupported = true, dispatcherTypes = {DispatcherType.ASYNC, DispatcherType.REQUEST})
 @Component
 @Order(Integer.MIN_VALUE)
 public class FilterConfiguration implements ServletContextInitializer {
