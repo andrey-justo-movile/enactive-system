@@ -20,7 +20,7 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties
 @EnableConfigurationProperties
 @EnableEncryptableProperties
 @ComponentScan({"com.social.enactive"})
-@WebServlet(asyncSupported = true)
+@WebServlet(asyncSupported = true, name = "dispatcher", urlPatterns = "/*")
 @SpringBootApplication
 public class SocialEnactiveWebMain {
 

@@ -3,8 +3,10 @@ package com.social.enactive.bot.configuration.http.filter;
 import java.io.IOException;
 import java.util.Collections;
 
+import javax.servlet.DispatcherType;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -23,6 +25,7 @@ import com.social.enactive.bot.components.user.UserService;
 import com.social.enactive.bot.components.user.credentials.UserCredentials;
 import com.social.enactive.bot.configuration.http.filter.to.UserLogged;
 
+@WebFilter(asyncSupported = true, dispatcherTypes = {DispatcherType.ASYNC, DispatcherType.REQUEST})
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
 	private static final ObjectMapper MAPPER = new ObjectMapper();

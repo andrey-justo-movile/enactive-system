@@ -2,8 +2,10 @@ package com.social.enactive.bot.configuration.http.filter;
 
 import java.io.IOException;
 
+import javax.servlet.DispatcherType;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,6 +16,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 import com.social.enactive.bot.components.authentication.AuthenticationService;
 
+@WebFilter(asyncSupported = true, dispatcherTypes = {DispatcherType.ASYNC, DispatcherType.REQUEST})
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
     private AuthenticationService authenticationService;

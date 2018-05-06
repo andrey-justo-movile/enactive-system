@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.social.enactive.bot.configuration.http.filter.RequestFilter;
 
-@WebFilter(asyncSupported = true)
+@WebFilter(pported = true)
 @Component
 @Order(Integer.MIN_VALUE)
 public class FilterConfiguration implements ServletContextInitializer {
