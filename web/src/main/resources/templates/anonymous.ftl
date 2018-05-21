@@ -11,15 +11,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/chat.css">
-    <script src="js/webgl/avatar.js"></script>
-    <script type="text/javascript" language="javascript">
-        var gameInstance = UnityLoader.instantiate("avatarContainer", "js/webgl/build.json");
-    </script>
   </head>
   <body ng-controller="AppController as AppView" ng-init="logged = false; tab = 'home'">
   	<input type="hidden" ng-model="logged">
     <input id="anonymous" type="hidden" ng-click="anonymous()" tabindex="4">
   	<div class="content-page">
+  	    <img id="avatar-img" src="images/education/lobo-mal.jpeg">
 	  	<div class="ng-cloak" ng-show="logged">
 			<#include "chat.ftl">
 	  	</div>
