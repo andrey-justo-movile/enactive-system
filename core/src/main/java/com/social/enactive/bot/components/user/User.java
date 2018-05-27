@@ -20,6 +20,7 @@ public class User implements Serializable {
 	private String name;
 	private String picture;
 	private String email;
+	private Gender gender;
 	private boolean anonymous;
 
 	public User() {
@@ -83,9 +84,17 @@ public class User implements Serializable {
 		this.anonymous = anonymous;
 	}
 
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
 	@Override
 	public String toString() {
-		return "User {id=" + id + ", username=" + username + ", name=" + name + ", picture=" + picture + ", email="
+		return "User {id=" + id + ", username=" + username + ", name=" + name + ", gender=" + gender + ", picture=" + picture + ", email="
 				+ email + ", anonymous=" + anonymous + "}";
 	}
 

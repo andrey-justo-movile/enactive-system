@@ -9,8 +9,8 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 import com.social.enactive.bot.components.user.UserInteraction;
 import com.social.enactive.bot.configuration.log.Log;
-import com.social.enactive.bot.integration.microsoft.face.FaceClient;
-import com.social.enactive.bot.integration.microsoft.face.response.FaceDetectionResponse;
+import com.social.enactive.bot.integration.microsoft.cognitiveservices.face.FaceClient;
+import com.social.enactive.bot.integration.microsoft.cognitiveservices.face.response.FaceDetectionResponse;
 import com.social.enactive.components.emotion.EmotionService;
 
 public class PerceptionService {

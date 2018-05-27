@@ -14,7 +14,7 @@ Here we found a research platform to talk and develop new kinds of chatbot templ
 # Templates Available
 - ECHO
 - SILENT
-- ARTS TEACHER (soon) 
+- SOCIAL ENACTIVE 
 
 # Production Web
 [Try it now!](https://enactive-social-bot.herokuapp.com/)

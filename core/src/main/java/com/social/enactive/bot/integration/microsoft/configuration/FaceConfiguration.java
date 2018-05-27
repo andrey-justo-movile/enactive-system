@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.social.enactive.bot.configuration.mapper.JacksonMapper;
-import com.social.enactive.bot.integration.microsoft.face.FaceClient;
+import com.social.enactive.bot.integration.microsoft.cognitiveservices.face.FaceClient;
 
 @Configuration
 public class FaceConfiguration {
