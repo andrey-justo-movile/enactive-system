@@ -16,7 +16,6 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicHeader;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SpeechDefaultPolicyAuthenticationService implements SpeechAuthenticationService {
 
@@ -60,7 +59,7 @@ public class SpeechDefaultPolicyAuthenticationService implements SpeechAuthentic
         }, REFRESH_TOKEN, TimeUnit.SECONDS);
     }
     
-    private String renewToken() {
+    protected String renewToken() {
         try {
             URIBuilder uriBuilder = new URIBuilder(serviceUrl + "/issueToken");
 

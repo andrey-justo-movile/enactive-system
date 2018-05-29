@@ -46,7 +46,7 @@ microsoft:
     speech:
         auth:
             url: "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
-            key:
+            key: "[key]"
         recognize:
             app-id:
             url: "https://speech.platform.bing.com"

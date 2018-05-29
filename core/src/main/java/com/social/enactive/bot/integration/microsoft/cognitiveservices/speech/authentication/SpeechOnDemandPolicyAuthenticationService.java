@@ -3,23 +3,20 @@ package com.social.enactive.bot.integration.microsoft.cognitiveservices.speech.a
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
-
-import com.movile.chatclub.libraries.kernel.http.HttpService;
+import org.apache.http.impl.client.CloseableHttpClient;
 
 public class SpeechOnDemandPolicyAuthenticationService extends SpeechDefaultPolicyAuthenticationService {
 
-    public SpeechOnDemandPolicyAuthenticationService(String serviceUrl, String key, HttpService httpService) {
+    public SpeechOnDemandPolicyAuthenticationService(String serviceUrl, String key, CloseableHttpClient httpService) {
         super(serviceUrl, key, httpService);
     }
     
     protected void scheduleUpdate() {
-        scheduler.schedule(new Runnable() {
-            
-            @Override
-            public void run() {
-                currentJWT = StringUtils.EMPTY;
-            }
-        }, REFRESH_TOKEN, TimeUnit.SECONDS);
+        // Do nothing
     }
 
+    @Override
+    public synchronized String getAuthJWT() {
+        return renewToken();
+    }
 }
