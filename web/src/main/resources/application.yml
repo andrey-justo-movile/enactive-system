@@ -43,6 +43,17 @@ microsoft:
         endpoint: "https://[location].api.cognitive.microsoft.com"
         version: "v1.0"
         token: test
+    speech:
+        auth:
+            url: "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
+            key:
+        recognize:
+            app-id:
+            url: "https://speech.platform.bing.com"
+    luis-key: "[key]"
+    luis-url: "[url]"
+    knowledge-url: "[url]"
+    knowledge-key: "[key]"
 
 endpoints:
     enabled: false

@@ -12,10 +12,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LUISClientConfiguration {
 
-    @Value("${cognitive-services.luis-url}")
+    @Value("${microsoft.luis-url}")
     private String serviceUrl;
     
-    @Value("${cognitive-services.luis-key}")
+    @Value("${microsoft.luis-key}")
     private String serviceKey;
     
     @Bean

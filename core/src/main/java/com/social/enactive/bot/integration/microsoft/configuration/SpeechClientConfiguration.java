@@ -12,16 +12,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpeechClientConfiguration {
 
-    @Value("${cognitive-services.speech.auth.url}")
+    @Value("${microsoft.speech.auth.url}")
     private String serviceAuthUrl;
 
-    @Value("${cognitive-services.speech.auth.key}")
+    @Value("${microsoft.speech.auth.key}")
     private String serviceAuthKey;
     
-    @Value("${cognitive-services.speech.recognize.url}")
+    @Value("${microsoft.speech.recognize.url}")
     private String serviceUrl;
     
-    @Value("${cognitive-services.speech.recognize.app-id}")
+    @Value("${microsoft.speech.recognize.app-id}")
     private String serviceAppId;
     
     @Bean

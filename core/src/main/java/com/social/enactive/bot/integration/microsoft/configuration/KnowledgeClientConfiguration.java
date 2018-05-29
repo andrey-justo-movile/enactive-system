@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class KnowledgeClientConfiguration {
 
-    @Value("${cognitive-services.knowledge-url}")
+    @Value("${microsoft.knowledge-url}")
     private String serviceUrl;
     
-    @Value("${cognitive-services.knowledge-key}")
+    @Value("${microsoft.knowledge-key}")
     private String serviceKey;
     
     @Bean
